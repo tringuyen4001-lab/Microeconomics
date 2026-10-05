@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chương 1 — Mười Nguyên Lý Của Kinh Tế Học | Mankiw</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --navy:#1e3a5f; --navy-2:#2b4d7d; --gold:#e8a838; --gold-dark:#c48f27;
+  --bg:#f8f9fa; --surface:#ffffff; --text:#1a1a2e; --muted:#556; --border:#e0e0e0;
+  --accent:#3a7dd6; --green:#2e8b57; --red:#c73737; --violet:#7a4bd6;
+  --radius:12px; --shadow:0 2px 12px rgba(0,0,0,0.08); --shadow-lg:0 8px 30px rgba(0,0,0,0.12);
+  --serif:"Source Serif 4",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+[data-theme="dark"]{
+  --bg:#0f1923; --surface:#1a2535; --text:#e8eaf0; --muted:#95a5c0; --border:#2a3a50;
+  --shadow:0 2px 12px rgba(0,0,0,0.5); --shadow-lg:0 8px 30px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;transition:background .3s,color .3s}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--navy);line-height:1.3}
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4{color:var(--gold)}
+
+/* ---- Language toggle: ONLY one language visible at a time ---- */
+html[data-lang="vn"] .lang-en, body[data-lang="vn"] .lang-en{display:none !important}
+html[data-lang="en"] .lang-vn, body[data-lang="en"] .lang-vn{display:none !important}
+
+/* ---------- Sidebar ---------- */
+#sidebar{position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--navy);color:#fff;display:flex;flex-direction:column;z-index:100;transition:transform .3s}
+.sidebar-header{padding:20px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
+.sidebar-header .book{font-family:var(--serif);font-size:13px;letter-spacing:1px;color:var(--gold);text-transform:uppercase}
+.sidebar-header .chap-num{font-family:var(--serif);font-size:13px;color:rgba(255,255,255,.7);margin-top:8px;letter-spacing:1px}
+.sidebar-header .chap-title{font-family:var(--serif);font-size:18px;font-weight:600;margin-top:4px;color:#fff;line-height:1.25}
+.progress-wrap{padding:12px 18px}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;color:rgba(255,255,255,.75)}
+.progress-bar{height:6px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),#f7c86a);width:0%;transition:width .4s}
+.nav-list{flex:1;overflow-y:auto;padding:8px 0}
+.nav-list::-webkit-scrollbar{width:6px}
+.nav-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 18px;font-size:13.5px;cursor:pointer;color:rgba(255,255,255,.8);border-left:3px solid transparent;transition:.15s}
+.nav-item:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-item.active{background:rgba(232,168,56,.14);color:var(--gold);border-left-color:var(--gold);font-weight:500}
+.nav-item .icon{width:20px;text-align:center;font-size:13px;opacity:.9}
+.nav-item .check{margin-left:auto;color:var(--gold);opacity:0;font-size:11px}
+.nav-item.done .check{opacity:1}
+.sidebar-footer{padding:12px 18px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:8px;flex-wrap:wrap}
+.sf-btn{flex:1;min-width:0;background:rgba(255,255,255,.08);color:#fff;border:none;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:12px;font-family:var(--sans);display:flex;align-items:center;justify-content:center;gap:6px;transition:.15s}
+.sf-btn:hover{background:rgba(255,255,255,.16)}
+.sf-btn.gold{background:var(--gold);color:#1a1a1a}
+.sf-btn.gold:hover{background:var(--gold-dark)}
+.sf-btn.wide{flex-basis:100%}
+
+/* Language pill */
+.lang-toggle{display:flex;background:rgba(255,255,255,.08);border-radius:8px;padding:3px;flex-basis:100%;margin-top:6px}
+.lang-toggle button{flex:1;background:transparent;color:rgba(255,255,255,.65);border:none;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:var(--sans);display:flex;align-items:center;justify-content:center;gap:6px;transition:.15s}
+.lang-toggle button.active{background:var(--gold);color:#1a1a1a}
+.lang-toggle button:not(.active):hover{color:#fff}
+
+/* ===== WATERMARK ===== */
+.watermark{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-family:var(--serif);font-size:11px;letter-spacing:1.5px;color:rgba(255,255,255,.55);flex-basis:100%;user-select:none}
+.watermark .wm-mark{color:var(--gold);font-weight:700;letter-spacing:2px}
+.watermark .wm-sub{display:block;font-size:9.5px;color:rgba(255,255,255,.35);letter-spacing:1px;margin-top:2px;font-family:var(--sans);font-style:italic}
+
+/* ---------- Main ---------- */
+#main{margin-left:280px;min-height:100vh;transition:margin-left .3s}
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 30px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:50;box-shadow:0 2px 6px rgba(0,0,0,.03)}
+.hamburger{display:none;background:none;border:none;color:var(--text);font-size:20px;cursor:pointer}
+.breadcrumb{flex:1;font-size:14px;color:var(--muted)}
+.breadcrumb .current{color:var(--text);font-weight:500}
+.topnav{display:flex;gap:6px}
+.tn-btn{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;font-family:var(--sans);display:flex;align-items:center;gap:6px;transition:.15s}
+.tn-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tn-btn:disabled{opacity:.4;cursor:not-allowed}
+
+#content-area{max-width:1080px;margin:0 auto;padding:32px 40px 80px}
+.panel{display:none;animation:fadeIn .4s}
+.panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- Panels typography ---------- */
+.panel-title{font-size:32px;margin-bottom:6px}
+.panel-subtitle{color:var(--muted);font-size:15px;margin-bottom:24px;font-family:var(--sans)}
+.section-h{font-size:22px;margin:28px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.section-h .num{color:var(--gold);font-weight:700;margin-right:6px}
+.para{margin-bottom:14px;font-size:15.5px}
+.para strong,.para b{color:var(--navy)}
+[data-theme="dark"] .para strong,[data-theme="dark"] .para b{color:var(--gold)}
+
+/* ---------- Callout ---------- */
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:18px 22px;margin:16px 0;box-shadow:var(--shadow)}
+.callout.blue{border-left-color:var(--accent)}
+.callout.green{border-left-color:var(--green)}
+.callout.violet{border-left-color:var(--violet)}
+.callout-title{font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:8px;color:var(--navy);display:flex;align-items:center;gap:8px}
+[data-theme="dark"] .callout-title{color:var(--gold)}
+.callout-title i{color:var(--gold)}
+
+/* Learning objective cards */
+.lo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+.lo-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;position:relative;transition:.2s}
+.lo-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.lo-num{position:absolute;top:12px;right:14px;font-family:var(--serif);font-weight:700;font-size:26px;color:rgba(232,168,56,.25)}
+.lo-icon{width:44px;height:44px;background:rgba(232,168,56,.15);color:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:10px}
+.lo-card h4{font-size:16px;margin-bottom:6px}
+.lo-card p{font-size:13.5px;color:var(--muted)}
+
+/* Key terms */
+.terms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:12px}
+.term-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:.2s}
+.term-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow)}
+.term-card .t-name{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+[data-theme="dark"] .term-card .t-name{color:var(--gold)}
+.term-card .t-def{font-size:13.5px;max-height:0;overflow:hidden;transition:max-height .3s,opacity .3s;opacity:0}
+.term-card.open .t-def{max-height:300px;opacity:1;margin-top:6px;padding-top:8px;border-top:1px dashed var(--border)}
+.term-card .toggle-hint{font-size:11px;color:var(--gold);font-weight:500}
+.term-card.open .toggle-hint{display:none}
+
+/* Principle banner */
+.principle-banner{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:var(--radius);padding:24px 28px;margin-bottom:22px;position:relative;overflow:hidden}
+.principle-banner .pb-num{position:absolute;top:-10px;right:20px;font-family:var(--serif);font-size:120px;font-weight:700;color:rgba(232,168,56,.18);line-height:1}
+.principle-banner .pb-label{font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:600;position:relative;z-index:2}
+.principle-banner .pb-title{font-family:var(--serif);font-size:26px;font-weight:700;margin-top:6px;color:#fff;position:relative;z-index:2}
+
+/* Example box */
+.vn-example{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:0;margin:16px 0;overflow:hidden;box-shadow:var(--shadow)}
+.vn-example .vh{background:linear-gradient(90deg,rgba(218,41,28,.1),rgba(255,205,41,.1));padding:12px 18px;border-bottom:1px solid var(--border);font-weight:600;display:flex;align-items:center;gap:8px}
+.vn-example .vh i{color:#da291c}
+.vn-example .vh .flag{font-size:18px}
+.vn-example .vb{padding:14px 18px 16px}
+.vn-example .vb ul{list-style:none;padding:0}
+.vn-example .vb li{padding:8px 0 8px 22px;position:relative;font-size:14.5px;border-bottom:1px dashed var(--border)}
+.vn-example .vb li:last-child{border-bottom:none}
+.vn-example .vb li:before{content:"\f0da";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--gold);position:absolute;left:6px;top:9px;font-size:12px}
+.vn-example .vb li b{color:var(--navy)}
+[data-theme="dark"] .vn-example .vb li b{color:var(--gold)}
+
+/* Think box */
+.think{background:rgba(122,75,214,.06);border:1px solid rgba(122,75,214,.25);border-radius:10px;padding:14px 18px;margin:14px 0}
+.think .th-title{font-weight:600;color:var(--violet);margin-bottom:6px;display:flex;align-items:center;gap:8px;font-size:14.5px}
+.think .th-body{font-size:14px}
+.reveal-btn{margin-top:8px;background:var(--violet);color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12.5px;font-family:var(--sans)}
+.reveal-btn:hover{opacity:.9}
+.reveal-answer{display:none;margin-top:8px;padding:10px 14px;background:var(--surface);border:1px dashed var(--violet);border-radius:8px;font-size:13.5px}
+.reveal-answer.open{display:block}
+
+/* Flashcards */
+.fc-wrap{display:flex;flex-direction:column;align-items:center;padding:16px 0}
+.fc-counter{color:var(--muted);font-size:13px;margin-bottom:10px}
+.flashcard{width:min(560px,100%);height:280px;perspective:1200px;cursor:pointer;margin-bottom:16px}
+.fc-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flashcard.flipped .fc-inner{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;background:var(--surface);border:2px solid var(--gold);border-radius:16px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center}
+.fc-face.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-color:var(--navy)}
+.fc-term{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.fc-hint{position:absolute;bottom:14px;font-size:11px;color:var(--muted);letter-spacing:1px}
+.fc-def{font-size:15.5px;line-height:1.55;color:#fff}
+.fc-nav{display:flex;gap:10px;align-items:center}
+.fc-nav button{background:var(--navy);color:#fff;border:none;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:15px;transition:.15s}
+.fc-nav button:hover{background:var(--navy-2)}
+.fc-nav button:disabled{opacity:.35;cursor:not-allowed}
+.fc-nav .info{font-size:13px;color:var(--muted);min-width:80px;text-align:center}
+
+/* Quiz */
+.q-block{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:14px}
+.q-num{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px}
+.q-text{font-size:15.5px;font-weight:500;margin:4px 0 12px}
+.q-opts{display:grid;gap:8px}
+.q-opt{background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;cursor:pointer;font-size:14px;display:flex;gap:10px;align-items:flex-start;transition:.15s}
+.q-opt:hover{border-color:var(--gold)}
+.q-opt.selected{border-color:var(--gold);background:rgba(232,168,56,.08)}
+.q-opt.correct{border-color:var(--green);background:rgba(46,139,87,.1)}
+.q-opt.wrong{border-color:var(--red);background:rgba(199,55,55,.08)}
+.q-opt .letter{font-weight:700;color:var(--muted);min-width:20px}
+.q-opt.correct .letter{color:var(--green)}
+.q-opt.wrong .letter{color:var(--red)}
+.q-expl{margin-top:10px;padding:10px 14px;background:rgba(58,125,214,.06);border-left:3px solid var(--accent);border-radius:6px;font-size:13.5px;display:none}
+.q-expl.show{display:block}
+.q-expl b{color:var(--accent)}
+.quiz-submit{background:var(--navy);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;cursor:pointer;font-size:15px;margin-top:10px}
+.quiz-result{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:var(--radius);padding:24px 28px;margin-bottom:20px;display:none}
+.quiz-result.show{display:block}
+.quiz-result h3{color:#fff;margin-bottom:8px}
+.quiz-result .score{font-family:var(--serif);font-size:48px;font-weight:700;color:var(--gold);margin:8px 0}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(232,168,56,.25),transparent);border-radius:50%}
+.hero .eyebrow{color:var(--gold);letter-spacing:2.5px;font-size:12px;font-weight:600;text-transform:uppercase}
+.hero h1{color:#fff;font-size:38px;margin:8px 0 6px;line-height:1.2}
+.hero .h-desc{margin-top:14px;color:rgba(255,255,255,.85);font-size:15px;max-width:640px}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:18px 0 8px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center}
+.stat .num{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--gold);line-height:1}
+.stat .lbl{font-size:12px;color:var(--muted);margin-top:4px}
+
+.group-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.gs-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;border-top:4px solid var(--gold)}
+.gs-card:nth-child(2){border-top-color:var(--accent)}
+.gs-card:nth-child(3){border-top-color:var(--green)}
+.gs-card h4{font-size:15px;margin-bottom:4px}
+.gs-card .cnt{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.gs-card ul{margin-top:8px;padding-left:18px;font-size:13.5px}
+.gs-card ul li{margin-bottom:4px}
+
+/* Nutshell */
+.nutshell-group{margin-bottom:20px}
+.nutshell-group h3{color:var(--gold);font-size:18px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.nutshell-group ul{list-style:none;padding:0}
+.nutshell-group li{padding:10px 14px 10px 40px;background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;position:relative;font-size:14.5px}
+.nutshell-group li:before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--green);position:absolute;left:14px;top:11px}
+
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
+
+.confetti{position:fixed;width:10px;height:10px;top:-20px;pointer-events:none;z-index:2000;animation:fall 4s linear forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:0}}
+.complete-banner{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),#f7c86a);color:#1a1a1a;padding:14px 28px;border-radius:12px;box-shadow:var(--shadow-lg);z-index:2001;font-weight:700;font-family:var(--serif);animation:slideDown .4s;display:none}
+.complete-banner.show{display:block}
+@keyframes slideDown{from{transform:translate(-50%,-100px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+
+@media (max-width:768px){
+  #sidebar{transform:translateX(-100%);width:280px}
+  #sidebar.open{transform:translateX(0)}
+  #main{margin-left:0}
+  .hamburger{display:block}
+  #content-area{padding:22px 18px 60px}
+  .panel-title{font-size:24px}
+  .hero{padding:24px 22px}
+  .hero h1{font-size:26px}
+  .principle-banner .pb-num{font-size:80px;right:8px}
+  .principle-banner .pb-title{font-size:20px}
+  .group-strip{grid-template-columns:1fr}
+  #overlay.open{display:block}
+  .topbar{padding:12px 18px}
+  .fc-face{padding:16px}
+  .fc-term{font-size:22px}
+}
+</style>
+</head>
+<body data-lang="vn">
+
+<div id="overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <div class="book"><i class="fa-solid fa-book"></i> N.G. Mankiw · 9e</div>
+    <div class="chap-num">
+      <span class="lang-vn">CHƯƠNG 1 · KINH TẾ VI MÔ</span>
+      <span class="lang-en">CHAPTER 1 · MICROECONOMICS</span>
+    </div>
+    <div class="chap-title">
+      <span class="lang-vn">Mười Nguyên Lý Của Kinh Tế Học</span>
+      <span class="lang-en">Ten Principles of Economics</span>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span><span class="lang-vn">Tiến độ</span><span class="lang-en">Progress</span></span>
+      <span id="progress-txt">0 / 15</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+  <nav class="nav-list" id="nav-list"></nav>
+  <div class="sidebar-footer">
+    <div class="lang-toggle">
+      <button id="lang-vn-btn" class="active" onclick="setLang('vn')"><i class="fa-solid fa-flag"></i> Tiếng Việt</button>
+      <button id="lang-en-btn" onclick="setLang('en')"><i class="fa-solid fa-flag"></i> English</button>
+    </div>
+    <button class="sf-btn" id="theme-btn" onclick="toggleTheme()">
+      <i class="fa-solid fa-moon"></i>
+      <span class="lang-vn"><span id="theme-txt-vn">Nền tối</span></span>
+      <span class="lang-en"><span id="theme-txt-en">Dark</span></span>
+    </button>
+    <button class="sf-btn gold wide" onclick="resetProgress()">
+      <i class="fa-solid fa-rotate-left"></i>
+      <span class="lang-vn">Reset tiến độ</span>
+      <span class="lang-en">Reset progress</span>
+    </button>
+    <!-- ============================================================ -->
+    <!-- WATERMARK BEGIN — xóa toàn bộ khối này (giữa BEGIN và END)   -->
+    <!-- nếu muốn bỏ dấu chủ quyền. CSS class .watermark trong <style> -->
+    <!-- cũng có thể xóa nếu muốn dọn hoàn toàn.                       -->
+    <!-- ============================================================ -->
+    <div class="watermark">
+      <span class="wm-mark">© SONDH</span>
+      <span class="wm-sub">Teaching materials · Micro & Macro</span>
+    </div>
+    <!-- WATERMARK END -->
+  </div>
+</aside>
+
+<main id="main">
+  <div class="topbar">
+    <button class="hamburger" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></button>
+    <div class="breadcrumb">
+      <span class="lang-vn">Chương 1</span><span class="lang-en">Chapter 1</span>
+      · <span class="current" id="crumb-current"></span>
+    </div>
+    <div class="topnav">
+      <button class="tn-btn" id="prev-btn" onclick="prevTab()">
+        <i class="fa-solid fa-chevron-left"></i>
+        <span class="lang-vn">Trước</span><span class="lang-en">Prev</span>
+      </button>
+      <button class="tn-btn" id="next-btn" onclick="nextTab()">
+        <span class="lang-vn">Tiếp</span><span class="lang-en">Next</span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div id="content-area">
+
+    <!-- ============ PANEL 0: OVERVIEW ============ -->
+    <section class="panel active" data-tab="0">
+      <div class="hero">
+        <div class="eyebrow">
+          <span class="lang-vn">CHƯƠNG 1 · KINH TẾ VI MÔ</span>
+          <span class="lang-en">CHAPTER 1 · MICROECONOMICS</span>
+        </div>
+        <h1 class="lang-vn">Mười Nguyên Lý Của Kinh Tế Học</h1>
+        <h1 class="lang-en">Ten Principles of Economics</h1>
+        <div class="h-desc lang-vn">Kinh tế học là môn khoa học nghiên cứu cách xã hội quản lý các <b style="color:var(--gold)">nguồn lực khan hiếm</b>. Chương này giới thiệu 10 nguyên lý nền tảng, chia thành 3 nhóm: cách con người ra quyết định (4), cách con người tương tác (3), và cách nền kinh tế vận hành (3).</div>
+        <div class="h-desc lang-en">Economics is the study of how society manages its <b style="color:var(--gold)">scarce resources</b>. This chapter introduces 10 foundational principles grouped into three sets: how people make decisions (4), how people interact (3), and how the economy as a whole works (3).</div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat">
+          <div class="num">10</div>
+          <div class="lbl"><span class="lang-vn">Nguyên lý</span><span class="lang-en">Principles</span></div>
+        </div>
+        <div class="stat">
+          <div class="num">4·3·3</div>
+          <div class="lbl"><span class="lang-vn">Cấu trúc</span><span class="lang-en">Structure</span></div>
+        </div>
+        <div class="stat">
+          <div class="num">16</div>
+          <div class="lbl"><span class="lang-vn">Thuật ngữ</span><span class="lang-en">Key terms</span></div>
+        </div>
+        <div class="stat">
+          <div class="num">14</div>
+          <div class="lbl"><span class="lang-vn">Câu quiz</span><span class="lang-en">Quiz questions</span></div>
+        </div>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">§</span>
+        <span class="lang-vn">Mục tiêu học tập</span>
+        <span class="lang-en">Learning objectives</span>
+      </h2>
+      <p class="para lang-vn">Sau khi học xong chương này, sinh viên có thể:</p>
+      <p class="para lang-en">By the end of this chapter, students should be able to:</p>
+      <div class="lo-grid">
+        <div class="lo-card">
+          <div class="lo-num">01</div>
+          <div class="lo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h4 class="lang-vn">Sự khan hiếm & ra quyết định</h4>
+          <h4 class="lang-en">Scarcity & decisions</h4>
+          <p class="lang-vn">Giải thích cách sự khan hiếm ảnh hưởng đến các quyết định.</p>
+          <p class="lang-en">Explain how scarcity influences decisions.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">02</div>
+          <div class="lo-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          <h4 class="lang-vn">Chi phí cơ hội</h4>
+          <h4 class="lang-en">Opportunity cost</h4>
+          <p class="lang-vn">Giải thích cách cá nhân đánh giá chi phí cơ hội để đưa ra quyết định.</p>
+          <p class="lang-en">Explain how individuals evaluate opportunity costs to make decisions.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">03</div>
+          <div class="lo-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h4 class="lang-vn">Phân tích biên</h4>
+          <h4 class="lang-en">Marginal analysis</h4>
+          <p class="lang-vn">Giải thích cách phân tích biên ảnh hưởng đến việc ra quyết định.</p>
+          <p class="lang-en">Explain how marginal analysis influences decision making.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">04</div>
+          <div class="lo-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h4 class="lang-vn">Nguyên lý kinh tế cơ bản</h4>
+          <h4 class="lang-en">Basic economic principles</h4>
+          <p class="lang-vn">Áp dụng nguyên lý kinh tế cơ bản của ra quyết định cá nhân để hiểu cách nền kinh tế vận hành.</p>
+          <p class="lang-en">Apply basic economic principles of individual decision making that determine how an economy generally works.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">05</div>
+          <div class="lo-icon"><i class="fa-solid fa-earth-asia"></i></div>
+          <h4 class="lang-vn">Thương mại và lợi ích</h4>
+          <h4 class="lang-en">Terms of trade</h4>
+          <p class="lang-vn">Giải thích cách các điều khoản thương mại có thể mang lại lợi ích.</p>
+          <p class="lang-en">Explain how the terms of trade can lead to gains.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">06</div>
+          <div class="lo-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h4 class="lang-vn">Hệ thống phân bổ</h4>
+          <h4 class="lang-en">Distribution system</h4>
+          <p class="lang-vn">Cho một tình huống, nhận diện được hệ thống phân bổ nguồn lực đang được sử dụng.</p>
+          <p class="lang-en">Given a scenario, identify the distribution system being used.</p>
+        </div>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">§</span>
+        <span class="lang-vn">Cấu trúc chương (4·3·3)</span>
+        <span class="lang-en">Chapter structure (4·3·3)</span>
+      </h2>
+      <div class="group-strip">
+        <div class="gs-card">
+          <div class="cnt"><span class="lang-vn">Nhóm 1 · 4 Nguyên lý</span><span class="lang-en">Group 1 · 4 Principles</span></div>
+          <h4 class="lang-vn">Cách con người ra quyết định</h4>
+          <h4 class="lang-en">How people make decisions</h4>
+          <ul class="lang-vn">
+            <li>1. Con người đối mặt với sự đánh đổi</li>
+            <li>2. Chi phí = thứ phải từ bỏ</li>
+            <li>3. Người lý trí tư duy ở biên</li>
+            <li>4. Con người phản ứng với động lực</li>
+          </ul>
+          <ul class="lang-en">
+            <li>1. People face trade-offs</li>
+            <li>2. Cost = what you give up</li>
+            <li>3. Rational people think at the margin</li>
+            <li>4. People respond to incentives</li>
+          </ul>
+        </div>
+        <div class="gs-card">
+          <div class="cnt"><span class="lang-vn">Nhóm 2 · 3 Nguyên lý</span><span class="lang-en">Group 2 · 3 Principles</span></div>
+          <h4 class="lang-vn">Cách con người tương tác</h4>
+          <h4 class="lang-en">How people interact</h4>
+          <ul class="lang-vn">
+            <li>5. Thương mại có lợi cho tất cả</li>
+            <li>6. Thị trường là cách tổ chức tốt</li>
+            <li>7. Chính phủ đôi khi cải thiện thị trường</li>
+          </ul>
+          <ul class="lang-en">
+            <li>5. Trade can make everyone better off</li>
+            <li>6. Markets are usually a good way to organize activity</li>
+            <li>7. Governments can sometimes improve outcomes</li>
+          </ul>
+        </div>
+        <div class="gs-card">
+          <div class="cnt"><span class="lang-vn">Nhóm 3 · 3 Nguyên lý</span><span class="lang-en">Group 3 · 3 Principles</span></div>
+          <h4 class="lang-vn">Cách nền kinh tế vận hành</h4>
+          <h4 class="lang-en">How the economy works</h4>
+          <ul class="lang-vn">
+            <li>8. Mức sống phụ thuộc năng suất</li>
+            <li>9. In tiền nhiều → giá tăng</li>
+            <li>10. Đánh đổi lạm phát ↔ thất nghiệp (ngắn hạn)</li>
+          </ul>
+          <ul class="lang-en">
+            <li>8. Living standards depend on productivity</li>
+            <li>9. Prices rise when government prints too much money</li>
+            <li>10. Short-run trade-off between inflation and unemployment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout blue">
+        <div class="callout-title">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span class="lang-vn">Từ nguyên "kinh tế"</span>
+          <span class="lang-en">Etymology of "economy"</span>
+        </div>
+        <p class="lang-vn">Từ <b>"economy"</b> bắt nguồn từ tiếng Hy Lạp <i>oikonomos</i> nghĩa là <i>"người quản lý gia đình"</i>. Cả hộ gia đình và nền kinh tế đều phải đưa ra nhiều quyết định về cách phân bổ nguồn lực khan hiếm.</p>
+        <p class="lang-en">The word <b>"economy"</b> comes from the Greek <i>oikonomos</i> meaning <i>"one who manages a household."</i> Both households and economies face many decisions about how to allocate scarce resources.</p>
+      </div>
+    </section>
+
+    <!-- ============ PANEL 1: KEY TERMS ============ -->
+    <section class="panel" data-tab="1">
+      <h1 class="panel-title">
+        <span class="lang-vn">Thuật ngữ then chốt</span>
+        <span class="lang-en">Key terms</span>
+      </h1>
+      <div class="panel-subtitle lang-vn">Nhấn vào mỗi thẻ để xem định nghĩa. Đây là bộ thuật ngữ nền tảng cho toàn bộ khóa Kinh tế Vi mô.</div>
+      <div class="panel-subtitle lang-en">Click each card to reveal the definition. These are the foundational terms for the whole Microeconomics course.</div>
+      <div class="terms-grid" id="terms-grid"></div>
+    </section>
+
+    <!-- ============ PRINCIPLES 1-10 injected by JS ============ -->
+
+  </div>
+</main>
+
+<div class="complete-banner" id="complete-banner">
+  <span class="lang-vn">🎉 Hoàn tất chương! Bạn đã thành thạo 10 nguyên lý.</span>
+  <span class="lang-en">🎉 Chapter complete! You've mastered the 10 principles.</span>
+</div>
+
+<script>
+const CHAPTER_KEY = "mankiw_ch01_micro_v2";
+
+/* ---------- NAV labels (both languages) ---------- */
+const NAV = [
+  {vn:"Tổng quan", en:"Overview", icon:"fa-compass"},
+  {vn:"Thuật ngữ", en:"Key terms", icon:"fa-key"},
+  {vn:"Nguyên lý 1: Đánh đổi", en:"Principle 1: Trade-offs", icon:"fa-scale-balanced"},
+  {vn:"Nguyên lý 2: Chi phí cơ hội", en:"Principle 2: Opportunity cost", icon:"fa-hand-holding-dollar"},
+  {vn:"Nguyên lý 3: Tư duy biên", en:"Principle 3: Marginal thinking", icon:"fa-chart-line"},
+  {vn:"Nguyên lý 4: Động lực", en:"Principle 4: Incentives", icon:"fa-bolt"},
+  {vn:"Nguyên lý 5: Thương mại", en:"Principle 5: Trade", icon:"fa-handshake"},
+  {vn:"Nguyên lý 6: Thị trường", en:"Principle 6: Markets", icon:"fa-store"},
+  {vn:"Nguyên lý 7: Chính phủ", en:"Principle 7: Government", icon:"fa-landmark"},
+  {vn:"Nguyên lý 8: Năng suất", en:"Principle 8: Productivity", icon:"fa-industry"},
+  {vn:"Nguyên lý 9: Lạm phát", en:"Principle 9: Inflation", icon:"fa-money-bill-trend-up"},
+  {vn:"Nguyên lý 10: LP-Thất nghiệp", en:"Principle 10: Inflation-Unemployment", icon:"fa-arrows-up-down"},
+  {vn:"Tóm tắt chương", en:"Chapter in a nutshell", icon:"fa-layer-group"},
+  {vn:"Flashcards", en:"Flashcards", icon:"fa-clone"},
+  {vn:"Quiz tổng hợp", en:"Final quiz", icon:"fa-circle-question"}
+];
+
+/* ---------- Key terms ---------- */
+const TERMS = [
+  {vn:"Khan hiếm", en:"Scarcity", def_vn:"Tính chất giới hạn của các nguồn lực của xã hội.", def_en:"The limited nature of society's resources."},
+  {vn:"Kinh tế học", en:"Economics", def_vn:"Môn khoa học nghiên cứu cách xã hội quản lý các nguồn lực khan hiếm của mình.", def_en:"The study of how society manages its scarce resources."},
+  {vn:"Hiệu quả", en:"Efficiency", def_vn:"Tính chất của xã hội thu được lợi ích tối đa từ các nguồn lực khan hiếm.", def_en:"The property of society getting the most it can from its scarce resources."},
+  {vn:"Bình đẳng", en:"Equality", def_vn:"Tính chất của việc phân bổ sự thịnh vượng kinh tế một cách đồng đều giữa các thành viên xã hội.", def_en:"The property of distributing economic prosperity uniformly among the members of society."},
+  {vn:"Chi phí cơ hội", en:"Opportunity cost", def_vn:"Bất cứ thứ gì phải từ bỏ để có được một thứ khác.", def_en:"Whatever must be given up to obtain some item."},
+  {vn:"Người lý trí", en:"Rational people", def_vn:"Những người ra quyết định một cách có hệ thống và có chủ đích để đạt được mục tiêu tối ưu trong điều kiện có sẵn.", def_en:"People who systematically and purposefully do the best they can to achieve their objectives."},
+  {vn:"Thay đổi biên", en:"Marginal change", def_vn:"Một sự điều chỉnh nhỏ, tăng dần đối với một kế hoạch hành động.", def_en:"A small incremental adjustment to a plan of action."},
+  {vn:"Động lực", en:"Incentive", def_vn:"Điều gì đó thúc đẩy một người hành động.", def_en:"Something that induces a person to act."},
+  {vn:"Nền kinh tế thị trường", en:"Market economy", def_vn:"Nền kinh tế phân bổ nguồn lực thông qua các quyết định phi tập trung của nhiều doanh nghiệp và hộ gia đình khi họ tương tác trong các thị trường hàng hóa và dịch vụ.", def_en:"An economy that allocates resources through the decentralized decisions of many firms and households as they interact in markets for goods and services."},
+  {vn:"Quyền sở hữu tài sản", en:"Property rights", def_vn:"Khả năng của một cá nhân trong việc sở hữu và kiểm soát các nguồn lực khan hiếm.", def_en:"The ability of an individual to own and exercise control over scarce resources."},
+  {vn:"Thất bại thị trường", en:"Market failure", def_vn:"Tình huống trong đó thị trường tự vận hành không thể phân bổ nguồn lực một cách hiệu quả.", def_en:"A situation in which a market left on its own fails to allocate resources efficiently."},
+  {vn:"Ngoại tác", en:"Externality", def_vn:"Tác động của hành động của một người lên phúc lợi của người ngoài cuộc (không tham gia giao dịch).", def_en:"The impact of one person's actions on the well-being of a bystander."},
+  {vn:"Sức mạnh thị trường", en:"Market power", def_vn:"Khả năng của một chủ thể kinh tế (hoặc nhóm nhỏ) có ảnh hưởng đáng kể đến giá thị trường.", def_en:"The ability of a single economic actor (or small group) to have substantial influence on market prices."},
+  {vn:"Năng suất", en:"Productivity", def_vn:"Số lượng hàng hóa và dịch vụ được sản xuất từ mỗi đơn vị lao động đầu vào.", def_en:"The quantity of goods and services produced from each unit of labor input."},
+  {vn:"Lạm phát", en:"Inflation", def_vn:"Sự gia tăng của mức giá chung trong nền kinh tế.", def_en:"An increase in the overall level of prices in the economy."},
+  {vn:"Chu kỳ kinh tế", en:"Business cycle", def_vn:"Sự dao động của hoạt động kinh tế, như việc làm và sản xuất.", def_en:"Fluctuations in economic activity, such as employment and production."}
+];
+
+/* ---------- Principles (each with full VN + EN sets) ---------- */
+const PRINCIPLES = [
+  {
+    n:1,
+    group_vn:"Nhóm 1 · Con người ra quyết định", group_en:"Group 1 · How people make decisions",
+    title_vn:"Con người đối mặt với sự đánh đổi", title_en:"People face trade-offs",
+    core_vn:"Để có được thứ gì đó ta thích, ta thường phải từ bỏ một thứ khác mà ta cũng thích. Không có bữa trưa nào miễn phí.",
+    core_en:"To get something we like, we usually have to give up something else that we also like. There ain't no such thing as a free lunch.",
+    ideas_vn:[
+      "<b>Cá nhân đánh đổi:</b> đi chơi tối trước ngày thi ⇄ ít thời gian ôn bài; làm thêm nhiều giờ ⇄ ít thời gian nghỉ ngơi.",
+      "<b>Xã hội đánh đổi:</b> 'Súng vs. Bơ' — chi cho quốc phòng nhiều thì chi cho hàng tiêu dùng ít; bảo vệ môi trường ⇄ chi phí cho doanh nghiệp.",
+      "<b>Hiệu quả vs. Bình đẳng:</b> chính sách tái phân phối (thuế lũy tiến, trợ cấp) làm 'bánh' công bằng hơn nhưng có thể làm giảm động lực làm việc và sản xuất — 'chiếc bánh' thu nhỏ lại."
+    ],
+    ideas_en:[
+      "<b>Individual trade-offs:</b> partying the night before an exam vs. studying; working more hours vs. leisure time.",
+      "<b>Society trade-offs:</b> 'Guns vs. Butter' — more spending on defense means less on consumer goods; protecting the environment vs. business costs.",
+      "<b>Efficiency vs. Equality:</b> redistribution (progressive taxes, welfare) makes the pie fairer but may reduce work and production incentives — shrinking the pie."
+    ],
+    ex_title_vn:"Đánh đổi ở Việt Nam", ex_title_en:"Vietnam examples: Trade-offs",
+    ex_vn:[
+      "<b>Sinh viên VN:</b> Đi làm thêm shipper Grab kiếm 4-6 triệu/tháng ⇄ ít thời gian học, có thể ảnh hưởng GPA.",
+      "<b>Gia đình:</b> Mua căn hộ Vinhomes (30 năm nợ ngân hàng) ⇄ mua chung cư mini (rẻ hơn, không có tiện ích).",
+      "<b>Chọn ngành:</b> Học Y (7 năm, lương cao về sau) ⇄ học CNTT (4 năm, ra trường lương cao ngay).",
+      "<b>Chính sách công:</b> Ngân sách xây cao tốc Bắc-Nam ⇄ đầu tư y tế, giáo dục vùng sâu.",
+      "<b>Hiệu quả ⇄ Bình đẳng:</b> Thuế thu nhập cá nhân lũy tiến tối đa 35% giúp tài trợ chương trình 30a xóa đói giảm nghèo, nhưng có thể khiến người lương cao chuyển sang tự kinh doanh hoặc chuyển ra nước ngoài."
+    ],
+    ex_en:[
+      "<b>Vietnamese students:</b> Working part-time as a Grab shipper earns ₫4-6M/month ⇄ less time to study, possibly hurting GPA.",
+      "<b>Families:</b> Buying a Vinhomes apartment (30-year mortgage) ⇄ buying a mini-apartment (cheaper, no amenities).",
+      "<b>Major selection:</b> Studying medicine (7 years, high salary later) ⇄ studying IT (4 years, high salary right away).",
+      "<b>Public policy:</b> Budget for North-South expressway ⇄ investment in healthcare and education in remote areas.",
+      "<b>Efficiency vs. Equality:</b> Vietnam's progressive income tax (up to 35%) funds the '30a' poverty-reduction program, but may push high earners to self-employment or emigration."
+    ],
+    q_vn:"Bạn có 3 giờ tối. Bạn có thể ôn thi (kỳ vọng tăng 0.5 điểm) HOẶC đi làm thêm ở quán cà phê được 90.000đ. Đây có phải đánh đổi không?",
+    q_en:"You have 3 free evening hours. You can study for an exam (+0.5 GPA expected) OR work at a café for ₫90,000. Is this a trade-off?",
+    a_vn:"Đúng. Cả hai lựa chọn đều có giá trị; chọn cái này ⇒ mất cái kia. Nguyên lý 1 không nói phải chọn cái nào — nó chỉ nhắc rằng bạn <b>không thể có cả hai</b>. Chọn dựa trên giá trị bạn đặt lên GPA vs. thu nhập ngắn hạn.",
+    a_en:"Yes. Both options have value; picking one means giving up the other. Principle 1 doesn't say which to choose — it just reminds you that you <b>cannot have both</b>. Decide based on how you weigh GPA vs. short-term income."
+  },
+  {
+    n:2,
+    group_vn:"Nhóm 1 · Con người ra quyết định", group_en:"Group 1 · How people make decisions",
+    title_vn:"Cái giá của một thứ là những gì ta từ bỏ để có nó", title_en:"The cost of something is what you give up to get it",
+    core_vn:"Khi ra quyết định, phải so sánh <b>lợi ích</b> và <b>chi phí</b> của các phương án — bao gồm cả <b>chi phí cơ hội</b> (chi phí ngầm).",
+    core_en:"Making decisions requires comparing the <b>benefits</b> and <b>costs</b> of alternatives — including the <b>opportunity cost</b> (the implicit cost).",
+    ideas_vn:[
+      "Chi phí cơ hội của việc học đại học <b>KHÔNG</b> chỉ là học phí + sách vở; <b>CÓ</b> tính tiền lương bạn <i>lẽ ra kiếm được</i> nếu đi làm.",
+      "Chi phí cơ hội của việc học đại học <b>KHÔNG</b> tính chi phí ăn ở (bạn vẫn phải ăn ở dù có đi học hay không) — trừ khi ăn ở ở trường đắt hơn ở nhà.",
+      "Chi phí cơ hội của đi xem phim = giá vé + <b>giá trị thời gian</b> ngồi trong rạp."
+    ],
+    ideas_en:[
+      "The opportunity cost of college is <b>NOT</b> just tuition + books; it <b>DOES</b> include the wages you <i>would have earned</i> by working instead.",
+      "Opportunity cost of college <b>DOES NOT</b> include room and board (you'd need them regardless) — unless college housing is more expensive than living at home.",
+      "Opportunity cost of a movie = ticket price + <b>the value of your time</b> spent in the theater."
+    ],
+    ex_title_vn:"Chi phí cơ hội — Ví dụ VN", ex_title_en:"Vietnam examples: Opportunity cost",
+    ex_vn:[
+      "<b>Học đại học 4 năm ở VN (2026):</b> Học phí ~20-40 tr/năm × 4 = 80-160 tr. <b>Cộng thêm</b> lương foregone ~8 tr/tháng × 48 tháng ≈ 384 tr nếu đi làm công nhân/nhân viên bán hàng. → Chi phí cơ hội thực khoảng <b>460-540 triệu đồng</b>.",
+      "<b>2 giờ lướt TikTok:</b> Chi phí cơ hội = 2 giờ đó có thể học 1 chương Mankiw, hoặc làm shipper kiếm ~60k, hoặc ngủ.",
+      "<b>Mua iPhone 16 Pro (35 triệu):</b> Chi phí cơ hội = 35tr đó có thể mua xe máy Wave RSX (25tr) + còn dư 10tr; hoặc gửi ngân hàng lãi ~2 triệu/năm.",
+      "<b>Đi Grab (60k) vs. đi xe buýt (7k):</b> Chênh 53k, đổi lại tiết kiệm ~40 phút. Chi phí cơ hội của 40 phút = ? Nếu bạn kiếm được nhiều hơn 53k/40 phút thì Grab có lý.",
+      "<b>Đóng cửa quán nhậu để đi du học:</b> Chi phí cơ hội = doanh thu 500tr/năm của quán."
+    ],
+    ex_en:[
+      "<b>4-year college in Vietnam (2026):</b> Tuition ~₫20-40M/year × 4 = ₫80-160M. <b>Plus</b> foregone wages ~₫8M/month × 48 months ≈ ₫384M as a worker or salesperson. → True opportunity cost roughly <b>₫460-540M</b>.",
+      "<b>2 hours scrolling TikTok:</b> Opportunity cost = those 2 hours could cover one Mankiw chapter, or ~₫60k as a shipper, or sleep.",
+      "<b>Buying an iPhone 16 Pro (₫35M):</b> Opportunity cost = that ₫35M could buy a Wave RSX motorbike (₫25M) with ₫10M left over; or bank interest of ~₫2M/year.",
+      "<b>Grab (₫60k) vs. bus (₫7k):</b> ₫53k difference saves ~40 minutes. Opportunity cost of 40 minutes? If you earn more than ₫53k/40min, Grab makes sense.",
+      "<b>Closing a restaurant to study abroad:</b> Opportunity cost = ₫500M/year in lost restaurant revenue."
+    ],
+    q_vn:"Bạn đã đóng học phí kỳ này 15 triệu (không hoàn lại). Giữa kỳ, bạn nhận được lời mời đi làm cho công ty lớn với lương 12 tr/tháng. Có nên bỏ học để đi làm không? Học phí 15tr có ảnh hưởng đến quyết định không?",
+    q_en:"You paid ₫15M tuition this semester (non-refundable). Mid-semester a large company offers you ₫12M/month. Should you drop out? Does the ₫15M tuition affect the decision?",
+    a_vn:"15tr học phí là <b>chi phí chìm</b> (sunk cost) — đã trả rồi, không tính vào quyết định hiện tại. Chỉ nên so: <b>lợi ích còn lại</b> của việc học tiếp (bằng cấp, kiến thức) vs. <b>lương foregone</b> nếu học tiếp. Nếu lợi ích tương lai của bằng > 12tr/tháng × số tháng còn lại → nên học tiếp.",
+    a_en:"₫15M is a <b>sunk cost</b> — already paid, irrelevant to the current decision. Compare only the <b>remaining benefits</b> of continuing school (degree, knowledge) vs. the <b>foregone wages</b> if you stay. If the future value of the degree > ₫12M/month × months remaining → stay in school."
+  },
+  {
+    n:3,
+    group_vn:"Nhóm 1 · Con người ra quyết định", group_en:"Group 1 · How people make decisions",
+    title_vn:"Người lý trí tư duy ở biên", title_en:"Rational people think at the margin",
+    core_vn:"<b>Người lý trí</b> ra quyết định bằng cách so sánh <b>lợi ích biên</b> và <b>chi phí biên</b> của một điều chỉnh nhỏ.<br>Hành động khi và chỉ khi <b>lợi ích biên ≥ chi phí biên</b>.",
+    core_en:"<b>Rational people</b> decide by comparing the <b>marginal benefit</b> and <b>marginal cost</b> of a small change.<br>Act if and only if <b>marginal benefit ≥ marginal cost</b>.",
+    ideas_vn:[
+      "<b>Biên (marginal)</b> = mức thay đổi nhỏ, tăng dần. Ví dụ: học <i>thêm 1 giờ</i>, sản xuất <i>thêm 1 chiếc</i>, thuê <i>thêm 1 nhân viên</i>.",
+      "<b>Nghịch lý nước-kim cương:</b> Nước rất cần thiết nhưng rẻ — vì <i>lợi ích biên</i> của thêm 1 lít nước rất thấp (nước đã dồi dào). Kim cương không cần thiết nhưng đắt — vì hiếm, lợi ích biên cao.",
+      "Ví dụ: Vé máy bay 200 ghế bay hết ~100k USD (trung bình 500 USD/ghế). Trước giờ khởi hành 15 phút, một khách chấp nhận trả 300 USD. Có nên bán? → CÓ! Vì <b>chi phí biên</b> của 1 khách thêm gần bằng 0."
+    ],
+    ideas_en:[
+      "<b>Marginal</b> = small, incremental change. E.g., studying <i>one more hour</i>, producing <i>one more unit</i>, hiring <i>one more worker</i>.",
+      "<b>Water-diamond paradox:</b> Water is essential yet cheap — its <i>marginal benefit</i> is low because water is already abundant. Diamonds are non-essential yet expensive — because they are scarce, marginal benefit is high.",
+      "Example: A 200-seat flight costs ~$100k (avg $500/seat). Fifteen minutes before takeoff, a passenger offers $300. Sell? YES — the <b>marginal cost</b> of one extra passenger is nearly 0."
+    ],
+    ex_title_vn:"Tư duy biên ở Việt Nam", ex_title_en:"Vietnam examples: Marginal thinking",
+    ex_vn:[
+      "<b>Netflix VN (260k/tháng):</b> Đã trả rồi thì chi phí biên xem thêm 1 tập phim = 0. Nên xem nếu bạn thấy vui hơn là làm việc khác.",
+      "<b>Grab tài xế:</b> Cuối ngày mệt, có nên chạy thêm 1 chuyến 40k không? So: <b>lợi ích biên</b> 40k vs. <b>chi phí biên</b> = 30 phút nghỉ + xăng + hao xe.",
+      "<b>Chủ quán phở:</b> Bán thêm 1 tô phở giá 50k, nguyên liệu tốn 25k. <b>Lợi ích biên</b> = 50k, <b>chi phí biên</b> = 25k → nên bán, kể cả khi vốn cố định của quán cao.",
+      "<b>Bún đậu mắm tôm:</b> Đói vừa, ăn 1 phần 40k (<b>lợi ích biên</b> cao, <b>chi phí biên</b> = 40k) → ăn. Ăn thêm phần 2? Lợi ích biên giảm mạnh (đã no), chi phí biên vẫn 40k → không ăn.",
+      "<b>Cà phê Highlands:</b> Điểm 1 thẻ, tích 10 thẻ được 1 ly miễn phí. Ly thứ 10 có chi phí biên = 0 → uống cà phê mỗi ngày dù không thật sự cần."
+    ],
+    ex_en:[
+      "<b>Netflix Vietnam (₫260k/month):</b> Once paid, marginal cost of watching one more episode = 0. Watch if it beats your next-best use of time.",
+      "<b>Grab driver:</b> End of a tired day, should you take one more ₫40k ride? Compare <b>marginal benefit</b> ₫40k vs. <b>marginal cost</b> of 30 min rest + fuel + wear.",
+      "<b>Pho shop owner:</b> Selling one more bowl at ₫50k costs ₫25k in ingredients. <b>Marginal benefit</b> = ₫50k, <b>marginal cost</b> = ₫25k → sell, even with high fixed costs.",
+      "<b>Bún đậu:</b> Moderate hunger, one ₫40k plate (high <b>marginal benefit</b>, <b>marginal cost</b> = ₫40k) → eat. A second plate? Marginal benefit drops sharply (you're full), marginal cost still ₫40k → skip.",
+      "<b>Highlands Coffee loyalty:</b> 10 stamps = 1 free drink. The 10th cup's marginal cost = 0 → daily coffee even when you don't really need it."
+    ],
+    q_vn:"Bạn là quản lý siêu thị Winmart. Tuyển thêm 1 thu ngân giúp tăng doanh thu 400 USD/tuần, lương thu ngân 300 USD/tuần. Có nên tuyển?",
+    q_en:"You manage a Winmart supermarket. Hiring one more cashier boosts weekly revenue by $400; the cashier's wage is $300/week. Hire?",
+    a_vn:"<b>Lợi ích biên = $400</b>, <b>chi phí biên = $300</b>. Vì lợi ích biên > chi phí biên → <b>NÊN tuyển</b>. Chênh lệch $100 là lợi nhuận biên tăng thêm.",
+    a_en:"<b>Marginal benefit = $400</b>, <b>marginal cost = $300</b>. Since marginal benefit > marginal cost → <b>YES, hire</b>. The $100 gap is marginal profit added."
+  },
+  {
+    n:4,
+    group_vn:"Nhóm 1 · Con người ra quyết định", group_en:"Group 1 · How people make decisions",
+    title_vn:"Con người phản ứng với động lực", title_en:"People respond to incentives",
+    core_vn:"<b>Động lực</b> là bất cứ điều gì khiến người ta hành động. Vì người lý trí cân nhắc chi phí-lợi ích, thay đổi động lực → thay đổi hành vi. Chính sách công thường thất bại khi bỏ qua điều này — dẫn tới <b>hậu quả không mong muốn</b>.",
+    core_en:"An <b>incentive</b> is anything that induces action. Because rational people weigh costs and benefits, changing incentives changes behavior. Policies often fail — with <b>unintended consequences</b> — when they ignore this.",
+    ideas_vn:[
+      "Giá tăng → người tiêu dùng mua ít lại, người sản xuất bán nhiều lên.",
+      "<b>Hậu quả không mong muốn:</b> Luật thắt dây an toàn giúp giảm tử vong <i>khi tai nạn xảy ra</i>, nhưng có thể khiến tài xế lái ẩu hơn → nhiều vụ tai nạn hơn, người đi bộ nguy hiểm hơn.",
+      "Chính sách công tốt cần trả lời: <i>Chính sách này thay đổi động lực của ai, và họ sẽ phản ứng thế nào?</i>"
+    ],
+    ideas_en:[
+      "Price up → consumers buy less, producers supply more.",
+      "<b>Unintended consequences:</b> Seat-belt laws reduce fatalities <i>per accident</i>, but may make drivers more reckless → more accidents, more pedestrian risk.",
+      "Good policy asks: <i>Whose incentives does this change, and how will they respond?</i>"
+    ],
+    ex_title_vn:"Động lực ở Việt Nam", ex_title_en:"Vietnam examples: Incentives",
+    ex_vn:[
+      "<b>Trợ giá xe điện VinFast:</b> Chính phủ giảm lệ phí trước bạ, VinFast trợ giá thêm → doanh số xe điện tăng vọt 2024-2026.",
+      "<b>Thuế tiêu thụ đặc biệt xăng:</b> Giá xăng ~24.000đ/lít (thuế ~40%) → khuyến khích chuyển sang xe máy điện, xe bus, đi Grab share.",
+      "<b>Học bổng khuyến khích học tập:</b> SV đạt GPA > 3.6 được miễn học phí → nhiều SV học chăm hơn (nhưng cũng có SV chọn môn 'dễ' để đạt điểm cao).",
+      "<b>Khuyến mãi Shopee 11.11:</b> Freeship + giảm 50% → người mua đổ dồn vào 1 ngày, kho hàng và shipper quá tải (hậu quả không mong muốn: giao trễ 5-7 ngày).",
+      "<b>Quy định 'nồng độ cồn = 0' khi lái xe:</b> Giảm tai nạn, nhưng quán nhậu và ngành F&B doanh thu giảm 30-40% năm 2023-2024; ngành Grab lại tăng vì khách gọi xe về.",
+      "<b>Bảo hiểm y tế bắt buộc:</b> Tăng độ phủ dịch vụ y tế, nhưng có hiện tượng 'lạm dụng khám chữa bệnh' vì đã đóng bảo hiểm rồi."
+    ],
+    ex_en:[
+      "<b>VinFast EV subsidies:</b> Government cut registration fees and VinFast added price subsidies → EV sales surged in 2024-2026.",
+      "<b>Special consumption tax on gasoline:</b> Pump price ~₫24,000/L (tax ~40%) → shifts consumers toward electric scooters, buses, or Grab pooling.",
+      "<b>Merit scholarships:</b> Students with GPA > 3.6 get free tuition → most study harder (but some pick easier subjects to boost GPA — unintended).",
+      "<b>Shopee 11.11 sale:</b> Free shipping + 50% off → buyers all pile in on one day, warehouses and shippers overwhelmed (unintended: 5-7 day delivery delays).",
+      "<b>Zero blood-alcohol rule for driving:</b> Fewer accidents, but bars and F&B revenue dropped 30-40% in 2023-2024; Grab ride volume rose as customers hailed home.",
+      "<b>Mandatory health insurance:</b> Wider access to care, but some overuse services because they've already paid the premium."
+    ],
+    q_vn:"Chính phủ tăng thuế xăng thêm 5.000đ/lít. Người tiêu dùng và doanh nghiệp sẽ phản ứng ra sao?",
+    q_en:"The government raises gasoline tax by ₫5,000/L. How do consumers and firms respond?",
+    a_vn:"<b>Người tiêu dùng:</b> đi xe điện, đi bộ, đi bus, đi chung xe, chuyển gần chỗ làm, đổi xe tiết kiệm xăng. <b>Doanh nghiệp:</b> sản xuất xe điện/hybrid, hãng taxi đầu tư xe điện, hãng vận tải tối ưu tuyến đường. <b>Hậu quả:</b> Grab tăng giá, giá vé bus có thể tăng, người thu nhập thấp chịu thiệt nhiều hơn (thuế xăng có tính lũy thoái).",
+    a_en:"<b>Consumers:</b> switch to EVs, walking, buses, carpooling, moving closer to work, or fuel-efficient cars. <b>Firms:</b> produce EVs/hybrids, taxi fleets electrify, logistics firms optimize routes. <b>Consequences:</b> Grab fares rise, bus tickets may rise, low-income households bear more of the burden (gas tax is regressive)."
+  },
+  {
+    n:5,
+    group_vn:"Nhóm 2 · Con người tương tác", group_en:"Group 2 · How people interact",
+    title_vn:"Thương mại có thể có lợi cho tất cả các bên", title_en:"Trade can make everyone better off",
+    core_vn:"Thương mại <b>không phải</b> trò chơi có kẻ thắng - người thua như thể thao. Cả hai bên đều có thể có lợi vì:<br>(1) Được tiêu dùng nhiều loại hàng hóa hơn.<br>(2) Cho phép <b>chuyên môn hóa</b> vào việc mà mình làm giỏi nhất.",
+    core_en:"Trade is <b>not</b> a zero-sum contest. Both sides can gain because trade lets people:<br>(1) consume a wider variety of goods; and<br>(2) <b>specialize</b> in what each does best.",
+    ideas_vn:[
+      "Trong gia đình: bố mẹ chuyên môn hóa (bố đi làm, mẹ nội trợ, con đi học), rồi 'giao dịch' — không ai tự may quần áo, tự trồng lúa.",
+      "Giữa các quốc gia: cùng nguyên tắc — nước A trồng cà phê giỏi, nước B làm điện thoại giỏi → trao đổi, cả hai được nhiều hơn."
+    ],
+    ideas_en:[
+      "Within households: members specialize (one parent works, another cooks, kids study), then 'trade' — no one sews their own clothes or grows their own rice.",
+      "Between countries: same principle — Country A grows coffee well, Country B makes phones well → trade, both get more."
+    ],
+    ex_title_vn:"Thương mại của Việt Nam", ex_title_en:"Vietnam examples: Trade",
+    ex_vn:[
+      "<b>VN xuất khẩu:</b> Gạo (đứng top 3 thế giới), cà phê Robusta (top 1), thủy sản, dệt may, giày dép, đặc biệt <b>điện thoại Samsung</b> (~20% tổng kim ngạch XK).",
+      "<b>VN nhập khẩu:</b> Chip, máy móc, xăng dầu, thuốc, ô tô nguyên chiếc, thịt bò Mỹ/Úc.",
+      "<b>Hiệp định FTA:</b> CPTPP, EVFTA, RCEP → thuế nhập vào EU, Nhật, Hàn giảm → xuất khẩu dệt may, thủy sản tăng.",
+      "<b>Chuyên môn hóa vùng miền:</b> ĐBSCL trồng lúa/thủy sản; Tây Nguyên trồng cà phê; Bình Dương/Đồng Nai công nghiệp; Hà Nội/HCM dịch vụ - tài chính. Giao thương liên vùng khiến cả nước hưởng lợi.",
+      "<b>Chuyên môn hóa cá nhân:</b> Bạn giỏi lập trình → làm dev kiếm 30tr/tháng. Không giỏi nấu ăn → gọi GrabFood 40k/bữa. Nếu tự nấu, mất 1 giờ có thể code kiếm 200k → 'thương mại' với GrabFood có lợi hơn.",
+      "<b>Grab, Shopee:</b> Nền tảng khớp người bán và người mua trong nước — mở rộng 'thương mại nội địa' bằng công nghệ."
+    ],
+    ex_en:[
+      "<b>Vietnam exports:</b> Rice (top-3 globally), Robusta coffee (top-1), seafood, garments, footwear, and notably <b>Samsung phones</b> (~20% of total exports).",
+      "<b>Vietnam imports:</b> Chips, machinery, petroleum, medicines, finished cars, US/Australian beef.",
+      "<b>Free-trade agreements:</b> CPTPP, EVFTA, RCEP → lower tariffs into EU, Japan, Korea → garment and seafood exports up.",
+      "<b>Regional specialization:</b> Mekong Delta grows rice and seafood; Central Highlands grows coffee; Binh Duong/Dong Nai host industry; Hanoi/HCMC provide services and finance. Inter-regional trade benefits the whole country.",
+      "<b>Personal specialization:</b> You're good at coding → dev job earns ₫30M/month. Not good at cooking → order GrabFood at ₫40k/meal. Cooking yourself for one hour could have earned ₫200k in code → 'trading' with GrabFood is better.",
+      "<b>Grab, Shopee:</b> Platforms matching domestic buyers and sellers — expanding 'domestic trade' via technology."
+    ],
+    q_vn:"Nếu VN đóng cửa hoàn toàn với thương mại quốc tế (đóng biên, cấm xuất-nhập khẩu), điều gì sẽ xảy ra?",
+    q_en:"If Vietnam completely closed to international trade (borders shut, exports/imports banned), what happens?",
+    a_vn:"Không có iPhone, không có Toyota, không có Netflix. Cà phê và gạo dư thừa trong nước, giá giảm mạnh, nông dân phá sản. Ngành điện tử (Samsung, LG) sụp đổ vì không nhập được chip. GDP giảm mạnh, mức sống thụt lùi. Thương mại là <b>tổng thu dương</b> — cắt nó là cắt phúc lợi của cả 2 phía.",
+    a_en:"No iPhones, no Toyotas, no Netflix. Domestic coffee and rice pile up, prices crash, farmers go bankrupt. Electronics (Samsung, LG) collapse without imported chips. GDP falls sharply, living standards regress. Trade is <b>positive-sum</b> — cutting it cuts welfare for both sides."
+  },
+  {
+    n:6,
+    group_vn:"Nhóm 2 · Con người tương tác", group_en:"Group 2 · How people interact",
+    title_vn:"Thị trường thường là cách tổ chức hoạt động kinh tế tốt", title_en:"Markets are usually a good way to organize economic activity",
+    core_vn:"Trong <b>nền kinh tế thị trường</b>, hàng triệu hộ gia đình và doanh nghiệp tự quyết định (không có ai chỉ đạo tập trung). Giá cả phản ánh cả <b>giá trị đối với người mua</b> và <b>chi phí đối với người sản xuất</b>. <b>Bàn tay vô hình</b> (Adam Smith) hướng lợi ích cá nhân về lợi ích xã hội.",
+    core_en:"In a <b>market economy</b>, millions of households and firms decide independently (no central planner). Prices reflect both the good's <b>value to buyers</b> and <b>producers' cost</b>. Adam Smith's <b>invisible hand</b> steers self-interest toward society's benefit.",
+    ideas_vn:[
+      "Thị trường trả lời 3 câu hỏi: <i>Sản xuất cái gì? Sản xuất thế nào? Ai được dùng?</i>",
+      "Các nền kinh tế kế hoạch tập trung (VD: LX cũ, Bắc Triều Tiên) thất bại vì không cho phép giá phản ánh giá trị và chi phí thực.",
+      "Chính phủ can thiệp giá (áp trần, áp sàn) → quyết định của hộ và doanh nghiệp bị bóp méo."
+    ],
+    ideas_en:[
+      "Markets answer three questions: <i>What to produce? How to produce it? Who consumes it?</i>",
+      "Centrally planned economies (USSR, N. Korea) failed because prices couldn't reflect real value and cost.",
+      "When the government controls prices (ceilings or floors), household and firm decisions are distorted."
+    ],
+    ex_title_vn:"Thị trường ở Việt Nam", ex_title_en:"Vietnam examples: Markets",
+    ex_vn:[
+      "<b>Chợ Bến Thành / Đồng Xuân / Bình Điền:</b> Hàng ngàn tiểu thương, người mua tự chốt giá — không ai điều phối trung tâm mà đủ hàng, đủ loại.",
+      "<b>Chợ điện tử — Shopee, Tiki, Lazada:</b> Cùng 1 chiếc iPhone, hàng chục shop báo giá khác nhau. Thị trường ép giá cạnh tranh về sát chi phí.",
+      "<b>Cà phê Highlands vs. Trung Nguyên vs. Phúc Long vs. Katinat:</b> Cạnh tranh chất lượng, giá, mở rộng chi nhánh — người tiêu dùng có nhiều lựa chọn.",
+      "<b>Đổi Mới 1986:</b> VN từ nền kinh tế kế hoạch chuyển sang <b>kinh tế thị trường định hướng XHCN</b> → GDP tăng gấp nhiều lần, dân đói giảm mạnh, hàng hóa dồi dào.",
+      "<b>Bàn tay vô hình ở Sài Gòn:</b> Cô bán bánh mì không có mục tiêu 'phục vụ xã hội', chỉ muốn bán được nhiều để lời — nhưng chính vì đó mà bạn có bánh mì ngon, rẻ mỗi sáng.",
+      "<b>Grab và Adam Smith:</b> Grab là ví dụ hiện đại — tài xế và khách chỉ theo lợi ích riêng, thuật toán khớp cung-cầu tự động, xã hội có dịch vụ vận tải hiệu quả."
+    ],
+    ex_en:[
+      "<b>Ben Thanh / Dong Xuan / Binh Dien markets:</b> Thousands of vendors, buyers negotiate prices — no central coordinator, yet everything is available.",
+      "<b>Online marketplaces — Shopee, Tiki, Lazada:</b> Same iPhone, dozens of sellers post different prices. Competition drives prices down toward cost.",
+      "<b>Highlands Coffee vs. Trung Nguyen vs. Phuc Long vs. Katinat:</b> Compete on quality, price, expansion — consumers get more choice.",
+      "<b>Đổi Mới 1986:</b> Vietnam moved from central planning to a <b>socialist-oriented market economy</b> → GDP grew many-fold, hunger dropped sharply, goods became plentiful.",
+      "<b>Invisible hand in Saigon:</b> A bánh-mì vendor doesn't aim to 'serve society' — she wants to sell more and profit. And precisely because of that, you get a cheap, tasty sandwich every morning.",
+      "<b>Grab and Adam Smith:</b> Grab is a modern example — drivers and riders each act on self-interest, an algorithm matches supply and demand, and society gets efficient transport."
+    ],
+    q_vn:"Nếu chính phủ VN áp giá trần cho tiền thuê nhà tại TP.HCM ở mức 3 triệu/tháng (thấp hơn mức thị trường ~8-10 triệu), điều gì sẽ xảy ra?",
+    q_en:"If the government caps HCMC rent at ₫3M/month (below market ~₫8-10M), what happens?",
+    a_vn:"Cầu vượt cung mạnh (nhiều người muốn thuê, ít chủ muốn cho thuê ở giá thấp). Xuất hiện: xếp hàng, hối lộ, phong bì cho môi giới, cho thuê 'chui' giá cao, chủ để trống thay vì cho thuê rẻ. Chất lượng nhà xuống cấp (chủ không có động cơ bảo trì). → Giá trần thường phản tác dụng.",
+    a_en:"Demand explodes past supply (many renters, few landlords willing at the low price). You get queues, bribes, agent kickbacks, illegal high-price sublets, and landlords leaving units empty. Housing quality deteriorates (no incentive to maintain). → Rent controls typically backfire."
+  },
+  {
+    n:7,
+    group_vn:"Nhóm 2 · Con người tương tác", group_en:"Group 2 · How people interact",
+    title_vn:"Chính phủ đôi khi có thể cải thiện kết quả thị trường", title_en:"Governments can sometimes improve market outcomes",
+    core_vn:"Thị trường tốt nhưng không hoàn hảo. Chính phủ can thiệp vì 2 lý do chính: (1) <b>tăng hiệu quả</b> khi có <b>thất bại thị trường</b>; (2) <b>tăng bình đẳng</b> qua tái phân phối. Lưu ý: <i>'có thể'</i> không có nghĩa là <i>'luôn luôn'</i>.",
+    core_en:"Markets are usually good, but imperfect. The government intervenes for two main reasons: (1) <b>promote efficiency</b> when there is <b>market failure</b>; (2) <b>promote equality</b> via redistribution. Note: <i>'can'</i> improve does not mean <i>'always will'</i>.",
+    ideas_vn:[
+      "<b>Điều kiện tiên quyết:</b> Chính phủ phải bảo vệ <b>quyền sở hữu tài sản</b> — nếu bị mất cắp, chẳng ai muốn sản xuất, đầu tư, giao dịch.",
+      "<b>Thất bại thị trường 1 — Ngoại tác (externality):</b> hành động của A làm ảnh hưởng đến C (không tham gia giao dịch). VD: ô nhiễm.",
+      "<b>Thất bại thị trường 2 — Sức mạnh thị trường (market power):</b> 1 người bán/mua chi phối giá. VD: độc quyền."
+    ],
+    ideas_en:[
+      "<b>Prerequisite:</b> Government must enforce <b>property rights</b> — if things get stolen, no one wants to produce, invest, or trade.",
+      "<b>Market failure 1 — Externality:</b> A's action affects bystander C. E.g., pollution.",
+      "<b>Market failure 2 — Market power:</b> a single seller/buyer dominates the price. E.g., monopoly."
+    ],
+    ex_title_vn:"Chính phủ Việt Nam trong nền kinh tế", ex_title_en:"Vietnam examples: Government",
+    ex_vn:[
+      "<b>Bảo vệ quyền sở hữu:</b> Sổ đỏ, Luật Sở hữu trí tuệ, Luật Doanh nghiệp — nền tảng cho đầu tư và kinh doanh. Không có nó, không ai dám xây nhà máy.",
+      "<b>Ngoại tác ô nhiễm — Formosa Hà Tĩnh (2016):</b> Xả thải làm cá chết dọc 4 tỉnh miền Trung. Chính phủ buộc bồi thường 500 triệu USD — thị trường tự không giải quyết được.",
+      "<b>Ô nhiễm không khí Hà Nội:</b> AQI thường xuyên xấu → chính phủ ban hành tiêu chuẩn khí thải, cấm xe máy cũ, hạn chế phương tiện.",
+      "<b>Độc quyền tự nhiên:</b> EVN (điện), VNPT/Viettel (viễn thông) trước đây — nhà nước quản lý giá, tránh lạm quyền độc quyền.",
+      "<b>Ngoại tác tích cực — Giáo dục:</b> Học đại học không chỉ có lợi cá nhân mà cả xã hội — nên nhà nước trợ giá học phí trường công.",
+      "<b>Tái phân phối:</b> Chương trình 30a xóa đói giảm nghèo; BHYT toàn dân; miễn học phí THCS; hỗ trợ đồng bào dân tộc thiểu số.",
+      "<b>Nhưng CP không phải lúc nào cũng tốt:</b> Ví dụ can thiệp giá xăng làm thất thoát Quỹ Bình ổn Giá; các dự án đầu tư công đội vốn, chậm tiến độ."
+    ],
+    ex_en:[
+      "<b>Property rights:</b> Land certificates (sổ đỏ), IP Law, Enterprise Law — the foundation of investment and business. Without them, no one builds a factory.",
+      "<b>Pollution externality — Formosa Ha Tinh (2016):</b> Chemical discharge killed fish along four central provinces. The government forced $500M compensation — the market alone couldn't fix it.",
+      "<b>Hanoi air pollution:</b> AQI often poor → the government issues emission standards, bans old motorbikes, restricts vehicles.",
+      "<b>Natural monopoly:</b> EVN (electricity), VNPT/Viettel (telecom historically) — the state regulates prices to prevent monopoly abuse.",
+      "<b>Positive externality — Education:</b> A college degree benefits the individual and society — so the state subsidizes public tuition.",
+      "<b>Redistribution:</b> Program 30a poverty reduction; universal health insurance; free lower-secondary tuition; support for ethnic minorities.",
+      "<b>But government isn't always good:</b> gasoline price intervention led to losses in the Price Stabilization Fund; public investment projects run over budget and behind schedule."
+    ],
+    q_vn:"Với mỗi tình huống sau, chính phủ nên can thiệp vì lý do <i>hiệu quả</i> hay <i>bình đẳng</i>? (a) Nhà máy xả thải hóa chất ra sông; (b) EVN là nhà cung cấp điện duy nhất; (c) Trợ cấp cho hộ nghèo ở vùng lũ; (d) Bằng sáng chế thuốc chữa ung thư khiến giá cao.",
+    q_en:"For each: efficiency or equality? (a) A factory dumps chemicals into a river; (b) EVN is the sole electricity provider; (c) Subsidies for flood-hit poor households; (d) A cancer-drug patent keeps prices high.",
+    a_vn:"(a) <b>Hiệu quả</b> — externality ô nhiễm. (b) <b>Hiệu quả</b> — market power/độc quyền. (c) <b>Bình đẳng</b> — tái phân phối. (d) <b>Hiệu quả</b> — market power (bằng sáng chế cho phép giá cao).",
+    a_en:"(a) <b>Efficiency</b> — pollution externality. (b) <b>Efficiency</b> — market power / monopoly. (c) <b>Equality</b> — redistribution. (d) <b>Efficiency</b> — market power (patent enables high prices)."
+  },
+  {
+    n:8,
+    group_vn:"Nhóm 3 · Nền kinh tế vận hành", group_en:"Group 3 · How the economy works",
+    title_vn:"Mức sống của một nước phụ thuộc vào khả năng sản xuất hàng hóa - dịch vụ", title_en:"A country's standard of living depends on its ability to produce goods and services",
+    core_vn:"Chênh lệch mức sống giữa các nước và qua thời gian rất lớn. Nguyên nhân sâu xa: <b>năng suất</b> — lượng hàng hóa/dịch vụ tạo ra trên mỗi giờ lao động. Năng suất cao → mức sống cao.",
+    core_en:"Living standards vary enormously across countries and over time. The deep cause: <b>productivity</b> — output produced per hour of labor. Higher productivity → higher living standard.",
+    ideas_vn:[
+      "Năng suất phụ thuộc vào <b>công nghệ</b>, <b>kỹ năng lao động</b>, <b>máy móc và cơ sở hạ tầng</b> mà người lao động có sẵn.",
+      "Chính sách công tác động tới mức sống chủ yếu qua kênh <b>năng suất</b>: giáo dục, R&D, cơ sở hạ tầng, đầu tư.",
+      "Các yếu tố khác (công đoàn, cạnh tranh từ nước ngoài) ít tác động hơn là ta thường nghĩ."
+    ],
+    ideas_en:[
+      "Productivity depends on <b>technology</b>, <b>worker skills</b>, and the <b>equipment and infrastructure</b> workers have.",
+      "Public policy affects living standards mainly through productivity: education, R&D, infrastructure, investment.",
+      "Other factors (unions, foreign competition) matter far less than commonly believed."
+    ],
+    ex_title_vn:"Năng suất & mức sống ở Việt Nam", ex_title_en:"Vietnam examples: Productivity",
+    ex_vn:[
+      "<b>GDP đầu người VN 2024:</b> ~4.700 USD. So sánh: Singapore ~85.000, Hàn Quốc ~33.000, Thái Lan ~7.000, Lào ~2.000. Chênh lệch chủ yếu do năng suất.",
+      "<b>VN 1986 vs. 2026:</b> GDP đầu người tăng từ ~200 USD lên ~4.700 USD — nhờ đầu tư máy móc, mở cửa FDI, giáo dục, chuyển đổi số.",
+      "<b>FDI Samsung, Intel, LG:</b> Mang máy móc, công nghệ, đào tạo → công nhân VN năng suất cao hơn hẳn công nhân cùng ngành ở nước không có FDI.",
+      "<b>Nông nghiệp:</b> ĐBSCL trước 1990 dùng trâu cày, năng suất lúa ~3 tấn/ha. Nay dùng máy gặt đập liên hợp, giống mới → ~6-7 tấn/ha.",
+      "<b>Giáo dục đại học:</b> Đại học Việt Nam đầu tư trọng điểm (VinUni, ĐHQG, Bách Khoa) → cung cấp nhân lực chất lượng cho ngành công nghệ.",
+      "<b>Ngành CNTT:</b> Kỹ sư phần mềm VN có thể làm remote cho công ty Mỹ với mức lương 2.000-4.000 USD/tháng vì năng suất tương đương ở nhiều mảng."
+    ],
+    ex_en:[
+      "<b>Vietnam GDP per capita 2024:</b> ~$4,700. Compare: Singapore ~$85,000, S. Korea ~$33,000, Thailand ~$7,000, Laos ~$2,000. Differences reflect productivity.",
+      "<b>Vietnam 1986 vs. 2026:</b> GDP per capita rose from ~$200 to ~$4,700 — via machinery investment, FDI opening, education, digital transformation.",
+      "<b>Samsung, Intel, LG FDI:</b> Brought machines, technology, training → Vietnamese workers are far more productive than industry peers in FDI-free countries.",
+      "<b>Agriculture:</b> Before 1990 the Mekong Delta used water buffalo, yielding ~3 t/ha of rice. Now with combine harvesters and new varieties → ~6-7 t/ha.",
+      "<b>Higher education:</b> Vietnam invests in top universities (VinUni, VNU, HUST) → high-quality talent for the tech sector.",
+      "<b>IT industry:</b> Vietnamese software engineers can work remotely for US firms at $2,000-4,000/month because productivity is on par in many niches."
+    ],
+    q_vn:"Tại sao lương của bác sĩ ở Mỹ (~250.000 USD/năm) cao hơn ở VN (~30 triệu VND/tháng ≈ 15.000 USD/năm) rất nhiều, dù công việc tương tự?",
+    q_en:"Why do US doctors earn ~$250k/year while Vietnamese doctors earn ~$15k/year, despite similar work?",
+    a_vn:"Vì <b>năng suất</b> chung của nền kinh tế Mỹ cao hơn: bệnh viện Mỹ có máy MRI, PET/CT, robot phẫu thuật, hệ thống quản lý điện tử → 1 giờ lao động của bác sĩ Mỹ tạo ra giá trị dịch vụ cao hơn. Lương phản ánh năng suất.",
+    a_en:"Because overall US <b>productivity</b> is higher: US hospitals have MRI, PET/CT, surgical robots, electronic records → one hour of a US doctor's work produces more service value. Wages reflect productivity."
+  },
+  {
+    n:9,
+    group_vn:"Nhóm 3 · Nền kinh tế vận hành", group_en:"Group 3 · How the economy works",
+    title_vn:"Giá tăng khi chính phủ in quá nhiều tiền", title_en:"Prices rise when the government prints too much money",
+    core_vn:"<b>Lạm phát</b> là sự gia tăng mức giá chung. Trong <b>dài hạn</b>, lạm phát hầu như luôn xuất phát từ việc <b>cung tiền tăng quá nhanh</b> — tiền trở nên dồi dào, giá trị mỗi đồng giảm, giá hàng hóa (tính bằng tiền) tăng.",
+    core_en:"<b>Inflation</b> is a rise in the general price level. In the <b>long run</b>, inflation almost always comes from <b>excess money supply growth</b> — as money grows plentiful, each unit is worth less, and prices (measured in money) rise.",
+    ideas_vn:[
+      "Ví dụ lịch sử: Đức 1920s (siêu lạm phát sau WWI, giá tăng gấp triệu lần); Zimbabwe 2008; Venezuela 2010s.",
+      "Không phải mọi lạm phát đều do in tiền trong ngắn hạn (giá dầu, thiên tai...) — nhưng trong <b>dài hạn</b>, mối liên hệ tiền-giá là chắc chắn."
+    ],
+    ideas_en:[
+      "Historical: Weimar Germany 1920s (post-WWI hyperinflation, prices up millions of times); Zimbabwe 2008; Venezuela 2010s.",
+      "Not every short-run inflation is due to money (oil shocks, disasters) — but in the <b>long run</b> the money-price link is robust."
+    ],
+    ex_title_vn:"Lạm phát ở Việt Nam", ex_title_en:"Vietnam examples: Inflation",
+    ex_vn:[
+      "<b>Lạm phát VN 1986-1988:</b> Đỉnh điểm ~774% năm 1986 — chính phủ in tiền bù đắp chi ngân sách khổng lồ trong thời kỳ bao cấp.",
+      "<b>Đổi tiền 1985:</b> 10 đồng cũ = 1 đồng mới — nhằm 'reset' cung tiền, nhưng lạm phát tiếp tục vì nguyên nhân gốc (in tiền) không đổi.",
+      "<b>Cải cách 1989-1992:</b> Ngân hàng Nhà nước độc lập hơn, kiểm soát cung tiền, lạm phát về ~10% và ổn định.",
+      "<b>CPI VN 2024-2025:</b> ~3-4%/năm — mục tiêu ổn định của NHNN thường là <4%.",
+      "<b>Giá phở 20 năm qua:</b> Tô phở 2004 giá ~10.000đ, năm 2024 ~50.000đ → giá tăng 5 lần trong 20 năm, tương ứng lạm phát trung bình ~8%/năm.",
+      "<b>Tiền tệ VN vs. USD:</b> Tỷ giá 1994 ~11.000đ/USD, 2024 ~25.000đ/USD → VND mất giá do lạm phát VN cao hơn Mỹ."
+    ],
+    ex_en:[
+      "<b>Vietnam inflation 1986-1988:</b> peaked at ~774% in 1986 — the government printed money to cover huge deficits during the subsidy era.",
+      "<b>1985 currency reform:</b> 10 old đồng = 1 new đồng — a money 'reset', but inflation continued because the root cause (money printing) didn't change.",
+      "<b>1989-1992 reforms:</b> A more independent central bank controlled the money supply; inflation fell to ~10% and stabilized.",
+      "<b>Vietnam CPI 2024-2025:</b> ~3-4%/year — the SBV's stability target is typically <4%.",
+      "<b>Pho prices over 20 years:</b> A bowl cost ~₫10,000 in 2004, ~₫50,000 in 2024 → 5× in 20 years, average inflation ~8%/year.",
+      "<b>VND vs. USD:</b> ~₫11,000/$ in 1994, ~₫25,000/$ in 2024 → the đồng weakened as Vietnam's inflation exceeded the US's."
+    ],
+    q_vn:"Nếu NHNN Việt Nam in thêm 500.000 tỷ VND để trả nợ công, điều gì có thể xảy ra trong dài hạn?",
+    q_en:"If the State Bank of Vietnam prints an additional ₫500 trillion to pay off public debt, what happens in the long run?",
+    a_vn:"Cung tiền tăng đột biến → giá cả hàng hóa (tính bằng VND) tăng mạnh → lạm phát cao → VND mất giá so với USD → nhập khẩu đắt đỏ → mức sống thực (số hàng hóa mua được bằng lương) giảm. Đây là 'thuế lạm phát' đánh vào người giữ tiền.",
+    a_en:"Money supply jumps → VND-denominated prices soar → high inflation → VND depreciates vs. USD → imports get expensive → real living standards (goods per wage) fall. This is the 'inflation tax' on people who hold cash."
+  },
+  {
+    n:10,
+    group_vn:"Nhóm 3 · Nền kinh tế vận hành", group_en:"Group 3 · How the economy works",
+    title_vn:"Xã hội đối mặt với đánh đổi ngắn hạn giữa lạm phát và thất nghiệp", title_en:"Society faces a short-run trade-off between inflation and unemployment",
+    core_vn:"Trong <b>ngắn hạn</b>, chính sách tiền tệ và tài khóa thường đẩy lạm phát và thất nghiệp về hai hướng ngược nhau: kích cầu → tăng việc làm, giảm thất nghiệp, nhưng tăng lạm phát. Đây là cơ sở của phân tích <b>chu kỳ kinh tế</b>.",
+    core_en:"In the <b>short run</b>, monetary and fiscal policy usually push inflation and unemployment in opposite directions: stimulate demand → more jobs, lower unemployment, but higher inflation. This underlies <b>business cycle</b> analysis.",
+    ideas_vn:[
+      "NHTW bơm tiền → chi tiêu tăng → doanh nghiệp bán được nhiều → thuê thêm người → thất nghiệp giảm, nhưng giá tăng theo thời gian.",
+      "Đánh đổi này chỉ tồn tại <b>ngắn hạn</b>. Về dài hạn, chỉ có tăng cung tiền → chỉ có lạm phát, việc làm không đổi.",
+      "Chính sách phản chu kỳ: Suy thoái → nới lỏng để giảm thất nghiệp; Lạm phát cao → thắt chặt để giảm giá."
+    ],
+    ideas_en:[
+      "Central bank injects money → spending up → firms sell more → hire more → unemployment down, but prices rise over time.",
+      "This trade-off is <b>short-run only</b>. In the long run, more money → only inflation, no employment gain.",
+      "Countercyclical policy: recession → easing to lower unemployment; high inflation → tightening to lower prices."
+    ],
+    ex_title_vn:"Đánh đổi LP-TN ở Việt Nam", ex_title_en:"Vietnam examples: Inflation-Unemployment",
+    ex_vn:[
+      "<b>2020-2021 (COVID):</b> NHNN giảm lãi suất, gói 350.000 tỷ hỗ trợ → giữ việc làm, GDP không âm — nhưng CPI 2022 tăng lên ~3,15% và tiếp tục áp lực.",
+      "<b>2011-2012:</b> Lạm phát VN đỉnh ~18% → NHNN tăng lãi suất huy động lên 14-17%, thắt chặt tín dụng → doanh nghiệp phá sản, thất nghiệp tăng, nhưng lạm phát về ~7% năm 2013.",
+      "<b>2024-2026:</b> Lạm phát ổn định ~3-4%, NHNN có 'không gian' hạ lãi suất khi cần kích thích kinh tế.",
+      "<b>Gói kích cầu 2009:</b> Sau khủng hoảng toàn cầu, VN chi 8 tỷ USD kích cầu → GDP tăng, nhưng đóng góp vào áp lực lạm phát 2010-2011.",
+      "<b>So sánh với Zimbabwe/Venezuela:</b> In tiền để trả lương công chức → lạm phát siêu cao, không giảm được thất nghiệp thực."
+    ],
+    ex_en:[
+      "<b>2020-2021 (COVID):</b> SBV cut rates, a ₫350 trillion support package → jobs kept, GDP avoided contraction — but CPI 2022 rose to ~3.15% with pressure continuing.",
+      "<b>2011-2012:</b> Vietnam inflation peaked ~18% → SBV raised deposit rates to 14-17% and tightened credit → firms went bankrupt, unemployment rose, but inflation fell to ~7% in 2013.",
+      "<b>2024-2026:</b> Inflation stable at ~3-4%, giving SBV 'room' to cut rates when it needs to stimulate.",
+      "<b>2009 stimulus package:</b> After the global crisis, Vietnam spent $8B on stimulus → GDP up, but contributed to 2010-2011 inflation pressure.",
+      "<b>Compare with Zimbabwe / Venezuela:</b> printing money to pay public wages → hyperinflation, real unemployment unchanged."
+    ],
+    q_vn:"Nếu NHNN VN muốn giảm tỷ lệ thất nghiệp đang cao 6% xuống 4% trong ngắn hạn, có thể dùng công cụ gì? Hậu quả có thể ra sao?",
+    q_en:"If SBV wants to cut unemployment from 6% to 4% in the short run, what tools can it use? What are the possible consequences?",
+    a_vn:"<b>Công cụ:</b> giảm lãi suất chính sách, hạ tỷ lệ dự trữ bắt buộc, nghiệp vụ thị trường mở (mua trái phiếu). → Cung tiền tăng → doanh nghiệp vay rẻ hơn → mở rộng sản xuất → tuyển thêm người → thất nghiệp giảm. <b>Hậu quả:</b> lạm phát có thể tăng lên 5-6% hoặc cao hơn; nếu quá liều, VND có thể mất giá. Đó là 'giá' của việc giảm thất nghiệp trong ngắn hạn.",
+    a_en:"<b>Tools:</b> cut policy rate, lower reserve requirement, open-market operations (buy bonds). → Money supply up → firms borrow cheaper → expand production → hire more → unemployment down. <b>Consequences:</b> inflation may rise to 5-6% or more; if overdone, VND weakens. That's the 'price' of lower short-run unemployment."
+  }
+];
+
+/* ---------- Nutshell content ---------- */
+const NUTSHELL = {
+  g1_vn:"Cá nhân ra quyết định", g1_en:"Individual decision making",
+  g1_items:[
+    {vn:"Con người đối mặt với sự đánh đổi giữa các mục tiêu.", en:"People face trade-offs among alternative goals."},
+    {vn:"Chi phí của bất kỳ hành động nào được đo bằng cơ hội đã bỏ qua.", en:"The cost of any action is measured in terms of forgone opportunities."},
+    {vn:"Người lý trí ra quyết định bằng cách so sánh chi phí biên và lợi ích biên.", en:"Rational people make decisions by comparing marginal costs and marginal benefits."},
+    {vn:"Con người thay đổi hành vi khi động lực thay đổi.", en:"People change their behavior in response to the incentives they face."}
+  ],
+  g2_vn:"Tương tác giữa con người", g2_en:"Interactions among people",
+  g2_items:[
+    {vn:"Thương mại và sự phụ thuộc lẫn nhau có thể mang lại lợi ích cho các bên.", en:"Trade and interdependence can be mutually beneficial."},
+    {vn:"Thị trường thường là cách tổ chức hoạt động kinh tế tốt.", en:"Markets are usually a good way of coordinating economic activity."},
+    {vn:"Chính phủ có thể cải thiện kết quả thị trường bằng cách khắc phục thất bại thị trường hoặc thúc đẩy bình đẳng.", en:"Governments can potentially improve market outcomes by remedying market failure or promoting equality."}
+  ],
+  g3_vn:"Toàn bộ nền kinh tế", g3_en:"The economy as a whole",
+  g3_items:[
+    {vn:"Năng suất là nguồn gốc quyết định của mức sống.", en:"Productivity is the ultimate source of living standards."},
+    {vn:"Tăng cung tiền là nguồn gốc của lạm phát.", en:"Growth in the quantity of money is the ultimate source of inflation."},
+    {vn:"Xã hội đối mặt với đánh đổi ngắn hạn giữa lạm phát và thất nghiệp.", en:"Society faces a short-run trade-off between inflation and unemployment."}
+  ]
+};
+
+/* ---------- Quiz ---------- */
+const QUIZ = [
+  {q_vn:"Định nghĩa 'kinh tế học' là gì?", q_en:"What is the definition of economics?",
+    opts_vn:["Nghiên cứu về tiền tệ và ngân hàng","Nghiên cứu cách xã hội quản lý các nguồn lực khan hiếm","Nghiên cứu về chứng khoán và đầu tư","Nghiên cứu về các doanh nghiệp lớn"],
+    opts_en:["Study of money and banking","Study of how society manages scarce resources","Study of stocks and investments","Study of large corporations"],
+    answer:1,
+    expl_vn:"Kinh tế học nghiên cứu cách xã hội phân bổ nguồn lực <b>khan hiếm</b> — đó là bản chất của môn học.",
+    expl_en:"Economics studies how society allocates its <b>scarce</b> resources — the essence of the field."},
+  {q_vn:"Chi phí cơ hội của việc học đại học 4 năm KHÔNG bao gồm khoản nào?", q_en:"Which is NOT an opportunity cost of 4 years of college?",
+    opts_vn:["Học phí","Tiền lương lẽ ra kiếm được nếu đi làm","Tiền ăn ở (giả sử cùng chi phí dù có đi học hay không)","Tiền sách giáo trình"],
+    opts_en:["Tuition","Wages foregone by not working","Room and board (assuming same cost either way)","Textbooks"],
+    answer:2,
+    expl_vn:"Nếu ăn ở tốn như nhau dù có đi học hay không, đó KHÔNG phải chi phí cơ hội của việc học — bạn vẫn phải trả nó dù chọn phương án nào.",
+    expl_en:"If room and board cost the same either way, they are NOT opportunity costs of college — you'd pay them regardless."},
+  {q_vn:"Một người 'lý trí' trong kinh tế học có nghĩa là gì?", q_en:"What does 'rational' mean in economics?",
+    opts_vn:["Luôn đúng","Có bằng cấp cao","Ra quyết định có hệ thống để đạt mục tiêu tối ưu trong điều kiện có sẵn","Không bao giờ mắc sai lầm"],
+    opts_en:["Always correct","Highly educated","Systematically pursues the best outcome given available opportunities","Never makes mistakes"],
+    answer:2,
+    expl_vn:"Người lý trí = ra quyết định có hệ thống và có chủ đích để tối ưu mục tiêu, dựa trên thông tin và cơ hội sẵn có.",
+    expl_en:"Rational people systematically and purposefully do the best they can given available information and opportunities."},
+  {q_vn:"Bạn đang xem Netflix với gói 260k/tháng đã trả. Chi phí biên của việc xem thêm 1 tập phim là bao nhiêu?", q_en:"You have a paid Netflix plan. What is the marginal cost of watching one more episode?",
+    opts_vn:["260.000đ","Bằng giá 1 ly cà phê","Gần bằng 0 (chỉ có chi phí thời gian)","Không thể xác định"],
+    opts_en:["₫260,000","Cost of one coffee","Nearly 0 (only time cost)","Cannot be determined"],
+    answer:2,
+    expl_vn:"Đã trả tiền tháng rồi — xem thêm 1 tập không tốn thêm tiền. Chi phí biên tiền tệ = 0, chỉ còn chi phí cơ hội của thời gian.",
+    expl_en:"The fee is already paid — one more episode costs nothing more in money. Monetary marginal cost = 0; only the opportunity cost of time remains."},
+  {q_vn:"Chính phủ tăng thuế thuốc lá thêm 50%. Điều gì có khả năng xảy ra?", q_en:"The government raises cigarette tax by 50%. What likely happens?",
+    opts_vn:["Không ai thay đổi hành vi","Người hút thuốc giảm tiêu thụ, người sản xuất có thể chuyển hướng","Giá thuốc lá giảm","Cầu thuốc lá tăng"],
+    opts_en:["No one changes behavior","Smokers consume less; producers may pivot","Cigarette prices fall","Cigarette demand rises"],
+    answer:1,
+    expl_vn:"Nguyên lý 4: con người phản ứng với động lực. Thuế cao hơn → giá cao hơn → cầu giảm; nhà sản xuất có thể chuyển sang sản phẩm khác hoặc thị trường khác.",
+    expl_en:"Principle 4: people respond to incentives. Higher tax → higher price → lower demand; producers may pivot to other products or markets."},
+  {q_vn:"Câu nào ĐÚNG về thương mại quốc tế?", q_en:"Which is TRUE about international trade?",
+    opts_vn:["Thương mại là trò chơi có tổng bằng 0 — kẻ thắng người thua","Cả hai bên đều có thể có lợi qua chuyên môn hóa","Chỉ nước xuất khẩu được lợi","Thương mại luôn có hại cho việc làm trong nước"],
+    opts_en:["Trade is zero-sum — winner/loser","Both sides can gain via specialization","Only exporters gain","Trade always hurts domestic jobs"],
+    answer:1,
+    expl_vn:"Nguyên lý 5: thương mại cho phép mỗi bên chuyên môn hóa và trao đổi → tất cả được lợi. Không phải zero-sum.",
+    expl_en:"Principle 5: trade allows specialization; both sides gain. It's not zero-sum."},
+  {q_vn:"'Bàn tay vô hình' của Adam Smith mô tả điều gì?", q_en:"What does Adam Smith's 'invisible hand' describe?",
+    opts_vn:["Sự can thiệp bí mật của chính phủ","Cách giá cả trong thị trường tự do dẫn dắt lợi ích cá nhân về lợi ích xã hội","Hệ thống ngân hàng ngầm","Phân bổ nguồn lực của nhà nước"],
+    opts_en:["Secret government intervention","How free-market prices guide self-interest toward social benefit","Underground banking","State resource allocation"],
+    answer:1,
+    expl_vn:"Bàn tay vô hình = cơ chế giá cả trong thị trường tự do dẫn dắt các quyết định vị kỷ của cá nhân về kết quả có lợi cho xã hội.",
+    expl_en:"The invisible hand = free-market prices guiding self-interested decisions toward socially beneficial outcomes."},
+  {q_vn:"Đâu là ví dụ của 'ngoại tác' (externality)?", q_en:"Which is an example of an externality?",
+    opts_vn:["Bạn mua bánh mì và trả tiền cho người bán","Nhà máy xả khói ảnh hưởng đến người dân xung quanh","Bạn trả tiền học phí đại học","Bạn thuê nhà và trả tiền cho chủ nhà"],
+    opts_en:["Buying bread and paying for it","Factory smoke affecting nearby residents","Paying college tuition","Renting an apartment"],
+    answer:1,
+    expl_vn:"Ngoại tác = tác động của hoạt động của một người/doanh nghiệp lên người thứ ba không tham gia giao dịch. Khói nhà máy ảnh hưởng dân cư xung quanh — điển hình.",
+    expl_en:"Externality = an action's impact on a bystander outside the transaction. Factory smoke affecting neighbors is the classic case."},
+  {q_vn:"Lý do chính khiến mức sống ở Singapore cao hơn Lào là gì?", q_en:"The main reason Singapore's living standard exceeds Laos's is?",
+    opts_vn:["Singapore có nhiều dầu mỏ hơn","Singapore có năng suất lao động cao hơn","Singapore có dân số nhiều hơn","Singapore có đất đai rộng hơn"],
+    opts_en:["More oil","Higher labor productivity","Larger population","More land"],
+    answer:1,
+    expl_vn:"Nguyên lý 8: mức sống phụ thuộc vào năng suất — số hàng hóa/dịch vụ mỗi giờ lao động tạo ra. Singapore có công nghệ, giáo dục, hạ tầng vượt trội.",
+    expl_en:"Principle 8: living standards depend on productivity — output per hour. Singapore has superior technology, education, and infrastructure."},
+  {q_vn:"Theo Mankiw, nguyên nhân gốc rễ của lạm phát trong dài hạn là gì?", q_en:"Per Mankiw, the root cause of long-run inflation is?",
+    opts_vn:["Giá dầu tăng","Cung tiền tăng quá nhanh","Thiên tai","Chiến tranh"],
+    opts_en:["Oil price shocks","Excess growth in money supply","Natural disasters","Wars"],
+    answer:1,
+    expl_vn:"Nguyên lý 9: trong dài hạn, lạm phát gần như luôn do cung tiền tăng quá nhanh (in tiền quá mức). Các yếu tố khác chỉ tác động ngắn hạn.",
+    expl_en:"Principle 9: in the long run, inflation is almost always due to excess money growth. Other factors matter only in the short run."},
+  {q_vn:"Trong ngắn hạn, chính sách nới lỏng tiền tệ (giảm lãi suất, tăng cung tiền) thường:", q_en:"Short-run easy monetary policy usually:",
+    opts_vn:["Giảm cả lạm phát lẫn thất nghiệp","Giảm lạm phát, tăng thất nghiệp","Giảm thất nghiệp, tăng lạm phát","Không ảnh hưởng gì"],
+    opts_en:["Reduces both inflation and unemployment","Reduces inflation, raises unemployment","Reduces unemployment, raises inflation","Has no effect"],
+    answer:2,
+    expl_vn:"Nguyên lý 10: đánh đổi ngắn hạn — kích cầu làm tăng việc làm (giảm thất nghiệp) nhưng đẩy giá lên (tăng lạm phát).",
+    expl_en:"Principle 10: short-run trade-off — stimulus raises jobs (lower unemployment) but pushes prices up (higher inflation)."},
+  {q_vn:"Đâu KHÔNG phải là một trong 4 nguyên lý về cách con người ra quyết định?", q_en:"Which is NOT one of the 4 'how people decide' principles?",
+    opts_vn:["Con người đối mặt với sự đánh đổi","Người lý trí tư duy ở biên","Thương mại có lợi cho tất cả","Con người phản ứng với động lực"],
+    opts_en:["People face trade-offs","Rational people think at the margin","Trade benefits everyone","People respond to incentives"],
+    answer:2,
+    expl_vn:"'Thương mại có lợi cho tất cả' là nguyên lý 5, thuộc nhóm 'con người tương tác' — không phải 'ra quyết định'.",
+    expl_en:"'Trade benefits everyone' is Principle 5, in the 'how people interact' group — not 'how people decide'."},
+  {q_vn:"Điều gì XÁC ĐỊNH việc chính phủ nên can thiệp vào thị trường?", q_en:"When SHOULD the government intervene in markets?",
+    opts_vn:["Bất cứ khi nào ai đó không hài lòng","Khi có thất bại thị trường hoặc cần thúc đẩy bình đẳng","Khi thị trường hoạt động hoàn hảo","Không bao giờ"],
+    opts_en:["Whenever someone complains","When there's market failure or an equality goal","When markets work perfectly","Never"],
+    answer:1,
+    expl_vn:"Nguyên lý 7: chính phủ CÓ THỂ cải thiện thị trường khi có thất bại thị trường (externality, market power) hoặc để tăng bình đẳng. 'Có thể' không nghĩa là 'luôn nên'.",
+    expl_en:"Principle 7: government CAN improve markets given failure (externality, power) or an equality goal. 'Can' ≠ 'should always'."},
+  {q_vn:"Bạn đã bỏ 5 triệu vào một dự án khởi nghiệp thất bại. Nay có cơ hội đầu tư thêm 1 triệu với 60% khả năng thu lại 2 triệu, hoặc bỏ dự án. Bạn nên:", q_en:"You sunk ₫5M into a failing startup. You can invest ₫1M more with a 60% chance of recovering ₫2M, or quit. You should:",
+    opts_vn:["Đầu tư thêm để 'gỡ' 5 triệu đã mất","Bỏ luôn vì đã lỗ 5 triệu","Đầu tư thêm nếu giá trị kỳ vọng > 1 triệu (bỏ qua 5tr đã mất)","Không đủ thông tin"],
+    opts_en:["Invest ₫1M more to recover the ₫5M","Quit — you've already lost ₫5M","Invest more only if expected value > ₫1M (ignore sunk cost)","Not enough info"],
+    answer:2,
+    expl_vn:"5 triệu là <b>chi phí chìm</b>, không ảnh hưởng quyết định hiện tại. Chỉ xét: lợi ích biên kỳ vọng = 60% × 2tr = 1,2tr, chi phí biên = 1tr → lợi ích biên > chi phí biên → nên đầu tư thêm.",
+    expl_en:"₫5M is a <b>sunk cost</b>, irrelevant now. Compare: expected marginal benefit = 0.6 × ₫2M = ₫1.2M vs. marginal cost = ₫1M → marginal benefit > marginal cost → invest."}
+];
+
+/* ---------- STATE ---------- */
+let currentTab = 0;
+let completed = new Set();
+let currentFC = 0;
+
+/* ---------- LANGUAGE ---------- */
+function setLang(mode){
+  document.documentElement.setAttribute("data-lang", mode);
+  document.body.setAttribute("data-lang", mode);
+  document.getElementById("lang-vn-btn").classList.toggle("active", mode==="vn");
+  document.getElementById("lang-en-btn").classList.toggle("active", mode==="en");
+  try{ localStorage.setItem(`${CHAPTER_KEY}_lang`, mode); }catch(e){}
+  updateCrumb();
+}
+function loadLang(){
+  try{
+    const s = localStorage.getItem(`${CHAPTER_KEY}_lang`);
+    if(s==="en") setLang("en"); else setLang("vn");
+  }catch(e){ setLang("vn"); }
+}
+
+/* ---------- NAV / TABS ---------- */
+function renderNav(){
+  const list = document.getElementById("nav-list");
+  list.innerHTML = NAV.map((n,i)=>`
+    <div class="nav-item ${i===0?'active':''}" data-i="${i}" onclick="switchTab(${i})">
+      <i class="fa-solid ${n.icon} icon"></i>
+      <span class="lang-vn">${n.vn}</span>
+      <span class="lang-en">${n.en}</span>
+      <i class="fa-solid fa-check check"></i>
+    </div>`).join("");
+}
+function updateCrumb(){
+  const el = document.getElementById("crumb-current");
+  const lang = document.body.getAttribute("data-lang");
+  el.textContent = NAV[currentTab][lang];
+}
+function switchTab(i){
+  if(i<0||i>=NAV.length) return;
+  currentTab = i;
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  const panel = document.querySelector(`.panel[data-tab="${i}"]`);
+  if(panel) panel.classList.add("active");
+  document.querySelectorAll(".nav-item").forEach((n,k)=>n.classList.toggle("active",k===i));
+  updateCrumb();
+  document.getElementById("prev-btn").disabled = (i===0);
+  document.getElementById("next-btn").disabled = (i===NAV.length-1);
+  window.scrollTo({top:0,behavior:"smooth"});
+  closeSidebar();
+  setTimeout(()=>markComplete(i), 2500);
+}
+function prevTab(){ switchTab(currentTab-1); }
+function nextTab(){ switchTab(currentTab+1); }
+function markComplete(i){
+  if(completed.has(i)) return;
+  completed.add(i);
+  saveProgress();
+  updateProgress();
+  if(completed.size === NAV.length) celebrate();
+}
+function updateProgress(){
+  const pct = Math.round(completed.size/NAV.length*100);
+  document.getElementById("progress-fill").style.width = pct+"%";
+  document.getElementById("progress-txt").textContent = `${completed.size} / ${NAV.length}`;
+  document.querySelectorAll(".nav-item").forEach((n,k)=>n.classList.toggle("done", completed.has(k)));
+}
+function saveProgress(){ try{ localStorage.setItem(`${CHAPTER_KEY}_completed`, JSON.stringify([...completed])); }catch(e){} }
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem(`${CHAPTER_KEY}_completed`);
+    if(raw) completed = new Set(JSON.parse(raw));
+  }catch(e){}
+  updateProgress();
+}
+function resetProgress(){
+  const lang = document.body.getAttribute("data-lang");
+  const msg = lang==="vn" ? "Reset toàn bộ tiến độ?" : "Reset all progress?";
+  if(!confirm(msg)) return;
+  completed.clear();
+  try{ localStorage.removeItem(`${CHAPTER_KEY}_completed`); }catch(e){}
+  updateProgress();
+  document.getElementById("complete-banner").classList.remove("show");
+}
+
+/* ---------- THEME ---------- */
+function toggleTheme(){
+  const cur = document.documentElement.getAttribute("data-theme");
+  const nxt = cur==="dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", nxt);
+  document.getElementById("theme-txt-vn").textContent = nxt==="dark" ? "Nền sáng" : "Nền tối";
+  document.getElementById("theme-txt-en").textContent = nxt==="dark" ? "Light" : "Dark";
+  document.querySelector("#theme-btn i").className = nxt==="dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+  try{ localStorage.setItem(`${CHAPTER_KEY}_theme`, nxt); }catch(e){}
+}
+function loadTheme(){
+  try{
+    const s = localStorage.getItem(`${CHAPTER_KEY}_theme`);
+    if(s==="dark"){
+      document.documentElement.setAttribute("data-theme","dark");
+      document.getElementById("theme-txt-vn").textContent = "Nền sáng";
+      document.getElementById("theme-txt-en").textContent = "Light";
+      document.querySelector("#theme-btn i").className = "fa-solid fa-sun";
+    }
+  }catch(e){}
+}
+
+/* ---------- SIDEBAR MOBILE ---------- */
+function openSidebar(){ document.getElementById("sidebar").classList.add("open"); document.getElementById("overlay").classList.add("open"); }
+function closeSidebar(){ document.getElementById("sidebar").classList.remove("open"); document.getElementById("overlay").classList.remove("open"); }
+
+/* ---------- RENDER TERMS ---------- */
+function renderTerms(){
+  const grid = document.getElementById("terms-grid");
+  grid.innerHTML = TERMS.map(t=>`
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="t-name">
+        <span class="lang-vn">${t.vn}</span>
+        <span class="lang-en">${t.en}</span>
+      </div>
+      <div class="toggle-hint">
+        <span class="lang-vn">Nhấn để xem định nghĩa</span>
+        <span class="lang-en">Click to reveal definition</span>
+      </div>
+      <div class="t-def">
+        <span class="lang-vn">${t.def_vn}</span>
+        <span class="lang-en">${t.def_en}</span>
+      </div>
+    </div>`).join("");
+}
+
+/* ---------- RENDER PRINCIPLES ---------- */
+function renderPrinciples(){
+  const container = document.getElementById("content-area");
+  PRINCIPLES.forEach((p,idx)=>{
+    const tabIdx = idx + 2;
+    const ideasHTML = p.ideas_vn.map((k,j)=>`
+      <div class="callout">
+        <p class="para lang-vn">${k}</p>
+        <p class="para lang-en">${p.ideas_en[j]}</p>
+      </div>`).join("");
+    const exVN = p.ex_vn.map(x=>`<li>${x}</li>`).join("");
+    const exEN = p.ex_en.map(x=>`<li>${x}</li>`).join("");
+
+    const section = document.createElement("section");
+    section.className = "panel";
+    section.setAttribute("data-tab", tabIdx);
+    section.innerHTML = `
+      <div class="principle-banner">
+        <div class="pb-num">${p.n.toString().padStart(2,'0')}</div>
+        <div class="pb-label">
+          <span class="lang-vn">${p.group_vn}</span>
+          <span class="lang-en">${p.group_en}</span>
+        </div>
+        <div class="pb-title lang-vn">Nguyên lý ${p.n}: ${p.title_vn}</div>
+        <div class="pb-title lang-en">Principle ${p.n}: ${p.title_en}</div>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">§1</span>
+        <span class="lang-vn">Ý tưởng cốt lõi</span>
+        <span class="lang-en">Core idea</span>
+      </h2>
+      <div class="callout blue">
+        <p class="para lang-vn">${p.core_vn}</p>
+        <p class="para lang-en">${p.core_en}</p>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">§2</span>
+        <span class="lang-vn">Các điểm chính</span>
+        <span class="lang-en">Key ideas</span>
+      </h2>
+      ${ideasHTML}
+
+      <h2 class="section-h">
+        <span class="num">§3</span>
+        <span class="lang-vn">Vận dụng thực tế Việt Nam</span>
+        <span class="lang-en">Vietnam applications</span>
+      </h2>
+      <div class="vn-example">
+        <div class="vh">
+          <span class="flag">🇻🇳</span>
+          <span class="lang-vn">${p.ex_title_vn}</span>
+          <span class="lang-en">${p.ex_title_en}</span>
+        </div>
+        <div class="vb">
+          <ul class="lang-vn">${exVN}</ul>
+          <ul class="lang-en">${exEN}</ul>
+        </div>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">§4</span>
+        <span class="lang-vn">Kiểm tra nhanh</span>
+        <span class="lang-en">Quick check</span>
+      </h2>
+      <div class="think">
+        <div class="th-title">
+          <i class="fa-solid fa-brain"></i>
+          <span class="lang-vn">Câu hỏi tư duy</span>
+          <span class="lang-en">Thinking question</span>
+        </div>
+        <div class="th-body">
+          <p class="lang-vn">${p.q_vn}</p>
+          <p class="lang-en">${p.q_en}</p>
+        </div>
+        <button class="reveal-btn" onclick="toggleReveal(this)">
+          <span class="lang-vn">Xem gợi ý</span>
+          <span class="lang-en">Show hint</span>
+        </button>
+        <div class="reveal-answer">
+          <div class="lang-vn">${p.a_vn}</div>
+          <div class="lang-en">${p.a_en}</div>
+        </div>
+      </div>
+    `;
+    container.appendChild(section);
+  });
+
+  container.insertAdjacentHTML("beforeend", nutshellHTML());
+  container.insertAdjacentHTML("beforeend", flashcardsHTML());
+  container.insertAdjacentHTML("beforeend", quizHTML());
+}
+
+function toggleReveal(btn){
+  const a = btn.nextElementSibling;
+  const on = a.classList.toggle("open");
+  btn.innerHTML = on
+    ? '<span class="lang-vn">Ẩn đáp án</span><span class="lang-en">Hide answer</span>'
+    : '<span class="lang-vn">Xem gợi ý</span><span class="lang-en">Show hint</span>';
+}
+
+function nutshellHTML(){
+  const g = (vn,en,items) => `
+    <div class="nutshell-group">
+      <h3><span class="lang-vn">${vn}</span><span class="lang-en">${en}</span></h3>
+      <ul>${items.map(x=>`<li><span class="lang-vn">${x.vn}</span><span class="lang-en">${x.en}</span></li>`).join("")}</ul>
+    </div>`;
+  return `
+  <section class="panel" data-tab="12">
+    <h1 class="panel-title">
+      <span class="lang-vn">Tóm tắt chương</span>
+      <span class="lang-en">Chapter in a nutshell</span>
+    </h1>
+    <div class="panel-subtitle lang-vn">Điểm lại các thông điệp cốt lõi để chuẩn bị cho các chương tiếp theo.</div>
+    <div class="panel-subtitle lang-en">Recap the core takeaways as you move to later chapters.</div>
+    ${g(NUTSHELL.g1_vn, NUTSHELL.g1_en, NUTSHELL.g1_items)}
+    ${g(NUTSHELL.g2_vn, NUTSHELL.g2_en, NUTSHELL.g2_items)}
+    ${g(NUTSHELL.g3_vn, NUTSHELL.g3_en, NUTSHELL.g3_items)}
+
+    <div class="callout green">
+      <div class="callout-title">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span class="lang-vn">Định hướng học tiếp</span>
+        <span class="lang-en">What comes next</span>
+      </div>
+      <p class="lang-vn">Chương 2 sẽ trình bày cách các nhà kinh tế tiếp cận vấn đề (mô hình, biểu đồ). Chương 3 sẽ mở rộng Nguyên lý 5 — <b>gains from trade</b> — với công cụ <i>lợi thế so sánh</i>.</p>
+      <p class="lang-en">Chapter 2 covers how economists approach problems (models, graphs). Chapter 3 extends Principle 5 — <b>gains from trade</b> — using <i>comparative advantage</i>.</p>
+    </div>
+  </section>`;
+}
+
+function flashcardsHTML(){
+  return `
+  <section class="panel" data-tab="13">
+    <h1 class="panel-title">Flashcards</h1>
+    <div class="panel-subtitle lang-vn">Nhấn vào thẻ để lật. Dùng mũi tên để chuyển thẻ. Tổng ${TERMS.length} thuật ngữ.</div>
+    <div class="panel-subtitle lang-en">Click a card to flip. Use arrows to navigate. Total ${TERMS.length} terms.</div>
+
+    <div class="fc-wrap">
+      <div class="fc-counter">
+        <span class="lang-vn">Thẻ <span id="fc-idx-vn">1</span> / ${TERMS.length}</span>
+        <span class="lang-en">Card <span id="fc-idx-en">1</span> / ${TERMS.length}</span>
+      </div>
+      <div class="flashcard" id="flashcard" onclick="flipCard()">
+        <div class="fc-inner">
+          <div class="fc-face front">
+            <div class="fc-term lang-vn" id="fc-term-vn"></div>
+            <div class="fc-term lang-en" id="fc-term-en" style="color:var(--navy)"></div>
+            <div class="fc-hint">
+              <span class="lang-vn">↑ Nhấn để lật ↑</span>
+              <span class="lang-en">↑ Click to flip ↑</span>
+            </div>
+          </div>
+          <div class="fc-face back">
+            <div class="fc-def lang-vn"><b style="color:var(--gold);font-size:12px;letter-spacing:1px;display:block;margin-bottom:8px">ĐỊNH NGHĨA</b><span id="fc-def-vn"></span></div>
+            <div class="fc-def lang-en"><b style="color:var(--gold);font-size:12px;letter-spacing:1px;display:block;margin-bottom:8px">DEFINITION</b><span id="fc-def-en"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-nav">
+        <button onclick="prevFC()" id="fc-prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="info" id="fc-info">1 / ${TERMS.length}</div>
+        <button onclick="nextFC()" id="fc-next"><i class="fa-solid fa-arrow-right"></i></button>
+        <button onclick="shuffleFC()" style="width:auto;padding:0 14px">
+          <i class="fa-solid fa-shuffle"></i>
+        </button>
+      </div>
+    </div>
+  </section>`;
+}
+
+function quizHTML(){
+  const blocks = QUIZ.map((q,i)=>`
+    <div class="q-block" data-qi="${i}">
+      <div class="q-num">
+        <span class="lang-vn">CÂU ${i+1} / ${QUIZ.length}</span>
+        <span class="lang-en">Q${i+1} / ${QUIZ.length}</span>
+      </div>
+      <div class="q-text lang-vn">${q.q_vn}</div>
+      <div class="q-text lang-en">${q.q_en}</div>
+      <div class="q-opts">
+        ${q.opts_vn.map((o,j)=>`
+          <div class="q-opt" onclick="selectOpt(${i},${j},this)">
+            <span class="letter">${String.fromCharCode(65+j)}.</span>
+            <span>
+              <span class="lang-vn">${o}</span>
+              <span class="lang-en">${q.opts_en[j]}</span>
+            </span>
+          </div>`).join("")}
+      </div>
+      <div class="q-expl" id="expl-${i}">
+        <b><span class="lang-vn">Giải thích:</span><span class="lang-en">Explanation:</span></b>
+        <span class="lang-vn"> ${q.expl_vn}</span>
+        <span class="lang-en"> ${q.expl_en}</span>
+      </div>
+    </div>`).join("");
+
+  return `
+  <section class="panel" data-tab="14">
+    <h1 class="panel-title">
+      <span class="lang-vn">Quiz tổng hợp</span>
+      <span class="lang-en">Final quiz</span>
+    </h1>
+    <div class="panel-subtitle lang-vn">${QUIZ.length} câu trắc nghiệm bao trùm 10 nguyên lý. Chọn đáp án, sau đó nhấn "Nộp bài" để chấm điểm và xem lời giải.</div>
+    <div class="panel-subtitle lang-en">${QUIZ.length} multiple-choice questions covering all 10 principles. Select answers, then click "Submit" to score and see explanations.</div>
+
+    <div class="quiz-result" id="quiz-result">
+      <h3><span class="lang-vn">Kết quả</span><span class="lang-en">Result</span></h3>
+      <div class="score" id="quiz-score">0 / ${QUIZ.length}</div>
+      <div id="quiz-comment"></div>
+      <button class="tn-btn" style="background:var(--gold);color:#1a1a1a;border:none;margin-top:12px" onclick="resetQuiz()">
+        <i class="fa-solid fa-rotate-right"></i>
+        <span class="lang-vn">Làm lại</span>
+        <span class="lang-en">Retry</span>
+      </button>
+    </div>
+
+    ${blocks}
+
+    <button class="quiz-submit" onclick="submitQuiz()">
+      <i class="fa-solid fa-check-double"></i>
+      <span class="lang-vn">Nộp bài</span>
+      <span class="lang-en">Submit</span>
+    </button>
+  </section>`;
+}
+
+/* ---------- FLASHCARDS LOGIC ---------- */
+let fcOrder = TERMS.map((_,i)=>i);
+function renderFC(){
+  const t = TERMS[fcOrder[currentFC]];
+  document.getElementById("fc-term-vn").textContent = t.vn;
+  document.getElementById("fc-term-en").textContent = t.en;
+  document.getElementById("fc-def-vn").textContent = t.def_vn;
+  document.getElementById("fc-def-en").textContent = t.def_en;
+  document.getElementById("fc-info").textContent = `${currentFC+1} / ${TERMS.length}`;
+  document.getElementById("fc-idx-vn").textContent = currentFC+1;
+  document.getElementById("fc-idx-en").textContent = currentFC+1;
+  document.getElementById("flashcard").classList.remove("flipped");
+  document.getElementById("fc-prev").disabled = currentFC===0;
+  document.getElementById("fc-next").disabled = currentFC===TERMS.length-1;
+}
+function flipCard(){ document.getElementById("flashcard").classList.toggle("flipped"); }
+function nextFC(){ if(currentFC<TERMS.length-1){ currentFC++; renderFC(); } }
+function prevFC(){ if(currentFC>0){ currentFC--; renderFC(); } }
+function shuffleFC(){
+  for(let i=fcOrder.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [fcOrder[i],fcOrder[j]] = [fcOrder[j],fcOrder[i]];
+  }
+  currentFC = 0; renderFC();
+}
+
+/* ---------- QUIZ LOGIC ---------- */
+const answers = {};
+function selectOpt(qi, oj, el){
+  answers[qi] = oj;
+  el.parentNode.querySelectorAll(".q-opt").forEach(x=>x.classList.remove("selected"));
+  el.classList.add("selected");
+}
+function submitQuiz(){
+  let score = 0;
+  QUIZ.forEach((q,i)=>{
+    const opts = document.querySelectorAll(`.q-block[data-qi="${i}"] .q-opt`);
+    const chosen = answers[i];
+    opts.forEach((o,j)=>{
+      o.classList.remove("selected","correct","wrong");
+      if(j===q.answer) o.classList.add("correct");
+      if(chosen!==undefined && j===chosen && chosen!==q.answer) o.classList.add("wrong");
+    });
+    document.getElementById(`expl-${i}`).classList.add("show");
+    if(chosen===q.answer) score++;
+  });
+  const res = document.getElementById("quiz-result");
+  document.getElementById("quiz-score").textContent = `${score} / ${QUIZ.length}`;
+  const pct = Math.round(score/QUIZ.length*100);
+  let vn = "", en = "";
+  if(pct>=90){ vn = "🎉 Xuất sắc! Bạn đã nắm vững 10 nguyên lý."; en = "🎉 Excellent! You have mastered the 10 principles."; }
+  else if(pct>=70){ vn = "👍 Khá tốt. Xem lại các câu sai và giải thích để củng cố."; en = "👍 Well done. Review missed questions and explanations to solidify."; }
+  else if(pct>=50){ vn = "💪 Đạt trung bình. Nên ôn lại các nguyên lý còn yếu."; en = "💪 Average. Revisit weak principles."; }
+  else { vn = "📚 Cần đọc lại chương từ đầu. Bắt đầu với tab Tổng quan và Thuật ngữ."; en = "📚 Please re-read the chapter from the start — begin with Overview and Key Terms."; }
+  document.getElementById("quiz-comment").innerHTML = `<span class="lang-vn">${vn}</span><span class="lang-en">${en}</span>`;
+  res.classList.add("show");
+  window.scrollTo({top:res.offsetTop-80, behavior:"smooth"});
+}
+function resetQuiz(){
+  for(const k in answers) delete answers[k];
+  document.querySelectorAll(".q-opt").forEach(o=>o.classList.remove("selected","correct","wrong"));
+  document.querySelectorAll(".q-expl").forEach(e=>e.classList.remove("show"));
+  document.getElementById("quiz-result").classList.remove("show");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ---------- CELEBRATE ---------- */
+function celebrate(){
+  document.getElementById("complete-banner").classList.add("show");
+  setTimeout(()=>document.getElementById("complete-banner").classList.remove("show"), 6000);
+  const colors = ["#e8a838","#1e3a5f","#2e8b57","#c73737","#7a4bd6","#3a7dd6"];
+  for(let i=0;i<120;i++){
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random()*100 + "vw";
+    c.style.background = colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDelay = Math.random()*0.6 + "s";
+    c.style.animationDuration = (3+Math.random()*2) + "s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(), 5500);
+  }
+}
+
+/* ---------- KEYBOARD ---------- */
+document.addEventListener("keydown", e=>{
+  if(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA") return;
+  if(currentTab === 13){
+    if(e.key==="ArrowRight"){ nextFC(); return; }
+    if(e.key==="ArrowLeft"){ prevFC(); return; }
+    if(e.key===" "){ e.preventDefault(); flipCard(); return; }
+  }
+});
+
+/* ---------- INIT ---------- */
+(function init(){
+  renderNav();
+  renderTerms();
+  renderPrinciples();
+  loadTheme();
+  loadLang();
+  loadProgress();
+  document.getElementById("prev-btn").disabled = true;
+  if(document.getElementById("flashcard")) renderFC();
+})();
+</script>
+</body>
+</html>
