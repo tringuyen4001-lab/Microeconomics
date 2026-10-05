@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chương 2 — Tư Duy Như Một Nhà Kinh Tế | Mankiw</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --navy:#1e3a5f; --navy-2:#2b4d7d; --gold:#e8a838; --gold-dark:#c48f27;
+  --bg:#f8f9fa; --surface:#ffffff; --text:#1a1a2e; --muted:#556; --border:#e0e0e0;
+  --accent:#3a7dd6; --green:#2e8b57; --red:#c73737; --violet:#7a4bd6;
+  --radius:12px; --shadow:0 2px 12px rgba(0,0,0,0.08); --shadow-lg:0 8px 30px rgba(0,0,0,0.12);
+  --serif:"Source Serif 4",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+[data-theme="dark"]{
+  --bg:#0f1923; --surface:#1a2535; --text:#e8eaf0; --muted:#95a5c0; --border:#2a3a50;
+  --shadow:0 2px 12px rgba(0,0,0,0.5); --shadow-lg:0 8px 30px rgba(0,0,0,0.6);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;transition:background .3s,color .3s}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--navy);line-height:1.3}
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4{color:var(--gold)}
+
+html[data-lang="vn"] .lang-en, body[data-lang="vn"] .lang-en{display:none !important}
+html[data-lang="en"] .lang-vn, body[data-lang="en"] .lang-vn{display:none !important}
+
+#sidebar{position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--navy);color:#fff;display:flex;flex-direction:column;z-index:100;transition:transform .3s}
+.sidebar-header{padding:20px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
+.sidebar-header .book{font-family:var(--serif);font-size:13px;letter-spacing:1px;color:var(--gold);text-transform:uppercase}
+.sidebar-header .chap-num{font-family:var(--serif);font-size:13px;color:rgba(255,255,255,.7);margin-top:8px;letter-spacing:1px}
+.sidebar-header .chap-title{font-family:var(--serif);font-size:18px;font-weight:600;margin-top:4px;color:#fff;line-height:1.25}
+.progress-wrap{padding:12px 18px}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;color:rgba(255,255,255,.75)}
+.progress-bar{height:6px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),#f7c86a);width:0%;transition:width .4s}
+.nav-list{flex:1;overflow-y:auto;padding:8px 0}
+.nav-list::-webkit-scrollbar{width:6px}
+.nav-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 18px;font-size:13.5px;cursor:pointer;color:rgba(255,255,255,.8);border-left:3px solid transparent;transition:.15s}
+.nav-item:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-item.active{background:rgba(232,168,56,.14);color:var(--gold);border-left-color:var(--gold);font-weight:500}
+.nav-item .icon{width:20px;text-align:center;font-size:13px;opacity:.9}
+.nav-item .check{margin-left:auto;color:var(--gold);opacity:0;font-size:11px}
+.nav-item.done .check{opacity:1}
+.sidebar-footer{padding:12px 18px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:8px;flex-wrap:wrap}
+.sf-btn{flex:1;min-width:0;background:rgba(255,255,255,.08);color:#fff;border:none;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:12px;font-family:var(--sans);display:flex;align-items:center;justify-content:center;gap:6px;transition:.15s}
+.sf-btn:hover{background:rgba(255,255,255,.16)}
+.sf-btn.gold{background:var(--gold);color:#1a1a1a}
+.sf-btn.gold:hover{background:var(--gold-dark)}
+.sf-btn.wide{flex-basis:100%}
+.lang-toggle{display:flex;background:rgba(255,255,255,.08);border-radius:8px;padding:3px;flex-basis:100%;margin-top:6px}
+.lang-toggle button{flex:1;background:transparent;color:rgba(255,255,255,.65);border:none;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:var(--sans);display:flex;align-items:center;justify-content:center;gap:6px;transition:.15s}
+.lang-toggle button.active{background:var(--gold);color:#1a1a1a}
+.lang-toggle button:not(.active):hover{color:#fff}
+.watermark{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-family:var(--serif);font-size:11px;letter-spacing:1.5px;color:rgba(255,255,255,.55);flex-basis:100%;user-select:none}
+.watermark .wm-mark{color:var(--gold);font-weight:700;letter-spacing:2px}
+.watermark .wm-sub{display:block;font-size:9.5px;color:rgba(255,255,255,.35);letter-spacing:1px;margin-top:2px;font-family:var(--sans);font-style:italic}
+
+#main{margin-left:280px;min-height:100vh;transition:margin-left .3s}
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 30px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:50;box-shadow:0 2px 6px rgba(0,0,0,.03)}
+.hamburger{display:none;background:none;border:none;color:var(--text);font-size:20px;cursor:pointer}
+.breadcrumb{flex:1;font-size:14px;color:var(--muted)}
+.breadcrumb .current{color:var(--text);font-weight:500}
+.topnav{display:flex;gap:6px}
+.tn-btn{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;font-family:var(--sans);display:flex;align-items:center;gap:6px;transition:.15s}
+.tn-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tn-btn:disabled{opacity:.4;cursor:not-allowed}
+
+#content-area{max-width:1080px;margin:0 auto;padding:32px 40px 80px}
+.panel{display:none;animation:fadeIn .4s}
+.panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.panel-title{font-size:32px;margin-bottom:6px}
+.panel-subtitle{color:var(--muted);font-size:15px;margin-bottom:24px;font-family:var(--sans)}
+.section-h{font-size:22px;margin:28px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.section-h .num{color:var(--gold);font-weight:700;margin-right:6px}
+.para{margin-bottom:14px;font-size:15.5px}
+.para strong,.para b{color:var(--navy)}
+[data-theme="dark"] .para strong,[data-theme="dark"] .para b{color:var(--gold)}
+
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:18px 22px;margin:16px 0;box-shadow:var(--shadow)}
+.callout.blue{border-left-color:var(--accent)}
+.callout.green{border-left-color:var(--green)}
+.callout.violet{border-left-color:var(--violet)}
+.callout.red{border-left-color:var(--red)}
+.callout-title{font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:8px;color:var(--navy);display:flex;align-items:center;gap:8px}
+[data-theme="dark"] .callout-title{color:var(--gold)}
+.callout-title i{color:var(--gold)}
+
+.lo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+.lo-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;position:relative;transition:.2s}
+.lo-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.lo-num{position:absolute;top:12px;right:14px;font-family:var(--serif);font-weight:700;font-size:26px;color:rgba(232,168,56,.25)}
+.lo-icon{width:44px;height:44px;background:rgba(232,168,56,.15);color:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:10px}
+.lo-card h4{font-size:16px;margin-bottom:6px}
+.lo-card p{font-size:13.5px;color:var(--muted)}
+
+.terms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:12px}
+.term-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:.2s}
+.term-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow)}
+.term-card .t-name{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+[data-theme="dark"] .term-card .t-name{color:var(--gold)}
+.term-card .t-def{font-size:13.5px;max-height:0;overflow:hidden;transition:max-height .3s,opacity .3s;opacity:0}
+.term-card.open .t-def{max-height:400px;opacity:1;margin-top:6px;padding-top:8px;border-top:1px dashed var(--border)}
+.term-card .toggle-hint{font-size:11px;color:var(--gold);font-weight:500}
+.term-card.open .toggle-hint{display:none}
+
+.section-banner{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:var(--radius);padding:24px 28px;margin-bottom:22px;position:relative;overflow:hidden}
+.section-banner .pb-num{position:absolute;top:-10px;right:20px;font-family:var(--serif);font-size:120px;font-weight:700;color:rgba(232,168,56,.18);line-height:1}
+.section-banner .pb-label{font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:600;position:relative;z-index:2}
+.section-banner .pb-title{font-family:var(--serif);font-size:26px;font-weight:700;margin-top:6px;color:#fff;position:relative;z-index:2}
+
+.vn-example{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:0;margin:16px 0;overflow:hidden;box-shadow:var(--shadow)}
+.vn-example .vh{background:linear-gradient(90deg,rgba(218,41,28,.1),rgba(255,205,41,.1));padding:12px 18px;border-bottom:1px solid var(--border);font-weight:600;display:flex;align-items:center;gap:8px}
+.vn-example .vh i{color:#da291c}
+.vn-example .vh .flag{font-size:18px}
+.vn-example .vb{padding:14px 18px 16px}
+.vn-example .vb ul{list-style:none;padding:0}
+.vn-example .vb li{padding:8px 0 8px 22px;position:relative;font-size:14.5px;border-bottom:1px dashed var(--border)}
+.vn-example .vb li:last-child{border-bottom:none}
+.vn-example .vb li:before{content:"\f0da";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--gold);position:absolute;left:6px;top:9px;font-size:12px}
+.vn-example .vb li b{color:var(--navy)}
+[data-theme="dark"] .vn-example .vb li b{color:var(--gold)}
+
+.think{background:rgba(122,75,214,.06);border:1px solid rgba(122,75,214,.25);border-radius:10px;padding:14px 18px;margin:14px 0}
+.think .th-title{font-weight:600;color:var(--violet);margin-bottom:6px;display:flex;align-items:center;gap:8px;font-size:14.5px}
+.think .th-body{font-size:14px}
+.reveal-btn{margin-top:8px;background:var(--violet);color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12.5px;font-family:var(--sans)}
+.reveal-btn:hover{opacity:.9}
+.reveal-answer{display:none;margin-top:8px;padding:10px 14px;background:var(--surface);border:1px dashed var(--violet);border-radius:8px;font-size:13.5px}
+.reveal-answer.open{display:block}
+
+.fc-wrap{display:flex;flex-direction:column;align-items:center;padding:16px 0}
+.fc-counter{color:var(--muted);font-size:13px;margin-bottom:10px}
+.flashcard{width:min(560px,100%);height:280px;perspective:1200px;cursor:pointer;margin-bottom:16px}
+.fc-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flashcard.flipped .fc-inner{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;background:var(--surface);border:2px solid var(--gold);border-radius:16px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center}
+.fc-face.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-color:var(--navy)}
+.fc-term{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.fc-hint{position:absolute;bottom:14px;font-size:11px;color:var(--muted);letter-spacing:1px}
+.fc-def{font-size:15.5px;line-height:1.55;color:#fff}
+.fc-nav{display:flex;gap:10px;align-items:center}
+.fc-nav button{background:var(--navy);color:#fff;border:none;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:15px;transition:.15s}
+.fc-nav button:hover{background:var(--navy-2)}
+.fc-nav button:disabled{opacity:.35;cursor:not-allowed}
+.fc-nav .info{font-size:13px;color:var(--muted);min-width:80px;text-align:center}
+
+.q-block{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:14px}
+.q-num{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px}
+.q-text{font-size:15.5px;font-weight:500;margin:4px 0 12px}
+.q-opts{display:grid;gap:8px}
+.q-opt{background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;cursor:pointer;font-size:14px;display:flex;gap:10px;align-items:flex-start;transition:.15s}
+.q-opt:hover{border-color:var(--gold)}
+.q-opt.selected{border-color:var(--gold);background:rgba(232,168,56,.08)}
+.q-opt.correct{border-color:var(--green);background:rgba(46,139,87,.1)}
+.q-opt.wrong{border-color:var(--red);background:rgba(199,55,55,.08)}
+.q-opt .letter{font-weight:700;color:var(--muted);min-width:20px}
+.q-opt.correct .letter{color:var(--green)}
+.q-opt.wrong .letter{color:var(--red)}
+.q-expl{margin-top:10px;padding:10px 14px;background:rgba(58,125,214,.06);border-left:3px solid var(--accent);border-radius:6px;font-size:13.5px;display:none}
+.q-expl.show{display:block}
+.q-expl b{color:var(--accent)}
+.quiz-submit{background:var(--navy);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;cursor:pointer;font-size:15px;margin-top:10px}
+.quiz-result{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:var(--radius);padding:24px 28px;margin-bottom:20px;display:none}
+.quiz-result.show{display:block}
+.quiz-result h3{color:#fff;margin-bottom:8px}
+.quiz-result .score{font-family:var(--serif);font-size:48px;font-weight:700;color:var(--gold);margin:8px 0}
+
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(232,168,56,.25),transparent);border-radius:50%}
+.hero .eyebrow{color:var(--gold);letter-spacing:2.5px;font-size:12px;font-weight:600;text-transform:uppercase}
+.hero h1{color:#fff;font-size:38px;margin:8px 0 6px;line-height:1.2}
+.hero .h-desc{margin-top:14px;color:rgba(255,255,255,.85);font-size:15px;max-width:640px}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:18px 0 8px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center}
+.stat .num{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--gold);line-height:1}
+.stat .lbl{font-size:12px;color:var(--muted);margin-top:4px}
+
+.roles-strip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.role-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;border-top:4px solid var(--accent)}
+.role-card:nth-child(2){border-top-color:var(--gold)}
+.role-card h4{font-size:17px;margin-bottom:6px}
+.role-card .role-tag{font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:6px;font-weight:600}
+.role-card p{font-size:14px;color:var(--text)}
+
+/* Circular-flow ASCII/SVG diagram wrapper */
+.diagram-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin:18px 0;box-shadow:var(--shadow);overflow-x:auto}
+.diagram-wrap svg{display:block;margin:0 auto;max-width:100%;height:auto}
+.diagram-caption{text-align:center;font-size:12.5px;color:var(--muted);margin-top:10px;font-style:italic}
+
+.svg-node{fill:var(--surface);stroke:var(--navy);stroke-width:2}
+[data-theme="dark"] .svg-node{fill:#1a2535}
+.svg-text{fill:var(--text);font-family:var(--sans);font-size:14px;font-weight:600}
+.svg-text-sm{fill:var(--muted);font-family:var(--sans);font-size:11px}
+.svg-arrow{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#arrow-a)}
+.svg-arrow-b{stroke:var(--green);stroke-width:2;fill:none;marker-end:url(#arrow-b)}
+.svg-arrow-c{stroke:var(--red);stroke-width:2;fill:none;marker-end:url(#arrow-c)}
+.svg-arrow-d{stroke:var(--gold);stroke-width:2;fill:none;marker-end:url(#arrow-d)}
+.svg-market{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4,3}
+
+/* PPF diagram */
+.ppf-legend{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:8px;font-size:12.5px}
+.ppf-legend span{display:flex;align-items:center;gap:5px}
+.ppf-legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+
+.nutshell-group{margin-bottom:20px}
+.nutshell-group h3{color:var(--gold);font-size:18px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.nutshell-group ul{list-style:none;padding:0}
+.nutshell-group li{padding:10px 14px 10px 40px;background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;position:relative;font-size:14.5px}
+.nutshell-group li:before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--green);position:absolute;left:14px;top:11px}
+
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
+.confetti{position:fixed;width:10px;height:10px;top:-20px;pointer-events:none;z-index:2000;animation:fall 4s linear forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:0}}
+.complete-banner{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),#f7c86a);color:#1a1a1a;padding:14px 28px;border-radius:12px;box-shadow:var(--shadow-lg);z-index:2001;font-weight:700;font-family:var(--serif);animation:slideDown .4s;display:none}
+.complete-banner.show{display:block}
+@keyframes slideDown{from{transform:translate(-50%,-100px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+
+@media (max-width:768px){
+  #sidebar{transform:translateX(-100%);width:280px}
+  #sidebar.open{transform:translateX(0)}
+  #main{margin-left:0}
+  .hamburger{display:block}
+  #content-area{padding:22px 18px 60px}
+  .panel-title{font-size:24px}
+  .hero{padding:24px 22px}
+  .hero h1{font-size:26px}
+  .section-banner .pb-num{font-size:80px;right:8px}
+  .section-banner .pb-title{font-size:20px}
+  .roles-strip{grid-template-columns:1fr}
+  #overlay.open{display:block}
+  .topbar{padding:12px 18px}
+  .fc-face{padding:16px}
+  .fc-term{font-size:22px}
+}
+</style>
+</head>
+<body data-lang="vn">
+
+<div id="overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <div class="book"><i class="fa-solid fa-book"></i> N.G. Mankiw · 9e</div>
+    <div class="chap-num">
+      <span class="lang-vn">CHƯƠNG 2 · KINH TẾ VI MÔ</span>
+      <span class="lang-en">CHAPTER 2 · MICROECONOMICS</span>
+    </div>
+    <div class="chap-title">
+      <span class="lang-vn">Tư duy như một nhà kinh tế</span>
+      <span class="lang-en">Thinking Like an Economist</span>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span><span class="lang-vn">Tiến độ</span><span class="lang-en">Progress</span></span>
+      <span id="progress-txt">0 / 11</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+  <nav class="nav-list" id="nav-list"></nav>
+  <div class="sidebar-footer">
+    <div class="lang-toggle">
+      <button id="lang-vn-btn" class="active" onclick="setLang('vn')"><i class="fa-solid fa-flag"></i> Tiếng Việt</button>
+      <button id="lang-en-btn" onclick="setLang('en')"><i class="fa-solid fa-flag"></i> English</button>
+    </div>
+    <button class="sf-btn" id="theme-btn" onclick="toggleTheme()">
+      <i class="fa-solid fa-moon"></i>
+      <span class="lang-vn"><span id="theme-txt-vn">Nền tối</span></span>
+      <span class="lang-en"><span id="theme-txt-en">Dark</span></span>
+    </button>
+    <button class="sf-btn gold wide" onclick="resetProgress()">
+      <i class="fa-solid fa-rotate-left"></i>
+      <span class="lang-vn">Reset tiến độ</span>
+      <span class="lang-en">Reset progress</span>
+    </button>
+    <!-- WATERMARK BEGIN — xóa khối này để bỏ dấu chủ quyền -->
+    <div class="watermark">
+      <span class="wm-mark">© SONDH</span>
+      <span class="wm-sub">Teaching materials · Micro & Macro</span>
+    </div>
+    <!-- WATERMARK END -->
+  </div>
+</aside>
+
+<main id="main">
+  <div class="topbar">
+    <button class="hamburger" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></button>
+    <div class="breadcrumb">
+      <span class="lang-vn">Chương 2</span><span class="lang-en">Chapter 2</span>
+      · <span class="current" id="crumb-current"></span>
+    </div>
+    <div class="topnav">
+      <button class="tn-btn" id="prev-btn" onclick="prevTab()">
+        <i class="fa-solid fa-chevron-left"></i>
+        <span class="lang-vn">Trước</span><span class="lang-en">Prev</span>
+      </button>
+      <button class="tn-btn" id="next-btn" onclick="nextTab()">
+        <span class="lang-vn">Tiếp</span><span class="lang-en">Next</span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div id="content-area">
+
+    <!-- PANEL 0: OVERVIEW -->
+    <section class="panel active" data-tab="0">
+      <div class="hero">
+        <div class="eyebrow">
+          <span class="lang-vn">CHƯƠNG 2 · KINH TẾ VI MÔ</span>
+          <span class="lang-en">CHAPTER 2 · MICROECONOMICS</span>
+        </div>
+        <h1 class="lang-vn">Tư Duy Như Một Nhà Kinh Tế</h1>
+        <h1 class="lang-en">Thinking Like an Economist</h1>
+        <div class="h-desc lang-vn">Chương này giới thiệu <b style="color:var(--gold)">cách các nhà kinh tế tiếp cận vấn đề</b>: dùng phương pháp khoa học, xây dựng giả định và mô hình, phân biệt vai trò <i>nhà khoa học</i> và <i>cố vấn chính sách</i>, và hiểu vì sao các nhà kinh tế đôi khi bất đồng.</div>
+        <div class="h-desc lang-en">This chapter introduces <b style="color:var(--gold)">how economists approach problems</b>: using the scientific method, building assumptions and models, distinguishing the <i>scientist</i> from the <i>policy adviser</i> role, and understanding why economists sometimes disagree.</div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat">
+          <div class="num">2</div>
+          <div class="lbl"><span class="lang-vn">Vai trò kinh tế gia</span><span class="lang-en">Economist roles</span></div>
+        </div>
+        <div class="stat">
+          <div class="num">2</div>
+          <div class="lbl"><span class="lang-vn">Mô hình nền tảng</span><span class="lang-en">Core models</span></div>
+        </div>
+        <div class="stat">
+          <div class="num">12</div>
+          <div class="lbl"><span class="lang-vn">Thuật ngữ</span><span class="lang-en">Key terms</span></div>
+        </div>
+        <div class="stat">
+          <div class="num">14</div>
+          <div class="lbl"><span class="lang-vn">Câu quiz</span><span class="lang-en">Quiz questions</span></div>
+        </div>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">§</span>
+        <span class="lang-vn">Mục tiêu học tập</span>
+        <span class="lang-en">Learning objectives</span>
+      </h2>
+      <p class="para lang-vn">Sau khi học xong chương này, sinh viên có thể:</p>
+      <p class="para lang-en">By the end of this chapter, students should be able to:</p>
+      <div class="lo-grid">
+        <div class="lo-card">
+          <div class="lo-num">01</div>
+          <div class="lo-icon"><i class="fa-solid fa-flask"></i></div>
+          <h4 class="lang-vn">Phương pháp khoa học</h4>
+          <h4 class="lang-en">Scientific method</h4>
+          <p class="lang-vn">Phân biệt vai trò của nhà kinh tế học với tư cách nhà khoa học và cố vấn chính sách.</p>
+          <p class="lang-en">Contrast when an economist acts as a policy adviser and when as a scientist.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">02</div>
+          <div class="lo-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h4 class="lang-vn">Sơ đồ vòng chu chuyển</h4>
+          <h4 class="lang-en">Circular-flow diagram</h4>
+          <p class="lang-vn">Giải thích cách sơ đồ vòng chu chuyển mô tả nền kinh tế.</p>
+          <p class="lang-en">Explain how the circular-flow diagram explains the economy.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">03</div>
+          <div class="lo-icon"><i class="fa-solid fa-chart-area"></i></div>
+          <h4 class="lang-vn">Đường giới hạn khả năng sản xuất</h4>
+          <h4 class="lang-en">Production possibilities frontier</h4>
+          <p class="lang-vn">Mô tả cách đường giới hạn khả năng sản xuất giải thích tổng sản lượng, chi phí cơ hội, và tăng trưởng.</p>
+          <p class="lang-en">Describe how the production possibilities frontier explains aggregate production, opportunity cost, and growth.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">04</div>
+          <div class="lo-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h4 class="lang-vn">Vi mô vs. Vĩ mô</h4>
+          <h4 class="lang-en">Micro vs. Macro</h4>
+          <p class="lang-vn">So sánh các khái niệm kinh tế vi mô và kinh tế vĩ mô.</p>
+          <p class="lang-en">Contrast microeconomic and macroeconomic concepts.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">05</div>
+          <div class="lo-icon"><i class="fa-solid fa-scale-unbalanced"></i></div>
+          <h4 class="lang-vn">Nhận định thực chứng - chuẩn tắc</h4>
+          <h4 class="lang-en">Positive vs. normative</h4>
+          <p class="lang-vn">Phân biệt nhận định thực chứng (positive) và chuẩn tắc (normative).</p>
+          <p class="lang-en">Explain the difference between positive and normative economics.</p>
+        </div>
+        <div class="lo-card">
+          <div class="lo-num">06</div>
+          <div class="lo-icon"><i class="fa-solid fa-people-arrows"></i></div>
+          <h4 class="lang-vn">Vì sao có bất đồng</h4>
+          <h4 class="lang-en">Sources of disagreement</h4>
+          <p class="lang-vn">Cho một tình huống, nhận diện nguồn gốc bất đồng giữa hai nhà kinh tế.</p>
+          <p class="lang-en">Given a scenario, identify the source of disagreement between two economists.</p>
+        </div>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">§</span>
+        <span class="lang-vn">Hai vai trò của nhà kinh tế</span>
+        <span class="lang-en">Two roles of the economist</span>
+      </h2>
+      <div class="roles-strip">
+        <div class="role-card">
+          <div class="role-tag"><span class="lang-vn">Vai trò 1</span><span class="lang-en">Role 1</span></div>
+          <h4 class="lang-vn">Nhà khoa học</h4>
+          <h4 class="lang-en">Scientist</h4>
+          <p class="lang-vn">Cố gắng <b>giải thích thế giới</b> — dùng phương pháp khoa học: quan sát, dựng lý thuyết, thu thập dữ liệu, kiểm định giả thuyết. Đưa ra <b>nhận định thực chứng</b>.</p>
+          <p class="lang-en">Tries to <b>explain the world</b> — using the scientific method: observe, theorize, gather data, test hypotheses. Makes <b>positive statements</b>.</p>
+        </div>
+        <div class="role-card">
+          <div class="role-tag"><span class="lang-vn">Vai trò 2</span><span class="lang-en">Role 2</span></div>
+          <h4 class="lang-vn">Cố vấn chính sách</h4>
+          <h4 class="lang-en">Policy adviser</h4>
+          <p class="lang-vn">Cố gắng <b>cải thiện thế giới</b> — dựa trên giá trị và mục tiêu, đề xuất chính sách. Đưa ra <b>nhận định chuẩn tắc</b>.</p>
+          <p class="lang-en">Tries to <b>improve the world</b> — based on values and goals, recommends policies. Makes <b>normative statements</b>.</p>
+        </div>
+      </div>
+
+      <div class="callout blue">
+        <div class="callout-title">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span class="lang-vn">Điểm khác biệt của kinh tế học với vật lý</span>
+          <span class="lang-en">Economics vs. physics</span>
+        </div>
+        <p class="lang-vn">Nhà kinh tế khó chạy thí nghiệm có kiểm soát như nhà vật lý — không thể "cho VN suy thoái để xem điều gì xảy ra". Vì thế họ phải dựa vào <b>thí nghiệm tự nhiên</b> (natural experiments) mà lịch sử tạo ra: Đổi Mới 1986, khủng hoảng 2008, đại dịch COVID-19...</p>
+        <p class="lang-en">Economists cannot run controlled experiments like physicists — you can't "throw Vietnam into a recession to see what happens." Instead, they rely on <b>natural experiments</b> that history provides: Đổi Mới 1986, the 2008 crisis, COVID-19...</p>
+      </div>
+    </section>
+
+    <!-- PANEL 1: KEY TERMS -->
+    <section class="panel" data-tab="1">
+      <h1 class="panel-title">
+        <span class="lang-vn">Thuật ngữ then chốt</span>
+        <span class="lang-en">Key terms</span>
+      </h1>
+      <div class="panel-subtitle lang-vn">Nhấn vào mỗi thẻ để xem định nghĩa. Đây là bộ thuật ngữ nền tảng cho phương pháp học tập kinh tế.</div>
+      <div class="panel-subtitle lang-en">Click each card to reveal the definition. These are the foundational terms for the economist's method.</div>
+      <div class="terms-grid" id="terms-grid"></div>
+    </section>
+
+    <!-- Sections injected by JS -->
+
+  </div>
+</main>
+
+<div class="complete-banner" id="complete-banner">
+  <span class="lang-vn">🎉 Hoàn tất chương 2! Bạn đã hiểu cách nhà kinh tế tư duy.</span>
+  <span class="lang-en">🎉 Chapter 2 complete! You now think like an economist.</span>
+</div>
+
+<!-- SVG marker definitions used across diagrams -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <marker id="arrow-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a7dd6"/></marker>
+    <marker id="arrow-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e8b57"/></marker>
+    <marker id="arrow-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c73737"/></marker>
+    <marker id="arrow-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e8a838"/></marker>
+  </defs>
+</svg>
+
+<script>
+const CHAPTER_KEY = "mankiw_ch02_micro_v1";
+
+const NAV = [
+  {vn:"Tổng quan", en:"Overview", icon:"fa-compass"},
+  {vn:"Thuật ngữ", en:"Key terms", icon:"fa-key"},
+  {vn:"1. Nhà khoa học", en:"1. Economist as scientist", icon:"fa-flask"},
+  {vn:"2. Vòng chu chuyển", en:"2. Circular-flow diagram", icon:"fa-diagram-project"},
+  {vn:"3. Đường PPF", en:"3. Production possibilities frontier", icon:"fa-chart-area"},
+  {vn:"4. Vi mô vs Vĩ mô", en:"4. Micro vs. Macro", icon:"fa-layer-group"},
+  {vn:"5. Thực chứng - Chuẩn tắc", en:"5. Positive vs. Normative", icon:"fa-scale-unbalanced"},
+  {vn:"6. Vì sao bất đồng", en:"6. Why economists disagree", icon:"fa-people-arrows"},
+  {vn:"Tóm tắt chương", en:"Chapter in a nutshell", icon:"fa-layer-group"},
+  {vn:"Flashcards", en:"Flashcards", icon:"fa-clone"},
+  {vn:"Quiz tổng hợp", en:"Final quiz", icon:"fa-circle-question"}
+];
+
+const TERMS = [
+  {vn:"Phương pháp khoa học", en:"Scientific method",
+    def_vn:"Cách xây dựng và kiểm định lý thuyết một cách khách quan: quan sát → đưa ra giả thuyết → thu thập dữ liệu → xác nhận hoặc bác bỏ.",
+    def_en:"The dispassionate development and testing of theories: observe → theorize → gather data → verify or refute."},
+  {vn:"Giả định", en:"Assumption",
+    def_vn:"Điều kiện đơn giản hóa được đặt ra để giúp phân tích. Giả định tốt bỏ qua chi tiết ít quan trọng và giữ lại điều cốt yếu.",
+    def_en:"A simplifying condition set up to make analysis tractable. Good assumptions drop unimportant details and keep the essentials."},
+  {vn:"Mô hình", en:"Model",
+    def_vn:"Sự thể hiện đơn giản hóa của một thực tại phức tạp hơn, thường bằng biểu đồ hoặc phương trình.",
+    def_en:"A simplified representation of a more complicated reality, often as diagrams or equations."},
+  {vn:"Sơ đồ vòng chu chuyển", en:"Circular-flow diagram",
+    def_vn:"Mô hình trực quan của nền kinh tế cho thấy dòng tiền chảy qua các thị trường giữa hộ gia đình và doanh nghiệp.",
+    def_en:"A visual model of the economy that shows how dollars flow through markets among households and firms."},
+  {vn:"Đường giới hạn khả năng sản xuất (PPF)", en:"Production possibilities frontier (PPF)",
+    def_vn:"Đồ thị thể hiện các tổ hợp sản lượng mà nền kinh tế có thể sản xuất, với lượng nguồn lực và công nghệ hiện có.",
+    def_en:"A graph that shows the combinations of output the economy can produce given the available factors of production and technology."},
+  {vn:"Hiệu quả (trên PPF)", en:"Efficient (on the PPF)",
+    def_vn:"Tình trạng nền kinh tế đang tận dụng hết nguồn lực khan hiếm — nằm trên đường PPF, không thể tăng sản lượng của một hàng hóa mà không giảm hàng hóa khác.",
+    def_en:"The economy is getting all it can from scarce resources — on the PPF; cannot produce more of one good without giving up some of another."},
+  {vn:"Không hiệu quả (trong PPF)", en:"Inefficient (inside the PPF)",
+    def_vn:"Tình trạng có nguồn lực chưa được sử dụng (thất nghiệp, nhà máy nhàn rỗi) — nằm trong lòng PPF.",
+    def_en:"Some resources are underused (unemployment, idle factories) — inside the PPF."},
+  {vn:"Kinh tế học vi mô", en:"Microeconomics",
+    def_vn:"Ngành nghiên cứu cách các hộ gia đình và doanh nghiệp ra quyết định và tương tác trong các thị trường cụ thể.",
+    def_en:"The study of how households and firms make decisions and how they interact in markets."},
+  {vn:"Kinh tế học vĩ mô", en:"Macroeconomics",
+    def_vn:"Ngành nghiên cứu các hiện tượng bao trùm toàn bộ nền kinh tế, gồm lạm phát, thất nghiệp và tăng trưởng kinh tế.",
+    def_en:"The study of economy-wide phenomena, including inflation, unemployment, and economic growth."},
+  {vn:"Nhận định thực chứng", en:"Positive statement",
+    def_vn:"Nhận định mang tính mô tả — nói thế giới đang như thế nào. Có thể kiểm định bằng dữ liệu.",
+    def_en:"A descriptive claim about how the world is. Can be tested against data."},
+  {vn:"Nhận định chuẩn tắc", en:"Normative statement",
+    def_vn:"Nhận định mang tính khuyến nghị — nói thế giới nên như thế nào. Phụ thuộc vào giá trị, không thể đơn thuần kiểm định.",
+    def_en:"A prescriptive claim about how the world should be. Depends on values, not testable by data alone."},
+  {vn:"Thí nghiệm tự nhiên", en:"Natural experiment",
+    def_vn:"Sự kiện lịch sử tạo ra biến thiên trong dữ liệu tương tự thí nghiệm có kiểm soát, dù không do nhà nghiên cứu chủ động sắp đặt.",
+    def_en:"A historical episode that creates data variation similar to a controlled experiment, without the researcher's intervention."}
+];
+
+/* ---------- SECTIONS (6 content sections) ---------- */
+const SECTIONS = [
+  {
+    n:1,
+    tag_vn:"§1", tag_en:"§1",
+    title_vn:"Nhà kinh tế học với tư cách nhà khoa học",
+    title_en:"The economist as scientist",
+    core_vn:"Nhà kinh tế học đóng <b>hai vai trò</b>: (1) <b>nhà khoa học</b> — cố gắng giải thích thế giới; (2) <b>cố vấn chính sách</b> — cố gắng cải thiện thế giới. Ở vai trò khoa học, họ dùng <b>phương pháp khoa học</b>: quan sát, dựng lý thuyết, thu thập dữ liệu, kiểm định.",
+    core_en:"Economists play <b>two roles</b>: (1) <b>scientist</b> — trying to explain the world; (2) <b>policy adviser</b> — trying to improve it. As scientists, they use the <b>scientific method</b>: observe, theorize, gather data, test.",
+    ideas_vn:[
+      "<b>Giả định (assumption)</b> giúp đơn giản hóa thực tại. Ví dụ để hiểu thương mại quốc tế, giả định chỉ có 2 nước và 2 hàng hóa — dễ phân tích, sau đó mở rộng.",
+      "<b>Mô hình (model)</b> là sự thể hiện đơn giản hóa của thực tại, thường bằng biểu đồ hoặc phương trình. Hai mô hình cơ bản của chương này: <b>sơ đồ vòng chu chuyển</b> và <b>đường PPF</b>.",
+      "Khác với vật lý, nhà kinh tế học <b>không thể chạy thí nghiệm có kiểm soát</b>. Họ dựa vào <b>thí nghiệm tự nhiên</b> — sự kiện lịch sử tạo ra biến thiên dữ liệu."
+    ],
+    ideas_en:[
+      "<b>Assumptions</b> simplify reality. E.g., to study international trade, assume only 2 countries and 2 goods — tractable analysis, extend later.",
+      "<b>Models</b> are simplified representations of reality, usually diagrams or equations. Two core models in this chapter: the <b>circular-flow diagram</b> and the <b>production possibilities frontier</b>.",
+      "Unlike physics, economists <b>cannot run controlled experiments</b>. They rely on <b>natural experiments</b> — historical episodes that create data variation."
+    ],
+    ex_title_vn:"Phương pháp khoa học ở Việt Nam",
+    ex_title_en:"Vietnam examples: Scientific method",
+    ex_vn:[
+      "<b>Đổi Mới 1986</b> là <i>thí nghiệm tự nhiên</i> lớn nhất — cho phép nghiên cứu tác động của chuyển đổi từ kinh tế kế hoạch sang thị trường (so sánh VN trước và sau, so với các nước LX cũ).",
+      "<b>Gia nhập WTO 2007:</b> Thí nghiệm tự nhiên về tác động của tự do hóa thương mại lên xuất khẩu, FDI, cạnh tranh nội địa.",
+      "<b>Giãn cách COVID-19 (2020-21):</b> Thí nghiệm bất đắc dĩ về tác động của cú sốc cung/cầu lên GDP, thất nghiệp, giá cả.",
+      "<b>Giả định trong mô hình:</b> Khi phân tích lạm phát VN, các nhà kinh tế thường giả định 'nền kinh tế đóng' để dễ tính, rồi mới thêm yếu tố xuất-nhập khẩu.",
+      "<b>Chính sách 2 con:</b> Khi VN từng có chính sách kế hoạch hóa gia đình, đó là thí nghiệm tự nhiên cho các nhà kinh tế nghiên cứu tác động dân số lên tăng trưởng."
+    ],
+    ex_en:[
+      "<b>Đổi Mới 1986</b> is the biggest <i>natural experiment</i> — enabling study of the transition from central planning to a market economy (compare Vietnam before/after, and against former USSR states).",
+      "<b>WTO accession 2007:</b> A natural experiment on the effects of trade liberalization on exports, FDI, and domestic competition.",
+      "<b>COVID-19 lockdowns (2020-21):</b> An unwanted experiment on supply/demand shocks and their effects on GDP, unemployment, and prices.",
+      "<b>Modeling assumption:</b> When analyzing Vietnam's inflation, economists often start assuming a 'closed economy' for tractability, then add trade.",
+      "<b>Population policy:</b> Vietnam's former family-planning policy served as a natural experiment for economists studying the effect of population on growth."
+    ],
+    q_vn:"Bạn muốn nghiên cứu xem tăng lương tối thiểu ở Việt Nam có làm giảm việc làm cho lao động phổ thông không. Bạn không thể ép chính phủ tăng lương để xem, vậy bạn có thể làm gì?",
+    q_en:"You want to study whether raising Vietnam's minimum wage reduces low-skill employment. You can't force the government to raise wages to observe. What can you do?",
+    a_vn:"Dùng <b>thí nghiệm tự nhiên</b>: VN đã tăng lương tối thiểu nhiều lần từ 2010 đến nay. Có thể so sánh tỷ lệ việc làm, giờ làm việc, và cơ cấu ngành trước và sau mỗi lần tăng. Cũng có thể so sánh các tỉnh có mức lương tối thiểu khác nhau (VN có 4 vùng lương). Cần <b>giả định</b> các yếu tố khác không đổi mạnh (như tăng trưởng GDP, chính sách khác).",
+    a_en:"Use a <b>natural experiment</b>: Vietnam has raised the minimum wage multiple times since 2010. Compare employment rates, hours, and industry mix before and after each increase. Also compare across the four wage zones with different minimums. You <b>assume</b> other factors (GDP growth, other policies) don't change too much."
+  },
+  {
+    n:2,
+    tag_vn:"§2", tag_en:"§2",
+    title_vn:"Sơ đồ vòng chu chuyển",
+    title_en:"The circular-flow diagram",
+    core_vn:"<b>Sơ đồ vòng chu chuyển</b> là mô hình trực quan của nền kinh tế: <b>hai chủ thể ra quyết định</b> (hộ gia đình và doanh nghiệp) tương tác trong <b>hai thị trường</b> (thị trường hàng hóa - dịch vụ, và thị trường yếu tố sản xuất).",
+    core_en:"The <b>circular-flow diagram</b> is a visual model of the economy: <b>two decision makers</b> (households and firms) interact in <b>two markets</b> (the market for goods and services, and the market for factors of production).",
+    ideas_vn:[
+      "<b>Hộ gia đình:</b> sở hữu các <b>yếu tố sản xuất</b> (lao động, đất đai, vốn); bán/cho thuê chúng cho doanh nghiệp để lấy thu nhập; dùng thu nhập mua hàng hóa - dịch vụ.",
+      "<b>Doanh nghiệp:</b> mua/thuê các yếu tố sản xuất; dùng chúng để sản xuất; bán hàng hóa - dịch vụ.",
+      "Trong <b>thị trường hàng hóa - dịch vụ</b>: doanh nghiệp là <i>người bán</i>, hộ gia đình là <i>người mua</i>. Trong <b>thị trường yếu tố sản xuất</b>: hộ gia đình là <i>người bán</i>, doanh nghiệp là <i>người mua</i>.",
+      "<b>Vòng trong:</b> dòng luân chuyển hàng hóa và yếu tố sản xuất (hàng thật). <b>Vòng ngoài:</b> dòng tiền tương ứng."
+    ],
+    ideas_en:[
+      "<b>Households:</b> own <b>factors of production</b> (labor, land, capital); sell/rent them to firms for income; spend that income on goods and services.",
+      "<b>Firms:</b> buy/hire factors of production; use them to produce; sell goods and services.",
+      "In the <b>goods-and-services market</b>: firms are <i>sellers</i>, households are <i>buyers</i>. In the <b>factor market</b>: households are <i>sellers</i>, firms are <i>buyers</i>.",
+      "<b>Inner loop:</b> the physical flow of goods and inputs. <b>Outer loop:</b> the corresponding flow of money."
+    ],
+    diagram:"circular",
+    ex_title_vn:"Vòng chu chuyển ở Việt Nam",
+    ex_title_en:"Vietnam examples: Circular flow",
+    ex_vn:[
+      "<b>Một sinh viên VN đi làm thêm ở KFC:</b> Bán lao động (yếu tố sản xuất) cho KFC → nhận lương → dùng lương mua bún bò tại quán → quán bán bún bò cho SV, thuê lao động của cô nhân viên bếp.",
+      "<b>Nike Vietnam:</b> Doanh nghiệp thuê 200.000 công nhân VN (mua yếu tố sản xuất), mua điện của EVN, vải từ nhà cung ứng → sản xuất giày → bán cho Nike Corp. Công nhân dùng lương mua nhu yếu phẩm ở Big C.",
+      "<b>Vinamilk và người tiêu dùng:</b> Vinamilk thuê nhân viên, mua sữa từ nông dân → chế biến → bán ở Bách Hóa Xanh. Nông dân dùng tiền mua thức ăn gia súc, phân bón.",
+      "<b>Grab tài xế và khách:</b> Tài xế bán dịch vụ vận tải (lao động) → khách trả tiền → khách dùng thu nhập từ công việc chính (nơi họ là bên bán lao động) để chi trả.",
+      "<b>Lưu ý:</b> Sơ đồ đơn giản này bỏ qua chính phủ (thu thuế, chi tiêu công) và nước ngoài (xuất - nhập khẩu). Trong thực tế VN, hai yếu tố này rất quan trọng."
+    ],
+    ex_en:[
+      "<b>A Vietnamese student working part-time at KFC:</b> sells labor (a factor of production) to KFC → receives wages → uses wages to buy bún bò at a shop → the shop sells food to the student and hires the cook's labor.",
+      "<b>Nike Vietnam:</b> The firm hires 200,000 Vietnamese workers (buys factors), buys electricity from EVN and cloth from suppliers → produces shoes → sells to Nike Corp. Workers use their wages to shop at Big C.",
+      "<b>Vinamilk and consumers:</b> Vinamilk hires staff, buys milk from farmers → processes it → sells at Bách Hóa Xanh. Farmers use the income to buy feed and fertilizer.",
+      "<b>Grab driver and rider:</b> The driver sells transport service (labor) → rider pays → the rider uses income from their main job (where they sell labor) to pay for the ride.",
+      "<b>Note:</b> This simple diagram ignores the government (taxes and public spending) and the rest of the world (exports and imports). In practice both are important in Vietnam."
+    ],
+    q_vn:"Khi bạn mua 1 ly cà phê Highlands 60.000đ bằng thẻ ngân hàng, giao dịch này đi qua thị trường nào trong sơ đồ vòng chu chuyển? Ai là người mua, ai là người bán?",
+    q_en:"When you buy a ₫60,000 Highlands coffee with a bank card, which market in the circular-flow diagram does this transaction go through? Who is the buyer and who is the seller?",
+    a_vn:"Đi qua <b>thị trường hàng hóa - dịch vụ</b>. Bạn (hộ gia đình) là <b>người mua</b>, Highlands (doanh nghiệp) là <b>người bán</b>. 60.000đ là dòng tiền vòng ngoài, ly cà phê là dòng hàng vòng trong. Nếu bạn là nhân viên ở đâu đó, tiền 60k này ban đầu đã đi từ doanh nghiệp bạn làm việc → thị trường yếu tố sản xuất → bạn (dưới dạng lương) → bạn chi ra thị trường hàng hóa.",
+    a_en:"Through the <b>market for goods and services</b>. You (household) are the <b>buyer</b>; Highlands (firm) is the <b>seller</b>. The ₫60,000 is the outer money flow, the coffee is the inner physical flow. If you're employed, that ₫60k originally flowed from your employer → factor market → you (as wages) → then to the goods market."
+  },
+  {
+    n:3,
+    tag_vn:"§3", tag_en:"§3",
+    title_vn:"Đường giới hạn khả năng sản xuất (PPF)",
+    title_en:"The production possibilities frontier (PPF)",
+    core_vn:"<b>Đường PPF</b> là đồ thị cho thấy các tổ hợp sản lượng của 2 hàng hóa mà nền kinh tế có thể sản xuất, với lượng nguồn lực và công nghệ hiện có. PPF minh họa các khái niệm cốt lõi: <b>khan hiếm, đánh đổi, chi phí cơ hội, hiệu quả, tăng trưởng</b>.",
+    core_en:"The <b>PPF</b> is a graph showing the combinations of two outputs the economy can produce given its resources and technology. It illustrates core ideas: <b>scarcity, trade-off, opportunity cost, efficiency, growth</b>.",
+    ideas_vn:[
+      "<b>Trên đường PPF (điểm A, B, C, D, E):</b> hiệu quả — tận dụng hết nguồn lực. Không thể tăng sản lượng của một hàng hóa mà không giảm hàng khác.",
+      "<b>Trong lòng PPF:</b> có thể sản xuất nhưng không hiệu quả — có nguồn lực chưa dùng (thất nghiệp, nhà máy nhàn rỗi).",
+      "<b>Ngoài đường PPF:</b> không khả thi với nguồn lực và công nghệ hiện có.",
+      "<b>Độ dốc PPF</b> chính là chi phí cơ hội của một hàng hóa tính bằng lượng hàng hóa kia.",
+      "<b>PPF cong ra ngoài (bowed outward):</b> chi phí cơ hội tăng dần — khi chuyển thêm nguồn lực sang một hàng hóa, các nguồn lực ít phù hợp hơn phải được sử dụng. <b>PPF đường thẳng:</b> chi phí cơ hội cố định.",
+      "<b>Dịch chuyển PPF ra ngoài</b> = <b>tăng trưởng kinh tế</b>: thêm nguồn lực (lao động, vốn) hoặc cải tiến công nghệ."
+    ],
+    ideas_en:[
+      "<b>On the PPF (points A, B, C, D, E):</b> efficient — all resources fully used. Cannot produce more of one good without giving up some of another.",
+      "<b>Inside the PPF:</b> feasible but inefficient — some resources are idle (unemployment, idle factories).",
+      "<b>Outside the PPF:</b> not feasible with current resources and technology.",
+      "<b>The slope of the PPF</b> is the opportunity cost of one good in terms of the other.",
+      "<b>Bowed-outward PPF:</b> increasing opportunity cost — as more resources shift to one good, less-suitable resources must be used. <b>Straight-line PPF:</b> constant opportunity cost.",
+      "<b>Outward shift of the PPF</b> = <b>economic growth</b>: more resources (labor, capital) or improved technology."
+    ],
+    diagram:"ppf",
+    ex_title_vn:"PPF ở Việt Nam",
+    ex_title_en:"Vietnam examples: PPF",
+    ex_vn:[
+      "<b>Nông dân ĐBSCL — Lúa vs. Tôm:</b> Trên 1 ha đất, có thể trồng 100% lúa (5 tấn/vụ) hay 100% nuôi tôm (2 tấn/vụ), hoặc kết hợp. Đó là PPF cá nhân của họ. Đất mặn phù hợp tôm, đất ngọt phù hợp lúa → PPF cong ra ngoài (chi phí cơ hội tăng dần).",
+      "<b>VN — Nông nghiệp vs. Công nghiệp:</b> Trước 1986, VN dành nhiều nguồn lực cho nông nghiệp, sản lượng công nghiệp thấp — một điểm gần trục nông nghiệp trên PPF quốc gia.",
+      "<b>Đổi Mới 1986 → PPF dịch ra ngoài:</b> Cải cách thể chế + FDI + công nghệ mới → cùng lượng lao động và đất nhưng sản xuất được nhiều hơn cả nông sản lẫn công nghiệp.",
+      "<b>Điểm trong PPF (không hiệu quả):</b> COVID-19 buộc nhà máy đóng cửa, hàng triệu lao động thất nghiệp — VN sản xuất ít hơn khả năng thực tế.",
+      "<b>Điểm ngoài PPF (không khả thi):</b> Không thể vừa đạt mục tiêu tăng trưởng 10%/năm vừa cắt giảm mạnh khai thác tài nguyên trong ngắn hạn — vượt quá năng lực hiện có.",
+      "<b>Samsung đầu tư VinCity (FDI):</b> Đưa máy móc và công nghệ vào VN → PPF dịch ra ngoài về phía công nghiệp điện tử, giúp VN sản xuất được lượng điện thoại trước đây không thể."
+    ],
+    ex_en:[
+      "<b>Mekong Delta farmer — rice vs. shrimp:</b> On 1 ha, can grow 100% rice (5 t/season) or raise 100% shrimp (2 t/season), or a mix. That's a personal PPF. Salty soil suits shrimp, freshwater suits rice → the PPF is bowed outward (increasing opportunity cost).",
+      "<b>Vietnam — agriculture vs. industry:</b> Before 1986, Vietnam devoted most resources to agriculture, industrial output was low — a point near the agriculture axis on the national PPF.",
+      "<b>Đổi Mới 1986 → PPF shifts outward:</b> institutional reform + FDI + new technology → with the same labor and land, more of both agricultural and industrial goods can be produced.",
+      "<b>Point inside the PPF (inefficient):</b> COVID-19 forced factories to close and left millions unemployed — Vietnam produced less than its potential.",
+      "<b>Point outside the PPF (not feasible):</b> Cannot simultaneously achieve 10%/year growth and sharply cut resource extraction in the short run — beyond current capacity.",
+      "<b>Samsung's Vietnam FDI:</b> Brought machines and technology → PPF shifts outward along the electronics dimension, enabling phone production quantities previously impossible."
+    ],
+    q_vn:"Nếu VN phát hiện mỏ dầu lớn ngoài khơi biển Đông và bắt đầu khai thác thương mại, điều gì xảy ra với đường PPF quốc gia (giả sử 2 hàng hóa: dầu và hàng tiêu dùng)?",
+    q_en:"If Vietnam discovers a large offshore oil field in the East Sea and starts commercial extraction, what happens to the national PPF (assume two goods: oil and consumer goods)?",
+    a_vn:"PPF <b>dịch ra ngoài</b> — nhưng có thể lệch hơn về phía trục dầu (vì công nghệ/nguồn lực mới đặc biệt hữu ích cho khai thác dầu). Nền kinh tế có thể sản xuất cả nhiều dầu <b>và</b> nhiều hàng tiêu dùng hơn trước, dù mức tăng thêm về dầu lớn hơn. Đây là <b>tăng trưởng kinh tế</b> do gia tăng nguồn lực.",
+    a_en:"The PPF <b>shifts outward</b> — but may tilt more toward the oil axis (because the new resource/technology is especially useful for oil). The economy can produce both more oil <b>and</b> more consumer goods than before, though the oil expansion is larger. This is <b>economic growth</b> from added resources."
+  },
+  {
+    n:4,
+    tag_vn:"§4", tag_en:"§4",
+    title_vn:"Kinh tế học vi mô và vĩ mô",
+    title_en:"Microeconomics and macroeconomics",
+    core_vn:"Kinh tế học được chia thành 2 phân ngành: <b>Vi mô</b> — nghiên cứu quyết định của hộ gia đình và doanh nghiệp, tương tác trong các thị trường cụ thể. <b>Vĩ mô</b> — nghiên cứu các hiện tượng bao trùm toàn nền kinh tế: lạm phát, thất nghiệp, tăng trưởng.",
+    core_en:"Economics divides into two subfields: <b>Microeconomics</b> — the study of household and firm decisions and their interactions in specific markets. <b>Macroeconomics</b> — the study of economy-wide phenomena: inflation, unemployment, growth.",
+    ideas_vn:[
+      "<b>Vi mô hỏi:</b> Vì sao giá thịt heo tăng khi có dịch tả lợn châu Phi? Vì sao Vinamilk mở rộng ra Campuchia? Vì sao lương kỹ sư CNTT cao hơn kế toán?",
+      "<b>Vĩ mô hỏi:</b> Tại sao GDP VN tăng 6-7%/năm? Tại sao lạm phát 3-4%? Tại sao thất nghiệp ở mức 2-3%? Chính sách tiền tệ ảnh hưởng thế nào?",
+      "Hai phân ngành <b>liên kết chặt chẽ</b>: các hiện tượng vĩ mô phát sinh từ hàng triệu quyết định vi mô. Nhưng vì đặt câu hỏi khác nhau nên có mô hình và khóa học riêng."
+    ],
+    ideas_en:[
+      "<b>Micro asks:</b> Why did pork prices spike during African swine fever? Why is Vinamilk expanding into Cambodia? Why do IT engineers earn more than accountants?",
+      "<b>Macro asks:</b> Why does Vietnam's GDP grow 6-7% per year? Why is inflation 3-4%? Why is unemployment 2-3%? How does monetary policy affect the economy?",
+      "The two subfields are <b>tightly linked</b>: macro phenomena emerge from millions of micro decisions. But because they ask different questions, they have different models and separate courses."
+    ],
+    ex_title_vn:"Vi mô vs Vĩ mô — Ví dụ VN",
+    ex_title_en:"Vietnam examples: Micro vs. Macro",
+    ex_vn:[
+      "<b>Vi mô:</b> Vì sao trà sữa 45k/ly nhưng cà phê Highlands 55k/ly? (giá cả trong thị trường cụ thể) — <b>Vĩ mô:</b> Vì sao mức giá chung ở VN tăng 3%/năm? (lạm phát toàn nền kinh tế).",
+      "<b>Vi mô:</b> Grab quyết định thuật toán giá surge như thế nào? (chiến lược doanh nghiệp) — <b>Vĩ mô:</b> Ngành vận tải chiếm bao nhiêu % GDP VN?",
+      "<b>Vi mô:</b> Một hộ gia đình ở TP.HCM nên thuê nhà hay mua nhà? (quyết định cá nhân) — <b>Vĩ mô:</b> Tỷ lệ tiết kiệm quốc gia của VN là bao nhiêu, ảnh hưởng thế nào tới đầu tư và tăng trưởng?",
+      "<b>Vi mô:</b> Tại sao Vietjet giảm giá vé mùa thấp điểm? — <b>Vĩ mô:</b> Ngân hàng Nhà nước có nên hạ lãi suất để kích thích tăng trưởng?",
+      "<b>Kết nối:</b> Khi hàng triệu hộ gia đình VN quyết định tiết kiệm nhiều hơn (vi mô), tổng cầu giảm, GDP tăng chậm lại (vĩ mô) — 'nghịch lý tiết kiệm' của Keynes."
+    ],
+    ex_en:[
+      "<b>Micro:</b> Why is bubble tea ₫45k/cup while Highlands coffee is ₫55k/cup? (prices in specific markets) — <b>Macro:</b> Why is Vietnam's general price level rising 3%/year? (economy-wide inflation).",
+      "<b>Micro:</b> How does Grab set its surge-pricing algorithm? (firm strategy) — <b>Macro:</b> What share of Vietnam's GDP is transport?",
+      "<b>Micro:</b> Should an HCMC household rent or buy? (individual decision) — <b>Macro:</b> What is Vietnam's national savings rate, and how does it affect investment and growth?",
+      "<b>Micro:</b> Why does Vietjet cut fares in low season? — <b>Macro:</b> Should the State Bank of Vietnam cut rates to stimulate growth?",
+      "<b>Connection:</b> When millions of Vietnamese households decide to save more (micro), aggregate demand falls and GDP growth slows (macro) — Keynes's 'paradox of thrift.'"
+    ],
+    q_vn:"Câu nào sau đây là vi mô, câu nào là vĩ mô? (a) Giá xăng ở TP.HCM tăng 2.000đ/lít; (b) Tỷ lệ thất nghiệp toàn quốc là 2,5%; (c) VinFast quyết định sản xuất 100.000 xe điện năm 2026; (d) GDP VN tăng 6,5% năm ngoái.",
+    q_en:"Which are micro and which are macro? (a) HCMC gasoline price rose ₫2,000/L; (b) Nationwide unemployment is 2.5%; (c) VinFast plans 100,000 EVs in 2026; (d) Vietnam's GDP grew 6.5% last year.",
+    a_vn:"(a) <b>Vi mô</b> — giá trong 1 thị trường cụ thể. (b) <b>Vĩ mô</b> — chỉ số toàn nền kinh tế. (c) <b>Vi mô</b> — quyết định của một doanh nghiệp. (d) <b>Vĩ mô</b> — chỉ số tổng sản lượng toàn nền kinh tế.",
+    a_en:"(a) <b>Micro</b> — price in one specific market. (b) <b>Macro</b> — economy-wide indicator. (c) <b>Micro</b> — one firm's decision. (d) <b>Macro</b> — economy-wide output indicator."
+  },
+  {
+    n:5,
+    tag_vn:"§5", tag_en:"§5",
+    title_vn:"Nhận định thực chứng và chuẩn tắc",
+    title_en:"Positive and normative statements",
+    core_vn:"<b>Nhận định thực chứng (positive):</b> mang tính mô tả — nói thế giới <i>đang</i> như thế nào. Có thể kiểm định bằng dữ liệu. <b>Nhận định chuẩn tắc (normative):</b> mang tính khuyến nghị — nói thế giới <i>nên</i> như thế nào. Phụ thuộc vào giá trị.",
+    core_en:"<b>Positive statements</b> are descriptive — they say how the world <i>is</i>. Testable with data. <b>Normative statements</b> are prescriptive — they say how the world <i>should be</i>. They depend on values.",
+    ideas_vn:[
+      "<b>Positive:</b> \"Luật lương tối thiểu gây ra thất nghiệp.\" — Kiểm định được: thu thập dữ liệu lương tối thiểu và việc làm ở nhiều nước/thời điểm.",
+      "<b>Normative:</b> \"Chính phủ nên tăng lương tối thiểu.\" — Không kiểm định được bằng dữ liệu; là <i>đánh giá giá trị</i>.",
+      "<b>Lưu ý quan trọng:</b> Một nhận định thực chứng <b>không nhất thiết phải đúng</b>. \"Trái Đất phẳng\" là nhận định thực chứng (mô tả thế giới) — nhưng sai. Positive ≠ đúng; chỉ có nghĩa là <i>có thể kiểm định</i>.",
+      "Là <i>nhà khoa học</i>, nhà kinh tế đưa ra nhận định thực chứng. Là <i>cố vấn chính sách</i>, họ đưa ra nhận định chuẩn tắc."
+    ],
+    ideas_en:[
+      "<b>Positive:</b> \"Minimum-wage laws cause unemployment.\" — Testable: gather data on minimum wages and employment across countries and time.",
+      "<b>Normative:</b> \"The government should raise the minimum wage.\" — Not testable by data; it is a <i>value judgment</i>.",
+      "<b>Important:</b> A positive statement <b>need not be true</b>. \"The Earth is flat\" is positive (describes the world) — but false. Positive ≠ true; it just means <i>testable</i>.",
+      "As <i>scientists</i>, economists make positive statements. As <i>policy advisers</i>, they make normative statements."
+    ],
+    ex_title_vn:"Positive vs Normative — Ví dụ VN",
+    ex_title_en:"Vietnam examples: Positive vs. Normative",
+    ex_vn:[
+      "<b>Positive:</b> \"Tăng thuế VAT từ 10% lên 12% sẽ làm giảm tiêu dùng 3%\" (có thể kiểm định bằng số liệu).",
+      "<b>Normative:</b> \"Chính phủ VN không nên tăng thuế VAT lên 12%.\" (đánh giá giá trị).",
+      "<b>Positive:</b> \"Nếu NHNN giữ nguyên lãi suất, VND sẽ mất giá 5% so với USD trong năm 2026\" (dự báo có thể kiểm định).",
+      "<b>Normative:</b> \"NHNN nên tăng lãi suất để bảo vệ giá trị VND.\" (đánh giá giá trị).",
+      "<b>Positive:</b> \"Đổi Mới 1986 đã giúp GDP đầu người VN tăng hơn 20 lần trong 40 năm\" (dữ kiện lịch sử).",
+      "<b>Normative:</b> \"VN nên tiếp tục con đường cải cách thị trường theo hướng Đổi Mới.\" (khuyến nghị chính sách).",
+      "<b>Positive nhưng có thể sai:</b> \"Trợ giá xăng làm giảm ô nhiễm không khí ở Hà Nội\" (có thể kiểm định — và có thể sai vì thực tế trợ giá làm dân dùng xăng nhiều hơn)."
+    ],
+    ex_en:[
+      "<b>Positive:</b> \"Raising VAT from 10% to 12% will reduce consumption by 3%\" (testable with data).",
+      "<b>Normative:</b> \"The Vietnamese government should not raise VAT to 12%.\" (value judgment).",
+      "<b>Positive:</b> \"If the State Bank of Vietnam holds rates unchanged, the đồng will depreciate 5% against USD in 2026\" (a testable forecast).",
+      "<b>Normative:</b> \"The State Bank of Vietnam should raise rates to protect the value of the đồng.\" (value judgment).",
+      "<b>Positive:</b> \"Đổi Mới 1986 raised Vietnam's GDP per capita more than 20-fold in 40 years\" (historical fact).",
+      "<b>Normative:</b> \"Vietnam should continue market-oriented reforms along the Đổi Mới path.\" (policy recommendation).",
+      "<b>Positive but possibly wrong:</b> \"Gasoline subsidies reduce Hanoi's air pollution\" (testable — and likely false, since subsidies raise gasoline use)."
+    ],
+    q_vn:"Phân loại mỗi câu sau là <i>thực chứng</i> hay <i>chuẩn tắc</i>: (a) Giá tăng khi chính phủ in nhiều tiền; (b) Chính phủ nên in ít tiền hơn; (c) VN cần cắt giảm thuế để kích thích tăng trưởng; (d) Tăng giá bún bò làm giảm số suất bán ra mỗi ngày.",
+    q_en:"Classify each as <i>positive</i> or <i>normative</i>: (a) Prices rise when the government prints more money; (b) The government should print less money; (c) Vietnam needs to cut taxes to stimulate growth; (d) Raising the price of bún bò reduces the number of servings sold per day.",
+    a_vn:"(a) <b>Thực chứng</b> — mô tả quan hệ, kiểm định được. (b) <b>Chuẩn tắc</b> — chứa 'nên'. (c) <b>Chuẩn tắc</b> — chứa 'cần', là khuyến nghị. (d) <b>Thực chứng</b> — mô tả quan hệ, kiểm định được bằng số liệu bán hàng.",
+    a_en:"(a) <b>Positive</b> — describes a relationship, testable. (b) <b>Normative</b> — contains 'should'. (c) <b>Normative</b> — 'needs to' is a policy recommendation. (d) <b>Positive</b> — describes a relationship, testable with sales data."
+  },
+  {
+    n:6,
+    tag_vn:"§6", tag_en:"§6",
+    title_vn:"Vì sao các nhà kinh tế bất đồng",
+    title_en:"Why economists disagree",
+    core_vn:"Các nhà kinh tế đôi khi đưa ra lời khuyên trái ngược vì <b>hai lý do</b>: (1) <b>khác biệt về đánh giá khoa học</b> — không đồng thuận về lý thuyết thực chứng nào đúng; (2) <b>khác biệt về giá trị</b> — có quan điểm chuẩn tắc khác nhau về mục tiêu chính sách. Tuy nhiên, họ đồng thuận về nhiều vấn đề hơn ta thường nghĩ.",
+    core_en:"Economists sometimes offer conflicting advice for <b>two reasons</b>: (1) <b>different scientific judgments</b> — they don't agree on which positive theory is correct; (2) <b>different values</b> — they hold different normative views about what policy should aim for. Yet they agree on more than most people realize.",
+    ideas_vn:[
+      "<b>Khác biệt khoa học:</b> Một số nhà kinh tế tin rằng giảm thuế thu nhập sẽ tăng tiết kiệm mạnh; nhóm khác tin tác động nhỏ. Cùng nhìn dữ liệu, khác diễn giải.",
+      "<b>Khác biệt giá trị:</b> Một nhóm ưu tiên hiệu quả (tăng trưởng nhanh); nhóm khác ưu tiên bình đẳng (phân phối công bằng). Cùng biết trade-off, chọn khác nhau.",
+      "<b>Nhận thức vs thực tế:</b> Truyền thông thường phóng đại bất đồng. Trên thực tế, đa số nhà kinh tế đồng thuận rất cao ở nhiều vấn đề."
+    ],
+    ideas_en:[
+      "<b>Scientific differences:</b> Some economists believe income-tax cuts strongly boost saving; others think the effect is small. Same data, different interpretation.",
+      "<b>Value differences:</b> Some prioritize efficiency (fast growth); others prioritize equality (fair distribution). Same trade-off, different choices.",
+      "<b>Perception vs. reality:</b> The media exaggerates disagreement. In fact, on many issues most economists strongly agree."
+    ],
+    consensus_title_vn:"Một số vấn đề mà đa số nhà kinh tế đồng thuận (khảo sát tại Mỹ)",
+    consensus_title_en:"Propositions most economists agree with (US survey)",
+    consensus:[
+      {vn_stmt:"Áp giá trần cho tiền thuê nhà làm giảm số lượng và chất lượng nhà cho thuê", en_stmt:"Rent ceilings reduce the quantity and quality of housing", pct:"93%"},
+      {vn_stmt:"Thuế nhập khẩu và hạn ngạch làm giảm phúc lợi kinh tế nói chung", en_stmt:"Tariffs and import quotas reduce general economic welfare", pct:"93%"},
+      {vn_stmt:"Mỹ nên bãi bỏ trợ cấp nông nghiệp", en_stmt:"The US should eliminate agricultural subsidies", pct:"85%"},
+      {vn_stmt:"Chính phủ địa phương nên bãi bỏ trợ cấp cho đội thể thao chuyên nghiệp", en_stmt:"Local governments should eliminate subsidies to sports franchises", pct:"85%"},
+      {vn_stmt:"Trợ cấp bằng tiền mặt tăng phúc lợi hơn là trợ cấp bằng hiện vật cùng giá trị", en_stmt:"Cash payments increase welfare more than in-kind transfers of equal value", pct:"84%"},
+      {vn_stmt:"Thâm hụt ngân sách liên bang lớn có tác động xấu tới nền kinh tế", en_stmt:"A large federal budget deficit has an adverse effect on the economy", pct:"83%"},
+      {vn_stmt:"Lương tối thiểu tăng làm tăng thất nghiệp ở lao động trẻ và thiếu kỹ năng", en_stmt:"A minimum wage increases unemployment among young and unskilled workers", pct:"79%"}
+    ],
+    ex_title_vn:"Bất đồng ở Việt Nam",
+    ex_title_en:"Vietnam examples: Disagreement",
+    ex_vn:[
+      "<b>Khác biệt khoa học — Lãi suất và tăng trưởng:</b> Một số nhà kinh tế VN tin rằng hạ lãi suất mạnh sẽ kích thích doanh nghiệp vay đầu tư (tăng trưởng); nhóm khác lo rằng nó chủ yếu đẩy giá bất động sản, ít giúp sản xuất.",
+      "<b>Khác biệt giá trị — Ưu tiên tăng trưởng hay môi trường:</b> Cùng biết nhiệt điện than gây ô nhiễm nhưng giá rẻ, có người ưu tiên tăng trưởng công nghiệp, người khác ưu tiên sức khỏe cộng đồng.",
+      "<b>Khác biệt giá trị — Bao cấp giáo dục:</b> Có người cho rằng học phí đại học cao là bất bình đẳng; người khác cho rằng bao cấp mọi cấp học làm chất lượng đại học giảm.",
+      "<b>Đồng thuận cao:</b> Đa số nhà kinh tế VN đồng thuận rằng Đổi Mới 1986 là quyết định đúng; hội nhập WTO có lợi nhìn chung; giá xăng trợ cấp sinh ra hệ lụy.",
+      "<b>Bối cảnh:</b> Khi một nhà kinh tế phản đối chính sách, có thể do (a) tin rằng dữ liệu không ủng hộ, (b) có giá trị khác, hoặc (c) có xung đột lợi ích (làm cho tập đoàn, đảng phái)."
+    ],
+    ex_en:[
+      "<b>Scientific difference — rates and growth:</b> Some Vietnamese economists believe deep rate cuts will spur business borrowing and investment; others worry they mainly inflate real estate with little help to production.",
+      "<b>Value difference — growth vs. environment:</b> Coal power is cheap but polluting; some prioritize industrial growth, others community health.",
+      "<b>Value difference — education subsidies:</b> Some argue high university tuition is inequitable; others argue full public funding lowers quality.",
+      "<b>High agreement:</b> Most Vietnamese economists agree Đổi Mới 1986 was the right call; WTO accession has been net-positive; gasoline subsidies create distortions.",
+      "<b>Context:</b> When an economist opposes a policy, it may be because (a) they think the data don't support it, (b) they hold different values, or (c) they have a conflict of interest (working for a corporation or party)."
+    ],
+    q_vn:"Hai nhà kinh tế VN tranh luận việc có nên tăng thuế bất động sản đối với căn nhà thứ hai. Nhà A cho rằng thuế sẽ giảm đầu cơ và giúp giá nhà bình dân. Nhà B nghĩ thuế sẽ đẩy giá thuê tăng, làm khó người thu nhập thấp. Nêu 2 nguồn có thể gây bất đồng.",
+    q_en:"Two Vietnamese economists debate a second-home property tax. Economist A argues it would curb speculation and lower prices of ordinary housing. Economist B thinks it would push rents up and hurt low-income renters. Name two possible sources of disagreement.",
+    a_vn:"(1) <b>Khác biệt khoa học:</b> họ có mô hình dự báo khác nhau — A tin cầu đầu cơ chiếm phần lớn giá; B tin nguồn cung ít co giãn nên thuế chuyển sang người thuê. Đây là bất đồng thực chứng, có thể kiểm định bằng dữ liệu. (2) <b>Khác biệt giá trị:</b> A đặt trọng số cao hơn cho người mua nhà thu nhập trung bình; B lo cho người thuê thu nhập thấp — cả hai đều là mục tiêu chính đáng nhưng khác nhau.",
+    a_en:"(1) <b>Scientific difference:</b> different forecasting models — A believes speculative demand dominates prices; B believes supply is inelastic so the tax passes through to renters. This is a positive disagreement, testable with data. (2) <b>Value difference:</b> A weighs middle-income buyers more; B focuses on low-income renters — both are legitimate goals but different."
+  }
+];
+
+/* ---------- Special diagrams (SVG) ---------- */
+function circularFlowSVG(){
+  return `
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+        <!-- Boxes -->
+        <rect class="svg-node" x="30" y="150" width="140" height="80" rx="8"/>
+        <text class="svg-text" x="100" y="180" text-anchor="middle"><tspan class="lang-vn">Hộ gia đình</tspan><tspan class="lang-en">Households</tspan></text>
+        <text class="svg-text-sm" x="100" y="200" text-anchor="middle"><tspan class="lang-vn">Sở hữu yếu tố SX</tspan><tspan class="lang-en">Own factors</tspan></text>
+        <text class="svg-text-sm" x="100" y="215" text-anchor="middle"><tspan class="lang-vn">Mua hàng hóa</tspan><tspan class="lang-en">Buy goods</tspan></text>
+
+        <rect class="svg-node" x="450" y="150" width="140" height="80" rx="8"/>
+        <text class="svg-text" x="520" y="180" text-anchor="middle"><tspan class="lang-vn">Doanh nghiệp</tspan><tspan class="lang-en">Firms</tspan></text>
+        <text class="svg-text-sm" x="520" y="200" text-anchor="middle"><tspan class="lang-vn">Sản xuất & bán</tspan><tspan class="lang-en">Produce & sell</tspan></text>
+        <text class="svg-text-sm" x="520" y="215" text-anchor="middle"><tspan class="lang-vn">Thuê lao động</tspan><tspan class="lang-en">Hire labor</tspan></text>
+
+        <!-- Markets -->
+        <ellipse class="svg-market" cx="310" cy="60" rx="120" ry="35"/>
+        <text class="svg-text" x="310" y="55" text-anchor="middle"><tspan class="lang-vn">TT Hàng hóa - Dịch vụ</tspan><tspan class="lang-en">Market for Goods & Services</tspan></text>
+        <text class="svg-text-sm" x="310" y="75" text-anchor="middle"><tspan class="lang-vn">DN bán, hộ mua</tspan><tspan class="lang-en">Firms sell, households buy</tspan></text>
+
+        <ellipse class="svg-market" cx="310" cy="320" rx="120" ry="35"/>
+        <text class="svg-text" x="310" y="315" text-anchor="middle"><tspan class="lang-vn">TT Yếu tố SX (lao động, đất, vốn)</tspan><tspan class="lang-en">Market for Factors of Production</tspan></text>
+        <text class="svg-text-sm" x="310" y="335" text-anchor="middle"><tspan class="lang-vn">Hộ bán, DN mua</tspan><tspan class="lang-en">Households sell, firms buy</tspan></text>
+
+        <!-- Money flows (outer loop) - gold -->
+        <path class="svg-arrow-d" d="M 170 170 Q 100 130 200 80"/>
+        <text class="svg-text-sm" fill="#c48f27" x="130" y="115"><tspan class="lang-vn">$ chi cho HH</tspan><tspan class="lang-en">$ for goods</tspan></text>
+
+        <path class="svg-arrow-d" d="M 420 80 Q 520 130 450 170"/>
+        <text class="svg-text-sm" fill="#c48f27" x="470" y="115"><tspan class="lang-vn">$ Doanh thu</tspan><tspan class="lang-en">$ Revenue</tspan></text>
+
+        <path class="svg-arrow-d" d="M 450 210 Q 520 260 420 300"/>
+        <text class="svg-text-sm" fill="#c48f27" x="470" y="270"><tspan class="lang-vn">$ Lương, tiền thuê</tspan><tspan class="lang-en">$ Wages, rent</tspan></text>
+
+        <path class="svg-arrow-d" d="M 200 300 Q 100 260 170 210"/>
+        <text class="svg-text-sm" fill="#c48f27" x="110" y="270"><tspan class="lang-vn">$ Thu nhập</tspan><tspan class="lang-en">$ Income</tspan></text>
+
+        <!-- Physical flows (inner loop) - green -->
+        <path class="svg-arrow-b" d="M 200 90 Q 260 130 170 155" stroke-dasharray="3,3"/>
+        <text class="svg-text-sm" fill="#2e8b57" x="200" y="140"><tspan class="lang-vn">Hàng hóa</tspan><tspan class="lang-en">Goods</tspan></text>
+
+        <path class="svg-arrow-b" d="M 170 230 Q 260 260 200 310" stroke-dasharray="3,3"/>
+        <text class="svg-text-sm" fill="#2e8b57" x="200" y="270"><tspan class="lang-vn">Lao động, vốn</tspan><tspan class="lang-en">Labor, capital</tspan></text>
+      </svg>
+      <div class="diagram-caption">
+        <span class="lang-vn">🡱 Mũi tên vàng: dòng tiền (vòng ngoài). Mũi tên xanh nét đứt: dòng hàng hóa và yếu tố (vòng trong).</span>
+        <span class="lang-en">Gold arrows: money flows (outer loop). Green dashed arrows: goods & factors (inner loop).</span>
+      </div>
+    </div>`;
+}
+
+function ppfSVG(){
+  return `
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="40" x2="60" y2="340" stroke="#1e3a5f" stroke-width="2"/>
+        <line x1="60" y1="340" x2="460" y2="340" stroke="#1e3a5f" stroke-width="2"/>
+        <text class="svg-text" x="60" y="30" text-anchor="middle"><tspan class="lang-vn">Máy bay</tspan><tspan class="lang-en">Airplanes</tspan></text>
+        <text class="svg-text" x="470" y="365" text-anchor="start"><tspan class="lang-vn">Đậu tương</tspan><tspan class="lang-en">Soybeans</tspan></text>
+
+        <!-- PPF curve (bowed outward) -->
+        <path d="M 60 60 Q 100 300 420 340" stroke="#c48f27" stroke-width="3" fill="none"/>
+        <path d="M 60 60 Q 100 300 420 340" stroke="url(#ppfGrad)" stroke-width="3" fill="none"/>
+
+        <!-- Points -->
+        <circle cx="60" cy="60" r="5" fill="#2e8b57"/>
+        <text class="svg-text" x="30" y="65">A</text>
+        <text class="svg-text-sm" x="20" y="80">(0, 100)</text>
+
+        <circle cx="130" cy="180" r="5" fill="#2e8b57"/>
+        <text class="svg-text" x="105" y="185">B</text>
+
+        <circle cx="230" cy="270" r="5" fill="#2e8b57"/>
+        <text class="svg-text" x="205" y="275">C</text>
+
+        <circle cx="340" cy="320" r="5" fill="#2e8b57"/>
+        <text class="svg-text" x="315" y="325">D</text>
+
+        <circle cx="420" cy="340" r="5" fill="#2e8b57"/>
+        <text class="svg-text" x="435" y="335">E</text>
+        <text class="svg-text-sm" x="425" y="355">(5000, 0)</text>
+
+        <!-- Inside PPF (inefficient) -->
+        <circle cx="200" cy="330" r="5" fill="#c73737"/>
+        <text class="svg-text" x="175" y="335">G</text>
+        <text class="svg-text-sm" x="150" y="355"><tspan class="lang-vn">Không hiệu quả</tspan><tspan class="lang-en">Inefficient</tspan></text>
+
+        <!-- Outside PPF (infeasible) -->
+        <circle cx="380" cy="150" r="5" fill="#7a4bd6"/>
+        <text class="svg-text" x="390" y="145">F</text>
+        <text class="svg-text-sm" x="320" y="130"><tspan class="lang-vn">Không khả thi</tspan><tspan class="lang-en">Not feasible</tspan></text>
+
+        <!-- Growth arrow -->
+        <path d="M 250 200 Q 320 160 400 130" stroke="#3a7dd6" stroke-width="2" stroke-dasharray="5,4" fill="none" marker-end="url(#arrow-a)"/>
+        <text class="svg-text-sm" fill="#3a7dd6" x="315" y="215"><tspan class="lang-vn">Tăng trưởng: PPF dịch ra ngoài</tspan><tspan class="lang-en">Growth: PPF shifts outward</tspan></text>
+      </svg>
+      <div class="ppf-legend">
+        <span><span class="dot" style="background:#c48f27"></span><span class="lang-vn">Đường PPF</span><span class="lang-en">PPF curve</span></span>
+        <span><span class="dot" style="background:#2e8b57"></span><span class="lang-vn">Điểm hiệu quả (A-E)</span><span class="lang-en">Efficient (A-E)</span></span>
+        <span><span class="dot" style="background:#c73737"></span><span class="lang-vn">Trong PPF: không hiệu quả (G)</span><span class="lang-en">Inside: inefficient (G)</span></span>
+        <span><span class="dot" style="background:#7a4bd6"></span><span class="lang-vn">Ngoài PPF: không khả thi (F)</span><span class="lang-en">Outside: not feasible (F)</span></span>
+      </div>
+    </div>`;
+}
+
+/* ---------- Nutshell ---------- */
+const NUTSHELL = {
+  g1_vn:"Nhà kinh tế học như nhà khoa học", g1_en:"The economist as scientist",
+  g1_items:[
+    {vn:"Nhà kinh tế học tiếp cận vấn đề với tính khách quan của một nhà khoa học.", en:"Economists approach their subject with a scientist's objectivity."},
+    {vn:"Họ đặt ra giả định phù hợp và xây dựng mô hình đơn giản để hiểu thế giới.", en:"They make appropriate assumptions and build simplified models to understand the world."},
+    {vn:"Hai mô hình cơ bản là sơ đồ vòng chu chuyển và đường giới hạn khả năng sản xuất.", en:"Two simple economic models are the circular-flow diagram and the production possibilities frontier."}
+  ],
+  g2_vn:"Vi mô và Vĩ mô", g2_en:"Micro and Macro",
+  g2_items:[
+    {vn:"Kinh tế học vi mô nghiên cứu quyết định của hộ gia đình và doanh nghiệp và tương tác của họ trong các thị trường.", en:"Microeconomics studies household and firm decisions and their interactions in markets."},
+    {vn:"Kinh tế học vĩ mô nghiên cứu các lực và xu hướng ảnh hưởng đến toàn bộ nền kinh tế.", en:"Macroeconomics studies the forces and trends that affect the economy as a whole."}
+  ],
+  g3_vn:"Nhà kinh tế học như cố vấn chính sách", g3_en:"The economist as policy adviser",
+  g3_items:[
+    {vn:"Nhận định thực chứng khẳng định thế giới đang như thế nào.", en:"A positive statement is an assertion about how the world is."},
+    {vn:"Nhận định chuẩn tắc khẳng định thế giới nên như thế nào.", en:"A normative statement is an assertion about how the world ought to be."},
+    {vn:"Khi làm cố vấn chính sách, nhà kinh tế đưa ra nhận định chuẩn tắc.", en:"When economists make normative statements, they act as policy advisers."},
+    {vn:"Nhà kinh tế đôi khi cho lời khuyên trái ngược vì khác biệt về đánh giá khoa học hoặc giá trị.", en:"Economists sometimes offer conflicting advice due to differences in scientific judgments or values."}
+  ]
+};
+
+/* ---------- Quiz ---------- */
+const QUIZ = [
+  {q_vn:"Vai trò nào KHÔNG phải của nhà kinh tế học?",
+    q_en:"Which is NOT a role of an economist?",
+    opts_vn:["Nhà khoa học — giải thích thế giới","Cố vấn chính sách — cải thiện thế giới","Nhà tiên tri — dự báo chính xác 100% tương lai","Nhà nghiên cứu — thu thập và phân tích dữ liệu"],
+    opts_en:["Scientist — explain the world","Policy adviser — improve the world","Prophet — predict the future with 100% accuracy","Researcher — collect and analyze data"],
+    answer:2,
+    expl_vn:"Nhà kinh tế học không phải là nhà tiên tri. Họ dùng phương pháp khoa học để giải thích và đôi khi tư vấn chính sách; dự báo của họ luôn có sai số.",
+    expl_en:"Economists are not prophets. They use the scientific method to explain and sometimes advise policy; their forecasts always have errors."},
+  {q_vn:"Vì sao nhà kinh tế dùng giả định trong mô hình?",
+    q_en:"Why do economists use assumptions in models?",
+    opts_vn:["Vì họ lười phân tích thực tế","Để đơn giản hóa thực tại phức tạp và tập trung vào điều cốt yếu","Vì thực tế quá dễ hiểu","Để làm mô hình khớp với dữ liệu bằng mọi giá"],
+    opts_en:["Because they are lazy","To simplify complex reality and focus on essentials","Because reality is too easy","To force models to fit data at any cost"],
+    answer:1,
+    expl_vn:"Giả định giúp bỏ qua chi tiết ít quan trọng để làm rõ cơ chế cốt lõi. Ví dụ: giả định 2 nước 2 hàng hóa để hiểu thương mại quốc tế trước khi mở rộng.",
+    expl_en:"Assumptions drop unimportant details to clarify the core mechanism. E.g., assume 2 countries and 2 goods to first understand international trade, then generalize."},
+  {q_vn:"Sơ đồ vòng chu chuyển có 2 chủ thể ra quyết định là:",
+    q_en:"The two decision makers in the circular-flow diagram are:",
+    opts_vn:["Chính phủ và người dân","Hộ gia đình và doanh nghiệp","Người bán và người mua","Nội địa và nước ngoài"],
+    opts_en:["Government and citizens","Households and firms","Sellers and buyers","Domestic and foreign"],
+    answer:1,
+    expl_vn:"Trong sơ đồ đơn giản, hai chủ thể là <b>hộ gia đình</b> và <b>doanh nghiệp</b>. Sơ đồ mở rộng thêm chính phủ và nước ngoài.",
+    expl_en:"In the simple diagram, the two decision makers are <b>households</b> and <b>firms</b>. Extended versions add government and the rest of the world."},
+  {q_vn:"Trong thị trường yếu tố sản xuất, ai là người BÁN?",
+    q_en:"In the market for factors of production, who is the SELLER?",
+    opts_vn:["Doanh nghiệp","Hộ gia đình","Chính phủ","Ngân hàng"],
+    opts_en:["Firms","Households","Government","Banks"],
+    answer:1,
+    expl_vn:"Hộ gia đình sở hữu lao động, đất đai, vốn và bán/cho thuê cho doanh nghiệp — nhận lại thu nhập.",
+    expl_en:"Households own labor, land, and capital, and sell/rent them to firms — receiving income."},
+  {q_vn:"Một điểm nằm trong lòng đường PPF cho biết:",
+    q_en:"A point inside the PPF means:",
+    opts_vn:["Không khả thi","Hiệu quả tối đa","Khả thi nhưng không hiệu quả (có nguồn lực chưa dùng)","Nền kinh tế đã tăng trưởng"],
+    opts_en:["Not feasible","Maximum efficiency","Feasible but inefficient (unused resources)","The economy has grown"],
+    answer:2,
+    expl_vn:"Điểm trong PPF nghĩa là có nguồn lực chưa được tận dụng — ví dụ thất nghiệp cao, nhà máy đóng cửa.",
+    expl_en:"A point inside the PPF means resources are underused — e.g., high unemployment or idle factories."},
+  {q_vn:"Đường PPF cong ra ngoài (bowed outward) minh họa điều gì?",
+    q_en:"A bowed-outward PPF illustrates:",
+    opts_vn:["Chi phí cơ hội cố định","Chi phí cơ hội tăng dần khi sản xuất nhiều hơn 1 loại hàng","Không có chi phí cơ hội","Nguồn lực vô hạn"],
+    opts_en:["Constant opportunity cost","Increasing opportunity cost as more of one good is produced","No opportunity cost","Unlimited resources"],
+    answer:1,
+    expl_vn:"Vì các nguồn lực khác nhau phù hợp với các sản phẩm khác nhau. Khi chuyển thêm nguồn lực sang một loại hàng, các nguồn lực ít phù hợp phải dùng → chi phí cơ hội tăng.",
+    expl_en:"Because different resources suit different products. Shifting more resources to one good means using less-suitable resources → opportunity cost rises."},
+  {q_vn:"Điều gì làm đường PPF của một nước dịch ra ngoài (economic growth)?",
+    q_en:"What causes a country's PPF to shift outward (economic growth)?",
+    opts_vn:["Chỉ có tăng dân số","Chỉ có tăng lãi suất","Tăng nguồn lực (lao động, vốn) hoặc cải tiến công nghệ","Giảm sản xuất một loại hàng hóa"],
+    opts_en:["Only population growth","Only higher interest rates","Increased resources (labor, capital) or better technology","Reducing production of one good"],
+    answer:2,
+    expl_vn:"Kinh tế tăng trưởng khi có thêm nguồn lực (dân số, vốn đầu tư, FDI) hoặc công nghệ mới — PPF dịch ra ngoài, cho phép sản xuất nhiều hơn cả 2 hàng hóa.",
+    expl_en:"An economy grows when resources expand (population, investment, FDI) or technology improves — the PPF shifts outward, allowing more of both goods."},
+  {q_vn:"Câu nào là ví dụ về kinh tế học VĨ MÔ?",
+    q_en:"Which is an example of MACROeconomics?",
+    opts_vn:["Vinamilk đặt giá 1 hộp sữa","Tỷ lệ lạm phát của Việt Nam là 3,5%","Chị Lan quyết định nghỉ việc để đi học","Grab tăng giá giờ cao điểm"],
+    opts_en:["Vinamilk sets the price of a milk box","Vietnam's inflation rate is 3.5%","Ms. Lan quits her job to study","Grab surge-prices at peak hour"],
+    answer:1,
+    expl_vn:"Tỷ lệ lạm phát là chỉ số toàn nền kinh tế → vĩ mô. Ba đáp án còn lại là quyết định của một doanh nghiệp hoặc cá nhân → vi mô.",
+    expl_en:"The inflation rate is an economy-wide indicator → macro. The other three are decisions by a firm or individual → micro."},
+  {q_vn:"Câu nào là nhận định THỰC CHỨNG (positive)?",
+    q_en:"Which is a POSITIVE statement?",
+    opts_vn:["Chính phủ nên trợ giá điện cho hộ nghèo","Tăng thuế thuốc lá làm giảm số người hút","Việt Nam cần xây dựng thêm cao tốc","Nhà nước nên bảo vệ ngành sản xuất trong nước"],
+    opts_en:["The government should subsidize electricity for the poor","Raising cigarette tax reduces the number of smokers","Vietnam should build more expressways","The state should protect domestic industry"],
+    answer:1,
+    expl_vn:"'Tăng thuế thuốc lá làm giảm số người hút' mô tả một quan hệ có thể kiểm định bằng dữ liệu → thực chứng. Ba câu còn lại chứa 'nên/cần' → chuẩn tắc.",
+    expl_en:"'Raising cigarette tax reduces smoking' describes a testable relationship → positive. The other three contain 'should/needs' → normative."},
+  {q_vn:"Một nhận định thực chứng (positive) có thể đúng hoặc sai — điều này có nghĩa là:",
+    q_en:"A positive statement can be true or false — this means:",
+    opts_vn:["Positive luôn đúng","Positive luôn sai","Positive chỉ đơn thuần là mô tả có thể kiểm định — không nhất thiết đã đúng","Positive không phải là kinh tế học"],
+    opts_en:["Positive is always true","Positive is always false","Positive is simply a testable description — not necessarily true","Positive is not economics"],
+    answer:2,
+    expl_vn:"'Trái Đất phẳng' là positive vì nó mô tả thế giới, nhưng sai. Positive nghĩa là 'có thể kiểm định', không đồng nghĩa với 'đúng'.",
+    expl_en:"'The Earth is flat' is a positive statement because it describes the world, but is false. Positive means 'testable', not 'true'."},
+  {q_vn:"Hai nhà kinh tế bất đồng vì họ có mô hình kinh tế khác nhau và cùng một dữ liệu diễn giải khác. Đây là:",
+    q_en:"Two economists disagree because they use different models and interpret the same data differently. This is:",
+    opts_vn:["Khác biệt giá trị","Khác biệt đánh giá khoa học","Xung đột lợi ích","Bất đồng chính trị"],
+    opts_en:["Difference in values","Difference in scientific judgment","Conflict of interest","Political disagreement"],
+    answer:1,
+    expl_vn:"Cùng mục tiêu (positive) nhưng khác lý thuyết/mô hình → khác biệt về đánh giá khoa học. Khác biệt giá trị là khi mục tiêu chuẩn tắc khác nhau.",
+    expl_en:"Same object (positive) but different theories/models → scientific judgment difference. Value differences are when normative goals differ."},
+  {q_vn:"Ở Việt Nam, nghiên cứu tác động của Đổi Mới 1986 lên tăng trưởng là ví dụ về:",
+    q_en:"In Vietnam, studying the effect of Đổi Mới 1986 on growth is an example of:",
+    opts_vn:["Thí nghiệm có kiểm soát","Thí nghiệm tự nhiên (natural experiment)","Mô phỏng máy tính","Điều tra dân số"],
+    opts_en:["A controlled experiment","A natural experiment","A computer simulation","A census"],
+    answer:1,
+    expl_vn:"Đổi Mới là sự kiện lịch sử tạo ra biến thiên trong dữ liệu — không phải nhà nghiên cứu chủ động sắp đặt. Đó là thí nghiệm tự nhiên.",
+    expl_en:"Đổi Mới is a historical event that generated data variation — not one the researcher set up. That's a natural experiment."},
+  {q_vn:"Trên PPF, một nền kinh tế đang sản xuất tại điểm B (trên đường). Muốn tăng sản lượng máy bay, phải:",
+    q_en:"On a PPF, an economy is at point B (on the curve). To produce more airplanes, it must:",
+    opts_vn:["Không cần từ bỏ gì","Từ bỏ một số hàng hóa khác (chi phí cơ hội)","Chờ dân số tăng","Nhập khẩu thêm nguồn lực"],
+    opts_en:["Not give up anything","Give up some other good (opportunity cost)","Wait for population growth","Import more resources"],
+    answer:1,
+    expl_vn:"Trên PPF nghĩa là mọi nguồn lực đã dùng hết → sản xuất thêm máy bay đòi hỏi rút nguồn lực khỏi hàng hóa khác. Đó chính là chi phí cơ hội.",
+    expl_en:"On the PPF means all resources are already used → producing more airplanes requires pulling resources from other goods. That's opportunity cost."},
+  {q_vn:"Ai trong số sau đây đóng vai trò 'cố vấn chính sách' (không phải nhà khoa học)?",
+    q_en:"Who below acts as 'policy adviser' (not scientist)?",
+    opts_vn:["Nhà kinh tế đo lường tác động của tăng thuế lên tiêu dùng","Nhà kinh tế kết luận rằng chính phủ NÊN giảm thuế xăng để giúp người nghèo","Nhà kinh tế xây mô hình PPF","Nhà kinh tế thu thập dữ liệu GDP"],
+    opts_en:["An economist measuring the effect of a tax hike on consumption","An economist concluding the government SHOULD cut gasoline tax to help the poor","An economist building a PPF model","An economist collecting GDP data"],
+    answer:1,
+    expl_vn:"Chứa 'nên' + đánh giá giá trị (giúp người nghèo) → cố vấn chính sách, nhận định chuẩn tắc. Ba câu còn lại là hoạt động khoa học thực chứng.",
+    expl_en:"Contains 'should' + value judgment (help the poor) → policy adviser, normative statement. The other three are positive scientific activity."}
+];
+
+/* ---------- STATE ---------- */
+let currentTab = 0;
+let completed = new Set();
+let currentFC = 0;
+
+/* ---------- LANGUAGE ---------- */
+function setLang(mode){
+  document.documentElement.setAttribute("data-lang", mode);
+  document.body.setAttribute("data-lang", mode);
+  document.getElementById("lang-vn-btn").classList.toggle("active", mode==="vn");
+  document.getElementById("lang-en-btn").classList.toggle("active", mode==="en");
+  try{ localStorage.setItem(`${CHAPTER_KEY}_lang`, mode); }catch(e){}
+  updateCrumb();
+}
+function loadLang(){
+  try{
+    const s = localStorage.getItem(`${CHAPTER_KEY}_lang`);
+    if(s==="en") setLang("en"); else setLang("vn");
+  }catch(e){ setLang("vn"); }
+}
+
+/* ---------- NAV ---------- */
+function renderNav(){
+  const list = document.getElementById("nav-list");
+  list.innerHTML = NAV.map((n,i)=>`
+    <div class="nav-item ${i===0?'active':''}" data-i="${i}" onclick="switchTab(${i})">
+      <i class="fa-solid ${n.icon} icon"></i>
+      <span class="lang-vn">${n.vn}</span>
+      <span class="lang-en">${n.en}</span>
+      <i class="fa-solid fa-check check"></i>
+    </div>`).join("");
+}
+function updateCrumb(){
+  const lang = document.body.getAttribute("data-lang");
+  document.getElementById("crumb-current").textContent = NAV[currentTab][lang];
+}
+function switchTab(i){
+  if(i<0||i>=NAV.length) return;
+  currentTab = i;
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  const panel = document.querySelector(`.panel[data-tab="${i}"]`);
+  if(panel) panel.classList.add("active");
+  document.querySelectorAll(".nav-item").forEach((n,k)=>n.classList.toggle("active",k===i));
+  updateCrumb();
+  document.getElementById("prev-btn").disabled = (i===0);
+  document.getElementById("next-btn").disabled = (i===NAV.length-1);
+  window.scrollTo({top:0,behavior:"smooth"});
+  closeSidebar();
+  setTimeout(()=>markComplete(i), 2500);
+}
+function prevTab(){ switchTab(currentTab-1); }
+function nextTab(){ switchTab(currentTab+1); }
+function markComplete(i){
+  if(completed.has(i)) return;
+  completed.add(i); saveProgress(); updateProgress();
+  if(completed.size === NAV.length) celebrate();
+}
+function updateProgress(){
+  const pct = Math.round(completed.size/NAV.length*100);
+  document.getElementById("progress-fill").style.width = pct+"%";
+  document.getElementById("progress-txt").textContent = `${completed.size} / ${NAV.length}`;
+  document.querySelectorAll(".nav-item").forEach((n,k)=>n.classList.toggle("done", completed.has(k)));
+}
+function saveProgress(){ try{ localStorage.setItem(`${CHAPTER_KEY}_completed`, JSON.stringify([...completed])); }catch(e){} }
+function loadProgress(){
+  try{ const raw = localStorage.getItem(`${CHAPTER_KEY}_completed`); if(raw) completed = new Set(JSON.parse(raw)); }catch(e){}
+  updateProgress();
+}
+function resetProgress(){
+  const lang = document.body.getAttribute("data-lang");
+  const msg = lang==="vn" ? "Reset toàn bộ tiến độ?" : "Reset all progress?";
+  if(!confirm(msg)) return;
+  completed.clear();
+  try{ localStorage.removeItem(`${CHAPTER_KEY}_completed`); }catch(e){}
+  updateProgress();
+  document.getElementById("complete-banner").classList.remove("show");
+}
+
+/* ---------- THEME ---------- */
+function toggleTheme(){
+  const cur = document.documentElement.getAttribute("data-theme");
+  const nxt = cur==="dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", nxt);
+  document.getElementById("theme-txt-vn").textContent = nxt==="dark" ? "Nền sáng" : "Nền tối";
+  document.getElementById("theme-txt-en").textContent = nxt==="dark" ? "Light" : "Dark";
+  document.querySelector("#theme-btn i").className = nxt==="dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+  try{ localStorage.setItem(`${CHAPTER_KEY}_theme`, nxt); }catch(e){}
+}
+function loadTheme(){
+  try{
+    const s = localStorage.getItem(`${CHAPTER_KEY}_theme`);
+    if(s==="dark"){
+      document.documentElement.setAttribute("data-theme","dark");
+      document.getElementById("theme-txt-vn").textContent = "Nền sáng";
+      document.getElementById("theme-txt-en").textContent = "Light";
+      document.querySelector("#theme-btn i").className = "fa-solid fa-sun";
+    }
+  }catch(e){}
+}
+
+function openSidebar(){ document.getElementById("sidebar").classList.add("open"); document.getElementById("overlay").classList.add("open"); }
+function closeSidebar(){ document.getElementById("sidebar").classList.remove("open"); document.getElementById("overlay").classList.remove("open"); }
+
+/* ---------- TERMS ---------- */
+function renderTerms(){
+  document.getElementById("terms-grid").innerHTML = TERMS.map(t=>`
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="t-name"><span class="lang-vn">${t.vn}</span><span class="lang-en">${t.en}</span></div>
+      <div class="toggle-hint"><span class="lang-vn">Nhấn để xem định nghĩa</span><span class="lang-en">Click to reveal definition</span></div>
+      <div class="t-def"><span class="lang-vn">${t.def_vn}</span><span class="lang-en">${t.def_en}</span></div>
+    </div>`).join("");
+}
+
+/* ---------- SECTIONS RENDER ---------- */
+function renderSections(){
+  const container = document.getElementById("content-area");
+  SECTIONS.forEach((s,idx)=>{
+    const tabIdx = idx + 2;
+    const ideasHTML = s.ideas_vn.map((k,j)=>`
+      <div class="callout">
+        <p class="para lang-vn">${k}</p>
+        <p class="para lang-en">${s.ideas_en[j]}</p>
+      </div>`).join("");
+    const exVN = s.ex_vn.map(x=>`<li>${x}</li>`).join("");
+    const exEN = s.ex_en.map(x=>`<li>${x}</li>`).join("");
+    let diagram = "";
+    if(s.diagram === "circular") diagram = circularFlowSVG();
+    else if(s.diagram === "ppf") diagram = ppfSVG();
+
+    let consensusHTML = "";
+    if(s.consensus){
+      const rows = s.consensus.map(c=>`
+        <tr>
+          <td style="width:70%;padding:8px 12px;font-size:14px"><span class="lang-vn">${c.vn_stmt}</span><span class="lang-en">${c.en_stmt}</span></td>
+          <td style="width:20%;padding:8px 12px;text-align:right;font-weight:700;color:var(--green);font-size:15px">${c.pct}</td>
+        </tr>`).join("");
+      consensusHTML = `
+        <h2 class="section-h">
+          <span class="num">§</span>
+          <span class="lang-vn">${s.consensus_title_vn}</span>
+          <span class="lang-en">${s.consensus_title_en}</span>
+        </h2>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin:14px 0">
+          <table style="width:100%;border-collapse:collapse"><tbody>${rows}</tbody></table>
+        </div>`;
+    }
+
+    const section = document.createElement("section");
+    section.className = "panel";
+    section.setAttribute("data-tab", tabIdx);
+    section.innerHTML = `
+      <div class="section-banner">
+        <div class="pb-num">${s.n.toString().padStart(2,'0')}</div>
+        <div class="pb-label">
+          <span class="lang-vn">Chương 2 · Phần ${s.n}</span>
+          <span class="lang-en">Chapter 2 · Section ${s.n}</span>
+        </div>
+        <div class="pb-title lang-vn">${s.title_vn}</div>
+        <div class="pb-title lang-en">${s.title_en}</div>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">${s.tag_vn}.1</span>
+        <span class="lang-vn">Ý tưởng cốt lõi</span>
+        <span class="lang-en">Core idea</span>
+      </h2>
+      <div class="callout blue">
+        <p class="para lang-vn">${s.core_vn}</p>
+        <p class="para lang-en">${s.core_en}</p>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">${s.tag_vn}.2</span>
+        <span class="lang-vn">Các điểm chính</span>
+        <span class="lang-en">Key ideas</span>
+      </h2>
+      ${ideasHTML}
+
+      ${diagram}
+
+      ${consensusHTML}
+
+      <h2 class="section-h">
+        <span class="num">${s.tag_vn}.3</span>
+        <span class="lang-vn">Vận dụng thực tế Việt Nam</span>
+        <span class="lang-en">Vietnam applications</span>
+      </h2>
+      <div class="vn-example">
+        <div class="vh">
+          <span class="flag">🇻🇳</span>
+          <span class="lang-vn">${s.ex_title_vn}</span>
+          <span class="lang-en">${s.ex_title_en}</span>
+        </div>
+        <div class="vb">
+          <ul class="lang-vn">${exVN}</ul>
+          <ul class="lang-en">${exEN}</ul>
+        </div>
+      </div>
+
+      <h2 class="section-h">
+        <span class="num">${s.tag_vn}.4</span>
+        <span class="lang-vn">Kiểm tra nhanh</span>
+        <span class="lang-en">Quick check</span>
+      </h2>
+      <div class="think">
+        <div class="th-title">
+          <i class="fa-solid fa-brain"></i>
+          <span class="lang-vn">Câu hỏi tư duy</span>
+          <span class="lang-en">Thinking question</span>
+        </div>
+        <div class="th-body">
+          <p class="lang-vn">${s.q_vn}</p>
+          <p class="lang-en">${s.q_en}</p>
+        </div>
+        <button class="reveal-btn" onclick="toggleReveal(this)">
+          <span class="lang-vn">Xem gợi ý</span>
+          <span class="lang-en">Show hint</span>
+        </button>
+        <div class="reveal-answer">
+          <div class="lang-vn">${s.a_vn}</div>
+          <div class="lang-en">${s.a_en}</div>
+        </div>
+      </div>
+    `;
+    container.appendChild(section);
+  });
+  container.insertAdjacentHTML("beforeend", nutshellHTML());
+  container.insertAdjacentHTML("beforeend", flashcardsHTML());
+  container.insertAdjacentHTML("beforeend", quizHTML());
+}
+
+function toggleReveal(btn){
+  const a = btn.nextElementSibling;
+  const on = a.classList.toggle("open");
+  btn.innerHTML = on
+    ? '<span class="lang-vn">Ẩn đáp án</span><span class="lang-en">Hide answer</span>'
+    : '<span class="lang-vn">Xem gợi ý</span><span class="lang-en">Show hint</span>';
+}
+
+function nutshellHTML(){
+  const g = (vn,en,items) => `
+    <div class="nutshell-group">
+      <h3><span class="lang-vn">${vn}</span><span class="lang-en">${en}</span></h3>
+      <ul>${items.map(x=>`<li><span class="lang-vn">${x.vn}</span><span class="lang-en">${x.en}</span></li>`).join("")}</ul>
+    </div>`;
+  return `
+  <section class="panel" data-tab="8">
+    <h1 class="panel-title"><span class="lang-vn">Tóm tắt chương</span><span class="lang-en">Chapter in a nutshell</span></h1>
+    <div class="panel-subtitle lang-vn">Điểm lại những thông điệp cốt lõi.</div>
+    <div class="panel-subtitle lang-en">Recap the core takeaways.</div>
+    ${g(NUTSHELL.g1_vn, NUTSHELL.g1_en, NUTSHELL.g1_items)}
+    ${g(NUTSHELL.g2_vn, NUTSHELL.g2_en, NUTSHELL.g2_items)}
+    ${g(NUTSHELL.g3_vn, NUTSHELL.g3_en, NUTSHELL.g3_items)}
+
+    <div class="callout green">
+      <div class="callout-title">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span class="lang-vn">Định hướng học tiếp</span>
+        <span class="lang-en">What comes next</span>
+      </div>
+      <p class="lang-vn">Chương 3 sẽ mở rộng Nguyên lý 5 (thương mại có lợi cho tất cả) và ứng dụng đường PPF vào phân tích <b>lợi thế so sánh</b>. Từ đó ta sẽ hiểu vì sao các nước, và các cá nhân, nên chuyên môn hóa và trao đổi.</p>
+      <p class="lang-en">Chapter 3 extends Principle 5 (trade benefits all) and applies the PPF to <b>comparative advantage</b>. You'll see why countries — and individuals — should specialize and trade.</p>
+    </div>
+  </section>`;
+}
+
+function flashcardsHTML(){
+  return `
+  <section class="panel" data-tab="9">
+    <h1 class="panel-title">Flashcards</h1>
+    <div class="panel-subtitle lang-vn">Nhấn vào thẻ để lật. Dùng mũi tên để chuyển thẻ. Tổng ${TERMS.length} thuật ngữ.</div>
+    <div class="panel-subtitle lang-en">Click a card to flip. Use arrows to navigate. Total ${TERMS.length} terms.</div>
+    <div class="fc-wrap">
+      <div class="fc-counter">
+        <span class="lang-vn">Thẻ <span id="fc-idx-vn">1</span> / ${TERMS.length}</span>
+        <span class="lang-en">Card <span id="fc-idx-en">1</span> / ${TERMS.length}</span>
+      </div>
+      <div class="flashcard" id="flashcard" onclick="flipCard()">
+        <div class="fc-inner">
+          <div class="fc-face front">
+            <div class="fc-term lang-vn" id="fc-term-vn"></div>
+            <div class="fc-term lang-en" id="fc-term-en" style="color:var(--navy)"></div>
+            <div class="fc-hint"><span class="lang-vn">↑ Nhấn để lật ↑</span><span class="lang-en">↑ Click to flip ↑</span></div>
+          </div>
+          <div class="fc-face back">
+            <div class="fc-def lang-vn"><b style="color:var(--gold);font-size:12px;letter-spacing:1px;display:block;margin-bottom:8px">ĐỊNH NGHĨA</b><span id="fc-def-vn"></span></div>
+            <div class="fc-def lang-en"><b style="color:var(--gold);font-size:12px;letter-spacing:1px;display:block;margin-bottom:8px">DEFINITION</b><span id="fc-def-en"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-nav">
+        <button onclick="prevFC()" id="fc-prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="info" id="fc-info">1 / ${TERMS.length}</div>
+        <button onclick="nextFC()" id="fc-next"><i class="fa-solid fa-arrow-right"></i></button>
+        <button onclick="shuffleFC()" style="width:auto;padding:0 14px"><i class="fa-solid fa-shuffle"></i></button>
+      </div>
+    </div>
+  </section>`;
+}
+
+function quizHTML(){
+  const blocks = QUIZ.map((q,i)=>`
+    <div class="q-block" data-qi="${i}">
+      <div class="q-num"><span class="lang-vn">CÂU ${i+1} / ${QUIZ.length}</span><span class="lang-en">Q${i+1} / ${QUIZ.length}</span></div>
+      <div class="q-text lang-vn">${q.q_vn}</div>
+      <div class="q-text lang-en">${q.q_en}</div>
+      <div class="q-opts">
+        ${q.opts_vn.map((o,j)=>`
+          <div class="q-opt" onclick="selectOpt(${i},${j},this)">
+            <span class="letter">${String.fromCharCode(65+j)}.</span>
+            <span><span class="lang-vn">${o}</span><span class="lang-en">${q.opts_en[j]}</span></span>
+          </div>`).join("")}
+      </div>
+      <div class="q-expl" id="expl-${i}">
+        <b><span class="lang-vn">Giải thích:</span><span class="lang-en">Explanation:</span></b>
+        <span class="lang-vn"> ${q.expl_vn}</span>
+        <span class="lang-en"> ${q.expl_en}</span>
+      </div>
+    </div>`).join("");
+  return `
+  <section class="panel" data-tab="10">
+    <h1 class="panel-title"><span class="lang-vn">Quiz tổng hợp</span><span class="lang-en">Final quiz</span></h1>
+    <div class="panel-subtitle lang-vn">${QUIZ.length} câu trắc nghiệm bao trùm toàn chương 2.</div>
+    <div class="panel-subtitle lang-en">${QUIZ.length} multiple-choice questions covering the whole chapter.</div>
+
+    <div class="quiz-result" id="quiz-result">
+      <h3><span class="lang-vn">Kết quả</span><span class="lang-en">Result</span></h3>
+      <div class="score" id="quiz-score">0 / ${QUIZ.length}</div>
+      <div id="quiz-comment"></div>
+      <button class="tn-btn" style="background:var(--gold);color:#1a1a1a;border:none;margin-top:12px" onclick="resetQuiz()">
+        <i class="fa-solid fa-rotate-right"></i>
+        <span class="lang-vn">Làm lại</span><span class="lang-en">Retry</span>
+      </button>
+    </div>
+
+    ${blocks}
+
+    <button class="quiz-submit" onclick="submitQuiz()">
+      <i class="fa-solid fa-check-double"></i>
+      <span class="lang-vn">Nộp bài</span><span class="lang-en">Submit</span>
+    </button>
+  </section>`;
+}
+
+/* ---------- FLASHCARDS ---------- */
+let fcOrder = TERMS.map((_,i)=>i);
+function renderFC(){
+  const t = TERMS[fcOrder[currentFC]];
+  document.getElementById("fc-term-vn").textContent = t.vn;
+  document.getElementById("fc-term-en").textContent = t.en;
+  document.getElementById("fc-def-vn").textContent = t.def_vn;
+  document.getElementById("fc-def-en").textContent = t.def_en;
+  document.getElementById("fc-info").textContent = `${currentFC+1} / ${TERMS.length}`;
+  document.getElementById("fc-idx-vn").textContent = currentFC+1;
+  document.getElementById("fc-idx-en").textContent = currentFC+1;
+  document.getElementById("flashcard").classList.remove("flipped");
+  document.getElementById("fc-prev").disabled = currentFC===0;
+  document.getElementById("fc-next").disabled = currentFC===TERMS.length-1;
+}
+function flipCard(){ document.getElementById("flashcard").classList.toggle("flipped"); }
+function nextFC(){ if(currentFC<TERMS.length-1){ currentFC++; renderFC(); } }
+function prevFC(){ if(currentFC>0){ currentFC--; renderFC(); } }
+function shuffleFC(){
+  for(let i=fcOrder.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [fcOrder[i],fcOrder[j]] = [fcOrder[j],fcOrder[i]];
+  }
+  currentFC = 0; renderFC();
+}
+
+/* ---------- QUIZ ---------- */
+const answers = {};
+function selectOpt(qi, oj, el){
+  answers[qi] = oj;
+  el.parentNode.querySelectorAll(".q-opt").forEach(x=>x.classList.remove("selected"));
+  el.classList.add("selected");
+}
+function submitQuiz(){
+  let score = 0;
+  QUIZ.forEach((q,i)=>{
+    const opts = document.querySelectorAll(`.q-block[data-qi="${i}"] .q-opt`);
+    const chosen = answers[i];
+    opts.forEach((o,j)=>{
+      o.classList.remove("selected","correct","wrong");
+      if(j===q.answer) o.classList.add("correct");
+      if(chosen!==undefined && j===chosen && chosen!==q.answer) o.classList.add("wrong");
+    });
+    document.getElementById(`expl-${i}`).classList.add("show");
+    if(chosen===q.answer) score++;
+  });
+  const res = document.getElementById("quiz-result");
+  document.getElementById("quiz-score").textContent = `${score} / ${QUIZ.length}`;
+  const pct = Math.round(score/QUIZ.length*100);
+  let vn = "", en = "";
+  if(pct>=90){ vn = "🎉 Xuất sắc! Bạn đã tư duy như một nhà kinh tế."; en = "🎉 Excellent! You are thinking like an economist."; }
+  else if(pct>=70){ vn = "👍 Khá tốt. Xem lại các câu sai và giải thích để củng cố."; en = "👍 Well done. Review missed questions to solidify."; }
+  else if(pct>=50){ vn = "💪 Đạt trung bình. Nên ôn lại các phần còn yếu."; en = "💪 Average. Revisit weak sections."; }
+  else { vn = "📚 Cần đọc lại chương từ đầu. Bắt đầu với Tổng quan."; en = "📚 Re-read the chapter — begin with Overview."; }
+  document.getElementById("quiz-comment").innerHTML = `<span class="lang-vn">${vn}</span><span class="lang-en">${en}</span>`;
+  res.classList.add("show");
+  window.scrollTo({top:res.offsetTop-80, behavior:"smooth"});
+}
+function resetQuiz(){
+  for(const k in answers) delete answers[k];
+  document.querySelectorAll(".q-opt").forEach(o=>o.classList.remove("selected","correct","wrong"));
+  document.querySelectorAll(".q-expl").forEach(e=>e.classList.remove("show"));
+  document.getElementById("quiz-result").classList.remove("show");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ---------- CELEBRATE ---------- */
+function celebrate(){
+  document.getElementById("complete-banner").classList.add("show");
+  setTimeout(()=>document.getElementById("complete-banner").classList.remove("show"), 6000);
+  const colors = ["#e8a838","#1e3a5f","#2e8b57","#c73737","#7a4bd6","#3a7dd6"];
+  for(let i=0;i<120;i++){
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random()*100 + "vw";
+    c.style.background = colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDelay = Math.random()*0.6 + "s";
+    c.style.animationDuration = (3+Math.random()*2) + "s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(), 5500);
+  }
+}
+
+document.addEventListener("keydown", e=>{
+  if(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA") return;
+  if(currentTab === 9){
+    if(e.key==="ArrowRight"){ nextFC(); return; }
+    if(e.key==="ArrowLeft"){ prevFC(); return; }
+    if(e.key===" "){ e.preventDefault(); flipCard(); return; }
+  }
+});
+
+(function init(){
+  renderNav();
+  renderTerms();
+  renderSections();
+  loadTheme();
+  loadLang();
+  loadProgress();
+  document.getElementById("prev-btn").disabled = true;
+  if(document.getElementById("flashcard")) renderFC();
+})();
+</script>
+</body>
+</html>
